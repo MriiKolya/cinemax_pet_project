@@ -24,9 +24,9 @@ class CinemaxIcons {
       IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData pause =
       IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData layer_2 =
+  static const IconData layer =
       IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData padlock_1 =
+  static const IconData padlock =
       IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData shield =
       IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
