@@ -58,17 +58,35 @@ class _TestScreenState extends State<TestScreen> {
               onPressed: () {},
             ),
             const SizedBox(height: 30),
-            CinemaxCheckBox(
-              boxShape: BoxShape.rectangle,
-              onChanged: () {
-                debugPrint('object');
-                debugPrint(value.toString());
-                setState(() {
-                  value = !value;
-                });
-              },
-              value: value,
-            )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CinemaxCheckBox(
+                  onChanged: () {
+                    debugPrint('object');
+                    debugPrint(value.toString());
+                    setState(() {
+                      value = !value;
+                    });
+                  },
+                  value: value,
+                ),
+                const SizedBox(width: 30),
+                CinemaxCheckBox(
+                  boxShape: BoxShape.rectangle,
+                  onChanged: () {
+                    debugPrint('object');
+                    debugPrint(value.toString());
+                    setState(() {
+                      value = !value;
+                    });
+                  },
+                  value: value,
+                )
+              ],
+            ),
+            SizedBox(height: 10),
+            Switch(value: value, onChanged: (value) {})
           ],
         ),
       )),

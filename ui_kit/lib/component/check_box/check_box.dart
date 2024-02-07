@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/theme/color_scheme.dart';
+import 'package:ui_kit/theme/theme_context_extention.dart';
 
 class CinemaxCheckBox extends StatefulWidget {
   const CinemaxCheckBox({
@@ -60,14 +60,15 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
 
   @override
   Widget build(BuildContext context) {
+    final style = context.checkBoxStyle;
     return GestureDetector(
       onTap: () {
         widget.onChanged?.call();
         _animateButton(!widget.value);
       },
       child: Container(
-          width: 24,
-          height: 24,
+          width: style.width,
+          height: style.height,
           decoration: BoxDecoration(
             shape: widget.boxShape == null
                 ? BoxShape.circle
@@ -75,12 +76,10 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
                     ? BoxShape.circle
                     : BoxShape.rectangle,
             borderRadius: widget.boxShape == BoxShape.rectangle
-                ? const BorderRadius.all(Radius.circular(3))
+                ? style.borderRadius
                 : null,
-            color: Colors.transparent,
             border: Border.all(
-              color: PrimaryColor.blueAccent,
-            ),
+                color: widget.value ? style.activeColor : style.checkColor),
           ),
           clipBehavior: Clip.antiAlias,
           child: SizedBox(
@@ -93,7 +92,7 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
                   scale: _scaleAnimation.value,
                   child: ClipRRect(
                     child: Padding(
-                      padding: const EdgeInsets.all(3.0),
+                      padding: style.contentPadding,
                       child: Container(
                         decoration: BoxDecoration(
                           shape: widget.boxShape == null
@@ -102,9 +101,9 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
                                   ? BoxShape.circle
                                   : BoxShape.rectangle,
                           borderRadius: widget.boxShape == BoxShape.rectangle
-                              ? const BorderRadius.all(Radius.circular(3))
+                              ? style.borderRadius
                               : null,
-                          color: PrimaryColor.blueAccent,
+                          color: style.activeColor,
                         ),
                       ),
                     ),
