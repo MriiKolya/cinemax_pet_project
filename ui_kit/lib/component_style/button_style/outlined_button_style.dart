@@ -38,7 +38,7 @@ class OutlinedButtonStyle extends ThemeExtension<OutlinedButtonStyle> {
         ),
         textStyle:
             TextStyles.h4(fontWeightStyle: FontWeightStyle.medium).copyWith(
-          color: TextColor.white,
+          color: TextColor.black,
         ),
         disabledTextColor: TextColor.grey,
         radius: const BorderRadius.all(
