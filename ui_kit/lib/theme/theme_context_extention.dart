@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/component_style/button_style/filled_button_style.dart';
 import 'package:ui_kit/component_style/button_style/outlined_button_style.dart';
 import 'package:ui_kit/component_style/button_style/text_button_style.dart';
+import 'package:ui_kit/component_style/check_box_style/check_box_style.dart';
 
 extension ThemeContextExtention on BuildContext {
   FilledButtonStyle get filledButtonStyle =>
@@ -10,4 +11,5 @@ extension ThemeContextExtention on BuildContext {
       Theme.of(this).extension<TextButtonStyle>()!;
   OutlinedButtonStyle get outlinedButtonStyle =>
       Theme.of(this).extension<OutlinedButtonStyle>()!;
+  CheckboxStyle get checkBoxStyle => Theme.of(this).extension<CheckboxStyle>()!;
 }

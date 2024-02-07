@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/component_style/button_style/filled_button_style.dart';
 import 'package:ui_kit/component_style/button_style/outlined_button_style.dart';
 import 'package:ui_kit/component_style/button_style/text_button_style.dart';
+import 'package:ui_kit/component_style/check_box_style/check_box_style.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 
 final ThemeData darkTheme = ThemeData(
@@ -11,5 +12,6 @@ final ThemeData darkTheme = ThemeData(
     FilledButtonStyle.dark(),
     TextButtonStyle.dark(),
     OutlinedButtonStyle.dark(),
+    CheckboxStyle.dark(),
   ],
 );
