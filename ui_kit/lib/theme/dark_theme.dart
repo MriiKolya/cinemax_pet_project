@@ -9,7 +9,7 @@ import 'package:ui_kit/theme/color_scheme.dart';
 
 final ThemeData darkTheme = ThemeData(
   primaryColor: PrimaryColor.light,
-  scaffoldBackgroundColor: PrimaryColor.dark,
+  scaffoldBackgroundColor: TextColor.black,
   useMaterial3: true,
   extensions: <ThemeExtension<dynamic>>[
     FilledButtonStyle.dark(),

@@ -19,6 +19,7 @@ class TextStyles {
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 28,
       );
 
@@ -26,6 +27,7 @@ class TextStyles {
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 24,
       );
 
@@ -33,6 +35,7 @@ class TextStyles {
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 18,
       );
 
@@ -40,24 +43,28 @@ class TextStyles {
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 16,
       );
   static TextStyle h5({FontWeightStyle? fontWeightStyle}) => TextStyle(
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 14,
       );
   static TextStyle h6({FontWeightStyle? fontWeightStyle}) => TextStyle(
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 12,
       );
   static TextStyle h7({FontWeightStyle? fontWeightStyle}) => TextStyle(
         fontFamily: _fontFamily,
         fontWeight: _getFontWeight(fontWeightStyle),
         package: 'ui_kit',
+        overflow: TextOverflow.ellipsis,
         fontSize: 10,
       );
 }

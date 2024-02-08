@@ -4,8 +4,8 @@ import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/text_style.dart';
 
 abstract class _Constants {
-  static const double paddingH = 18;
-  static const double paddingV = 24;
+  static const double paddingH = 12;
+  static const double paddingV = 18;
 }
 
 class TextButtonStyle extends ThemeExtension<TextButtonStyle> {

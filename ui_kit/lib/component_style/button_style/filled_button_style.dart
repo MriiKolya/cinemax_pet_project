@@ -4,8 +4,8 @@ import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/text_style.dart';
 
 abstract class _Constants {
-  static const double paddingH = 18;
-  static const double paddingV = 24;
+  static const double paddingH = 12;
+  static const double paddingV = 18;
   static const double borderR = 20;
   static const double iconPaddingH = 8;
 }
