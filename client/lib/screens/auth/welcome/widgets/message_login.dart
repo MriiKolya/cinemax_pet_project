@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/text_style.dart';
+import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/typography.dart';
 
 class MessageLogin extends StatelessWidget {
   const MessageLogin({
@@ -9,17 +10,20 @@ class MessageLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = context.textStyle;
     return RichText(
         text: TextSpan(
-            style: TextStyles.h4(fontWeightStyle: FontWeightStyle.regular)
-                .copyWith(color: TextColor.grey),
+            style: textStyle.h4.copyWith(
+                fontWeight: FontWeightStyle.regular.fontWeight,
+                color: TextColor.grey),
             children: [
           const TextSpan(text: 'I already have an account?'),
           const TextSpan(text: ' '),
           TextSpan(
             text: 'Login',
-            style: TextStyles.h4(fontWeightStyle: FontWeightStyle.semibold)
-                .copyWith(color: PrimaryColor.blueAccent),
+            style: textStyle.h4.copyWith(
+                fontWeight: FontWeightStyle.semiBold.fontWeight,
+                color: PrimaryColor.blueAccent),
           ),
         ]));
   }

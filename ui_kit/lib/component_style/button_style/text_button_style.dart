@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/text_style.dart';
+import 'package:ui_kit/theme/typography.dart';
 
 abstract class _Constants {
   static const double paddingH = 12;
@@ -26,8 +26,8 @@ class TextButtonStyle extends ThemeExtension<TextButtonStyle> {
           vertical: _Constants.paddingV,
           horizontal: _Constants.paddingH,
         ),
-        textStyle:
-            TextStyles.h4(fontWeightStyle: FontWeightStyle.medium).copyWith(
+        textStyle: CinemaxTypography.h4().copyWith(
+          fontWeight: FontWeightStyle.medium.fontWeight,
           color: PrimaryColor.blueAccent,
         ),
         disabledTextColor: TextColor.grey,
@@ -39,8 +39,8 @@ class TextButtonStyle extends ThemeExtension<TextButtonStyle> {
           vertical: _Constants.paddingV,
           horizontal: _Constants.paddingH,
         ),
-        textStyle:
-            TextStyles.h4(fontWeightStyle: FontWeightStyle.medium).copyWith(
+        textStyle: CinemaxTypography.h4().copyWith(
+          fontWeight: FontWeightStyle.medium.fontWeight,
           color: PrimaryColor.blueAccent,
         ),
         disabledTextColor: TextColor.grey,

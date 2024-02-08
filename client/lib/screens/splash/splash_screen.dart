@@ -1,9 +1,9 @@
-import 'package:client/config/router/app_router.dart';
+import 'package:client/config/router/app_router_name.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/logo/cinemax_logo.dart';
-import 'package:ui_kit/theme/text_style.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/typography.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(seconds: 1), () {
       if (mounted) {
-        context.go(AppRoutes.signUp);
+        context.goNamed(AppRouterName.welcomeName);
       }
     });
     super.initState();
@@ -25,20 +25,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final style = context.logoStyle;
+    final textStyle = context.textStyle;
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CinemaxLogo(),
-            Text(
-              'CINEMAX',
-              style: TextStyles.h1(fontWeightStyle: FontWeightStyle.semibold)
-                  .copyWith(
-                color: style.primaryColor,
-              ),
-            ),
+            Text('CINEMAX',
+                style: textStyle.h1.copyWith(
+                  fontWeight: FontWeightStyle.semiBold.fontWeight,
+                )),
           ],
         ),
       ),
