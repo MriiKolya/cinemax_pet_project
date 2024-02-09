@@ -5,7 +5,7 @@ import 'package:ui_kit/component_style/button_style/outlined_button_style.dart';
 import 'package:ui_kit/component_style/button_style/text_button_style.dart';
 import 'package:ui_kit/component_style/check_box_style/check_box_style.dart';
 import 'package:ui_kit/component_style/icon_style/icon_style.dart';
-import 'package:ui_kit/component_style/input_text_style/input_text_style.dart';
+import 'package:ui_kit/component_style/input_field_style/input_field_style.dart';
 import 'package:ui_kit/component_style/logo_style/cinemax_logo_style.dart';
 import 'package:ui_kit/component_style/switch_style/switch_style.dart';
 import 'package:ui_kit/component_style/text_style/text_style.dart';
@@ -26,6 +26,6 @@ final ThemeData darkTheme = ThemeData(
     IconStyle.dark(),
     AppBarStyle.dark(),
     TextStyles.dark(),
-    InputTextStyle.dark()
+    InputFieldStyle.dark()
   ],
 );

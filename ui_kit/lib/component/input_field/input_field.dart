@@ -25,7 +25,7 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = context.inputTextStyle;
+    final style = context.inputFieldStyle;
     return TextFormField(
       obscureText: obscureText,
       keyboardType: keyboardType,

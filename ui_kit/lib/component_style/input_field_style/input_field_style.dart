@@ -9,7 +9,7 @@ abstract class _Constants {
   static const double iconPadding = 15;
 }
 
-class InputTextStyle extends ThemeExtension<InputTextStyle> {
+class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
   final TextStyle labelStyle;
   final TextStyle floatingLabelStyle;
   final TextStyle textStyle;
@@ -23,7 +23,7 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
   final EdgeInsets contentPadding;
   final EdgeInsets amountIconPadding;
 
-  InputTextStyle({
+  InputFieldStyle({
     required this.border,
     required this.errorBorder,
     required this.errorTextStyle,
@@ -36,7 +36,7 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
     required this.contentPadding,
   });
 
-  factory InputTextStyle.dark() => InputTextStyle(
+  factory InputFieldStyle.dark() => InputFieldStyle(
         labelStyle: CinemaxTypography.h6()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.grey),
         textStyle: CinemaxTypography.h6()
@@ -68,7 +68,7 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
         ),
       );
 
-  factory InputTextStyle.light() => InputTextStyle(
+  factory InputFieldStyle.light() => InputFieldStyle(
         labelStyle: CinemaxTypography.h6().copyWith(
             fontWeight: FontWeight.w500,
             color: TextColor.grey),
@@ -102,7 +102,7 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
       );
 
   @override
-  InputTextStyle copyWith({
+  InputFieldStyle copyWith({
     TextStyle? labelStyle,
     TextStyle? floatingLabelStyle,
     TextStyle? textStyle,
@@ -114,7 +114,7 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
     EdgeInsets? contentPadding,
     EdgeInsets? amountIconPadding,
   }) {
-    return InputTextStyle(
+    return InputFieldStyle(
       labelStyle: labelStyle ?? this.labelStyle,
       textStyle: textStyle ?? this.textStyle,
       focusBorder: focusBorder ?? this.focusBorder,
@@ -129,8 +129,8 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
   }
 
   @override
-  InputTextStyle lerp(
-    covariant InputTextStyle? other,
+  InputFieldStyle lerp(
+    covariant InputFieldStyle? other,
     double t,
   ) {
     return this;
