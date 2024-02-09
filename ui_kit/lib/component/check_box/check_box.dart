@@ -10,7 +10,7 @@ class CinemaxCheckBox extends StatefulWidget {
   }) : super(key: key);
 
   final bool value;
-  final void Function()? onChanged;
+  final void Function(bool)? onChanged;
   final BoxShape? boxShape;
 
   @override
@@ -63,8 +63,7 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
     final style = context.checkBoxStyle;
     return GestureDetector(
       onTap: () {
-        widget.onChanged?.call();
-        _animateButton(!widget.value);
+        _animateButton(widget.value);
       },
       child: Container(
           width: style.width,

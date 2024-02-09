@@ -2,8 +2,8 @@ import 'package:client/config/router/app_router_name.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/logo/cinemax_logo.dart';
+import 'package:ui_kit/component_style/text_style/text_style.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
-import 'package:ui_kit/theme/typography.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

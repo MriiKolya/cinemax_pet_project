@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-enum FontWeightStyle {
-  regular,
-  medium,
-  semiBold,
-}
-
 class CinemaxTypography {
   static const String _fontFamily = 'Montserrat';
 
@@ -54,20 +48,4 @@ class CinemaxTypography {
         overflow: TextOverflow.ellipsis,
         fontSize: 10,
       );
-}
-
-extension FontWeightExtension on FontWeightStyle {
-  FontWeight get fontWeight {
-    switch (this) {
-      case FontWeightStyle.regular:
-        return FontWeight.w400;
-      case FontWeightStyle.medium:
-        return FontWeight.w500;
-      case FontWeightStyle.semiBold:
-        return FontWeight.w600;
-
-      default:
-        return FontWeight.normal;
-    }
-  }
 }
