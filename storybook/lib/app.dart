@@ -4,7 +4,7 @@ import 'package:client/screens/auth/sing_up/sing_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storybook/cinemax_storybook.dart';
-import 'package:storybook/pages/input_text_page.dart';
+import 'package:storybook/pages/component_page.dart';
 
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -34,7 +34,7 @@ class StoryBookApp extends StatelessWidget {
                 ),
                 Story(
                   name: 'Component/InputText',
-                  builder: (context) => const InputTextPage(),
+                  builder: (context) => const ComponentPage(),
                 ),
               ],
             ),

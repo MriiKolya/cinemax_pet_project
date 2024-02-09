@@ -54,7 +54,7 @@ class InputText extends StatelessWidget {
                 ),
               )
             : null,
-        // errorText: 'Ошибка',
+        errorText: 'Ошибка',
         focusedBorder: style.focusBorder,
         border: style.border,
         errorBorder: style.errorBorder,

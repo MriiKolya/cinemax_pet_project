@@ -63,7 +63,8 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
     final style = context.checkBoxStyle;
     return GestureDetector(
       onTap: () {
-        _animateButton(widget.value);
+        widget.onChanged?.call(!widget.value);
+        _animateButton(!widget.value);
       },
       child: Container(
           width: style.width,
