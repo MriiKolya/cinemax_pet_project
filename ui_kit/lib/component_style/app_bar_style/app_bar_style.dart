@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:ui_kit/component_style/text_style/text_style.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/typography.dart';
 
@@ -20,30 +19,22 @@ class AppBarStyle extends ThemeExtension<AppBarStyle> {
 
   factory AppBarStyle.dark() => AppBarStyle(
         backgroundColor: TextColor.black,
-        titleTextStyle: CinemaxTypography.h4().copyWith(
-          fontWeight: FontWeightStyle.semiBold.fontWeight,
-          color: TextColor.white,
-        ),
-        subTitleTextStyle: CinemaxTypography.h6().copyWith(
-            color: TextColor.grey,
-            fontWeight: FontWeightStyle.medium.fontWeight),
-        actionTextStyle: CinemaxTypography.h6().copyWith(
-            color: TextColor.white,
-            fontWeight: FontWeightStyle.medium.fontWeight),
+        titleTextStyle: CinemaxTypography.h4()
+            .copyWith(fontWeight: FontWeight.w600, color: TextColor.white),
+        subTitleTextStyle: CinemaxTypography.h6()
+            .copyWith(color: TextColor.grey, fontWeight: FontWeight.w500),
+        actionTextStyle: CinemaxTypography.h6()
+            .copyWith(color: TextColor.white, fontWeight: FontWeight.w500),
       );
 
   factory AppBarStyle.light() => AppBarStyle(
         backgroundColor: PrimaryColor.light,
-        titleTextStyle: CinemaxTypography.h4().copyWith(
-          fontWeight: FontWeightStyle.semiBold.fontWeight,
-          color: TextColor.black,
-        ),
-        subTitleTextStyle: CinemaxTypography.h6().copyWith(
-            color: TextColor.grey,
-            fontWeight: FontWeightStyle.medium.fontWeight),
-        actionTextStyle: CinemaxTypography.h6().copyWith(
-            color: TextColor.black,
-            fontWeight: FontWeightStyle.medium.fontWeight),
+        titleTextStyle: CinemaxTypography.h4()
+            .copyWith(fontWeight: FontWeight.w600, color: TextColor.black),
+        subTitleTextStyle: CinemaxTypography.h6()
+            .copyWith(color: TextColor.grey, fontWeight: FontWeight.w500),
+        actionTextStyle: CinemaxTypography.h6()
+            .copyWith(color: TextColor.black, fontWeight: FontWeight.w500),
       );
 
   @override

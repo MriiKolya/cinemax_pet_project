@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ui_kit/component_style/text_style/text_style.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/typography.dart';
 
@@ -38,12 +37,10 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
   });
 
   factory InputTextStyle.dark() => InputTextStyle(
-        labelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.medium.fontWeight,
-            color: TextColor.grey),
-        textStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.medium.fontWeight,
-            color: TextColor.white),
+        labelStyle: CinemaxTypography.h6()
+            .copyWith(fontWeight: FontWeight.w500, color: TextColor.grey),
+        textStyle: CinemaxTypography.h6()
+            .copyWith(fontWeight: FontWeight.w500, color: TextColor.white),
         contentPadding: const EdgeInsets.symmetric(
             vertical: _Constants.contentPaddingV,
             horizontal: _Constants.contentPaddingH),
@@ -56,10 +53,10 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
         amountIconPadding:
             const EdgeInsets.symmetric(horizontal: _Constants.iconPadding),
         errorTextStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.regular.fontWeight,
+            fontWeight: FontWeight.w400,
             color: SecondaryColor.red),
         floatingLabelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.medium.fontWeight,
+            fontWeight: FontWeight.w500,
             color: TextColor.whiteGrey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
@@ -73,10 +70,10 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
 
   factory InputTextStyle.light() => InputTextStyle(
         labelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.medium.fontWeight,
+            fontWeight: FontWeight.w500,
             color: TextColor.grey),
         textStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.medium.fontWeight,
+            fontWeight: FontWeight.w500,
             color: TextColor.black),
         contentPadding: const EdgeInsets.symmetric(
             vertical: _Constants.contentPaddingV,
@@ -97,10 +94,10 @@ class InputTextStyle extends ThemeExtension<InputTextStyle> {
         fillColor: PrimaryColor.light,
         amountIconPadding: const EdgeInsets.only(left: _Constants.iconPadding),
         errorTextStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.regular.fontWeight,
+            fontWeight: FontWeight.w400,
             color: SecondaryColor.red),
         floatingLabelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeightStyle.medium.fontWeight,
+            fontWeight: FontWeight.w500,
             color: TextColor.darkGrey),
       );
 

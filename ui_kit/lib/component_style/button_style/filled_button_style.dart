@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:ui_kit/component_style/text_style/text_style.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/typography.dart';
 
@@ -42,7 +41,7 @@ class FilledButtonStyle extends ThemeExtension<FilledButtonStyle> {
         ),
         disabledButtonColor: SecondaryColor.darkGrey,
         textStyle: CinemaxTypography.h4().copyWith(
-          fontWeight: FontWeightStyle.medium.fontWeight,
+          fontWeight: FontWeight.w500,
           color: TextColor.white,
         ),
         disabledTextColor: TextColor.grey,
@@ -63,7 +62,7 @@ class FilledButtonStyle extends ThemeExtension<FilledButtonStyle> {
         ),
         disabledButtonColor: SecondaryColor.darkGrey,
         textStyle: CinemaxTypography.h4().copyWith(
-          fontWeight: FontWeightStyle.medium.fontWeight,
+          fontWeight: FontWeight.w500,
           color: TextColor.white,
         ),
         disabledTextColor: TextColor.grey,

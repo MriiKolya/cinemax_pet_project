@@ -1,7 +1,7 @@
+import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_kit/component/check_box/check_box.dart';
-import 'package:ui_kit/component/input_text/input_text.dart';
-import 'package:ui_kit/component_style/text_style/text_style.dart';
+import 'package:ui_kit/component/input_field/input_field.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
@@ -19,13 +19,13 @@ class _InputFormSignUpState extends State<InputFormSignUp> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        const InputText(
+        const InputField(
           labelText: 'Full Name',
         ),
-        const InputText(
+        const InputField(
           labelText: 'Email Address',
         ),
-        const InputText(
+        const InputField(
           labelText: 'Password',
         ),
         Row(

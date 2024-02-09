@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
-class InputText extends StatelessWidget {
-  const InputText({
+class InputField extends StatelessWidget {
+  const InputField({
     super.key,
     this.controller,
     this.labelText,

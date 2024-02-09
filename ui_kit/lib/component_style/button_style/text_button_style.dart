@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:ui_kit/component_style/text_style/text_style.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/typography.dart';
 
@@ -29,7 +28,7 @@ class TextButtonStyle extends ThemeExtension<TextButtonStyle> {
           horizontal: _Constants.paddingH,
         ),
         textStyle: CinemaxTypography.h4().copyWith(
-          fontWeight: FontWeightStyle.medium.fontWeight,
+          fontWeight: FontWeight.w500,
           color: PrimaryColor.blueAccent,
         ),
         disabledTextColor: TextColor.grey,
@@ -42,7 +41,7 @@ class TextButtonStyle extends ThemeExtension<TextButtonStyle> {
           horizontal: _Constants.paddingH,
         ),
         textStyle: CinemaxTypography.h4().copyWith(
-          fontWeight: FontWeightStyle.medium.fontWeight,
+          fontWeight: FontWeight.w500,
           color: PrimaryColor.blueAccent,
         ),
         disabledTextColor: TextColor.grey,

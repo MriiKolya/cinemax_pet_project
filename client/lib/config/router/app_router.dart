@@ -1,6 +1,6 @@
 import 'package:client/config/router/app_router_name.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
-import 'package:client/screens/auth/sing_up/sing_up_screen.dart';
+import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
 import 'package:flutter/cupertino.dart';

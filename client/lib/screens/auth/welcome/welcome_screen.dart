@@ -1,11 +1,11 @@
 import 'package:client/config/router/app_router_name.dart';
+import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/screens/auth/welcome/widgets/message_login.dart';
 import 'package:client/screens/auth/welcome/widgets/or_sign_up_with.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';
 import 'package:ui_kit/component/logo/cinemax_logo.dart';
-import 'package:ui_kit/component_style/text_style/text_style.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 

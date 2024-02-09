@@ -7,7 +7,7 @@ import 'package:ui_kit/component/buttons/cinemax_outlined_button.dart';
 import 'package:ui_kit/component/switch/cinemax_swith.dart';
 import 'package:ui_kit/component/check_box/check_box.dart';
 import 'package:ui_kit/component/icon/cinemax_icon.dart';
-import 'package:ui_kit/component/input_text/input_text.dart';
+import 'package:ui_kit/component/input_field/input_field.dart';
 
 class ComponentPage extends StatelessWidget {
   const ComponentPage({super.key});
@@ -26,7 +26,7 @@ class ComponentPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const InputText(
+              const InputField(
                 labelText: 'Full Name',
                 sufficIcon: CinemaxIcons.eyeOff,
                 prefixIcon: CinemaxIcons.search,

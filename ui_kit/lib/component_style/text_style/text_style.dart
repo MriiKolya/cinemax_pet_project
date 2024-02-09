@@ -2,28 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/typography.dart';
 
-enum FontWeightStyle {
-  regular,
-  medium,
-  semiBold,
-}
-
-extension FontWeightExtension on FontWeightStyle {
-  FontWeight get fontWeight {
-    switch (this) {
-      case FontWeightStyle.regular:
-        return FontWeight.w400;
-      case FontWeightStyle.medium:
-        return FontWeight.w500;
-      case FontWeightStyle.semiBold:
-        return FontWeight.w600;
-
-      default:
-        return FontWeight.normal;
-    }
-  }
-}
-
 class TextStyles extends ThemeExtension<TextStyles> {
   final TextStyle h1;
   final TextStyle h2;
@@ -86,7 +64,6 @@ class TextStyles extends ThemeExtension<TextStyles> {
   @override
   ThemeExtension<TextStyles> lerp(
       covariant ThemeExtension<TextStyles>? other, double t) {
-    // TODO: implement lerp
     throw UnimplementedError();
   }
 }
