@@ -1,64 +1,97 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
-class InputField extends StatelessWidget {
+class InputField extends StatefulWidget {
   const InputField({
-    super.key,
+    Key? key,
     this.controller,
     this.labelText,
-    this.sufficIcon,
     this.prefixIcon,
+    this.suffixIcon,
     this.prefixOnTap,
     this.suffixOnTap,
     this.keyboardType,
-    this.obscureText = false,
-  });
+    this.isPassword = false,
+    this.onChanged,
+    this.validator,
+    this.autovalidateMode,
+  }) : super(key: key);
 
   final TextEditingController? controller;
   final String? labelText;
-  final IconData? sufficIcon;
   final IconData? prefixIcon;
+  final IconData? suffixIcon;
   final VoidCallback? prefixOnTap;
   final VoidCallback? suffixOnTap;
   final TextInputType? keyboardType;
-  final bool obscureText;
+  final bool isPassword;
+  final Function(String)? onChanged;
+  final String? Function(String?)? validator;
+  final AutovalidateMode? autovalidateMode;
+
+  @override
+  State<InputField> createState() => _InputFieldState();
+}
+
+class _InputFieldState extends State<InputField> {
+  late bool isObscure;
+
+  @override
+  void initState() {
+    super.initState();
+    isObscure = widget.isPassword;
+  }
 
   @override
   Widget build(BuildContext context) {
     final style = context.inputFieldStyle;
     return TextFormField(
-      obscureText: obscureText,
-      keyboardType: keyboardType,
+      autovalidateMode: widget.autovalidateMode,
+      validator: widget.validator,
       style: style.textStyle,
+      controller: widget.controller,
+      onChanged: widget.onChanged,
+      obscureText: isObscure,
+      keyboardType: widget.keyboardType,
       decoration: InputDecoration(
         contentPadding: style.contentPadding,
-        suffixIcon: sufficIcon != null
+        prefixIcon: widget.prefixIcon != null
             ? Padding(
                 padding: style.amountIconPadding,
                 child: GestureDetector(
-                  onTap: suffixOnTap,
+                  onTap: widget.prefixOnTap,
                   child: Icon(
-                    sufficIcon,
+                    widget.prefixIcon,
                   ),
                 ),
               )
             : null,
-        prefixIcon: prefixIcon != null
-            ? Padding(
-                padding: style.amountIconPadding,
-                child: GestureDetector(
-                  onTap: suffixOnTap,
-                  child: Icon(
-                    prefixIcon,
-                  ),
+        suffixIcon: widget.isPassword
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    isObscure = !isObscure;
+                  });
+                },
+                icon: Icon(
+                  isObscure ? Icons.visibility_off : Icons.visibility,
                 ),
               )
-            : null,
-        errorText: 'Ошибка',
+            : widget.suffixIcon != null
+                ? Padding(
+                    padding: style.amountIconPadding,
+                    child: GestureDetector(
+                      onTap: widget.suffixOnTap,
+                      child: Icon(
+                        widget.suffixIcon,
+                      ),
+                    ),
+                  )
+                : null,
         focusedBorder: style.focusBorder,
         border: style.border,
         errorBorder: style.errorBorder,
-        labelText: labelText,
+        labelText: widget.labelText,
         fillColor: style.fillColor,
         filled: true,
         labelStyle: style.labelStyle,

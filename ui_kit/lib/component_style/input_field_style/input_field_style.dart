@@ -37,9 +37,9 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
   });
 
   factory InputFieldStyle.dark() => InputFieldStyle(
-        labelStyle: CinemaxTypography.h6()
+        labelStyle: CinemaxTypography.h5()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.grey),
-        textStyle: CinemaxTypography.h6()
+        textStyle: CinemaxTypography.h5()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.white),
         contentPadding: const EdgeInsets.symmetric(
             vertical: _Constants.contentPaddingV,
@@ -52,29 +52,25 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
         ),
         amountIconPadding:
             const EdgeInsets.symmetric(horizontal: _Constants.iconPadding),
-        errorTextStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeight.w400,
-            color: SecondaryColor.red),
-        floatingLabelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeight.w500,
-            color: TextColor.whiteGrey),
+        errorTextStyle: CinemaxTypography.h6()
+            .copyWith(fontWeight: FontWeight.w400, color: SecondaryColor.red),
+        floatingLabelStyle: CinemaxTypography.h5()
+            .copyWith(fontWeight: FontWeight.w500, color: TextColor.whiteGrey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
           borderSide: BorderSide.none,
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
-          borderSide: BorderSide(color: SecondaryColor.red.withOpacity(0.2)),
+          borderSide: BorderSide(color: SecondaryColor.red.withOpacity(0.8)),
         ),
       );
 
   factory InputFieldStyle.light() => InputFieldStyle(
-        labelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeight.w500,
-            color: TextColor.grey),
-        textStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeight.w500,
-            color: TextColor.black),
+        labelStyle: CinemaxTypography.h5()
+            .copyWith(fontWeight: FontWeight.w500, color: TextColor.grey),
+        textStyle: CinemaxTypography.h5()
+            .copyWith(fontWeight: FontWeight.w500, color: TextColor.black),
         contentPadding: const EdgeInsets.symmetric(
             vertical: _Constants.contentPaddingV,
             horizontal: _Constants.contentPaddingH),
@@ -89,16 +85,14 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
-          borderSide: BorderSide(color: SecondaryColor.red.withOpacity(0.2)),
+          borderSide: BorderSide(color: SecondaryColor.red.withOpacity(0.8)),
         ),
         fillColor: PrimaryColor.light,
         amountIconPadding: const EdgeInsets.only(left: _Constants.iconPadding),
-        errorTextStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeight.w400,
-            color: SecondaryColor.red),
-        floatingLabelStyle: CinemaxTypography.h6().copyWith(
-            fontWeight: FontWeight.w500,
-            color: TextColor.darkGrey),
+        errorTextStyle: CinemaxTypography.h6()
+            .copyWith(fontWeight: FontWeight.w400, color: SecondaryColor.red),
+        floatingLabelStyle: CinemaxTypography.h5()
+            .copyWith(fontWeight: FontWeight.w500, color: TextColor.darkGrey),
       );
 
   @override

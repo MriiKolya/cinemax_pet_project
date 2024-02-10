@@ -28,8 +28,8 @@ class ComponentPage extends StatelessWidget {
             children: [
               const InputField(
                 labelText: 'Full Name',
-                sufficIcon: CinemaxIcons.eyeOff,
-                prefixIcon: CinemaxIcons.search,
+                prefixIcon: CinemaxIcons.eyeOff,
+                suffixIcon: CinemaxIcons.search,
               ),
               CinemaxFilledButton(
                 label: 'Filled Button',
