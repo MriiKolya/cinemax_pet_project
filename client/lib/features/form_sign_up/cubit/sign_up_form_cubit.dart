@@ -34,11 +34,11 @@ class SignUpFormCubit extends Cubit<SignUpFormState> {
     ));
   }
 
-  void agreeTermsToggled(bool agree) {
-    emit(state.copyWith(agreeTerms: agree));
+  void agreeTermsToggled() {
+    emit(state.copyWith(agreeTerms: !state.agreeTerms));
   }
 
-  Future<void> signUpSubmitted() async {
+  void signUpSubmitted() {
     final isEmailValid = state.emailAddress.value.isRight();
     final isPasswordValid = state.password.value.isRight();
     final isNameValid = state.name.value.isRight();

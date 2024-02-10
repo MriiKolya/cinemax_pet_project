@@ -18,13 +18,13 @@ Either<ValueFailure, String> _validatePassword(String input) {
     );
   }
 
-  if (!input.contains(RegExp(r'[A-Z]'))) {
+  if (!input.contains(RegExp('[A-Z]'))) {
     return left(
       ValueFailure.invalidPasswordFormat(failedValue: input),
     );
   }
 
-  if (!input.contains(RegExp(r'[0-9]'))) {
+  if (!input.contains(RegExp('[0-9]'))) {
     return left(
       ValueFailure.invalidPasswordFormat(failedValue: input),
     );

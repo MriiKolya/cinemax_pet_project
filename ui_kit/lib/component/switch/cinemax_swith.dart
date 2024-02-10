@@ -9,7 +9,8 @@ class CinemaxSwith extends StatelessWidget {
   });
 
   final bool value;
-  final void Function(bool)? onChanged;
+  // ignore: avoid_positional_boolean_parameters
+  final void Function(bool value)? onChanged;
 
   @override
   Widget build(BuildContext context) {

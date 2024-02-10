@@ -10,7 +10,7 @@ class CinemaxCheckBox extends StatefulWidget {
   }) : super(key: key);
 
   final bool value;
-  final void Function(bool)? onChanged;
+  final void Function()? onChanged;
   final BoxShape? boxShape;
 
   @override
@@ -30,8 +30,8 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
       duration: _animationDuration,
     );
     _scaleAnimation = Tween<double>(
-      begin: 0,
-      end: 1,
+      begin: 1,
+      end: 0,
     ).animate(
       CurvedAnimation(
         parent: _buttonAnimationController,
@@ -63,7 +63,7 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
     final style = context.checkBoxStyle;
     return GestureDetector(
       onTap: () {
-        widget.onChanged?.call(!widget.value);
+        widget.onChanged?.call();
         _animateButton(!widget.value);
       },
       child: Container(

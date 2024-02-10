@@ -9,7 +9,7 @@ abstract class PrimaryColor {
 
 abstract class SecondaryColor {
   static Color green = const Color(0xff22B07D);
-  static Color orane = const Color(0xffFF8700);
+  static Color orange = const Color(0xffFF8700);
   static Color red = const Color(0xffFF7256);
   static Color darkGrey = const Color(0xff696974);
 }

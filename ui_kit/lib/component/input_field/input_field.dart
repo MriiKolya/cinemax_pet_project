@@ -25,7 +25,7 @@ class InputField extends StatefulWidget {
   final VoidCallback? suffixOnTap;
   final TextInputType? keyboardType;
   final bool isPassword;
-  final Function(String)? onChanged;
+  final void Function(String)? onChanged;
   final String? Function(String?)? validator;
   final AutovalidateMode? autovalidateMode;
 
