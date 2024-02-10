@@ -1,4 +1,4 @@
-import 'package:client/features/login_form/login_form.dart';
+import 'package:client/features/reset_password_form/reset_password_form.dart';
 import 'package:client/screens/auth/widgets/title_sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -6,19 +6,17 @@ import 'package:ui_kit/assets/icons/cinemax_icons.dart';
 import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
 import 'package:ui_kit/component/icon/cinemax_icon.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class ResetPasswordScreen extends StatelessWidget {
+  const ResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CinemaxAppBar(
-        titleText: 'Login',
-        leadingIcon: CinemaxIcon(
-          icon: CinemaxIcons.arrowBack,
-          onTap: () => context.pop(),
-        ),
-      ),
+          leadingIcon: CinemaxIcon(
+        icon: CinemaxIcons.arrowBack,
+        onTap: () => context.pop(),
+      )),
       body: LayoutBuilder(
         builder: (context, constraints) => Stack(
           alignment: Alignment.center,
@@ -26,8 +24,8 @@ class LoginScreen extends StatelessWidget {
             Positioned(
               top: constraints.maxHeight / 20,
               child: const TitleForScreen(
-                titleText: 'Greetings from Cinemax',
-                subTitleText: 'Welcone back! Please enter your details',
+                titleText: 'Reset Password',
+                subTitleText: 'Recover your account password',
               ),
             ),
             Positioned(
@@ -35,7 +33,7 @@ class LoginScreen extends StatelessWidget {
               child: SizedBox(
                 width: constraints.maxWidth / 1.2,
                 height: constraints.maxHeight / 1.5,
-                child: const LoginForm(),
+                child: const ResetPasswordForm(),
               ),
             ),
           ],

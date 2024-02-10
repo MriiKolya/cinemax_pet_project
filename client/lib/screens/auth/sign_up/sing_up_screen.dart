@@ -1,5 +1,5 @@
-import 'package:client/features/form_sign_up/sign_up_form.dart';
-import 'package:client/screens/auth/sign_up/widgets/title_sing_up.dart';
+import 'package:client/features/sign_up_form/sign_up_form.dart';
+import 'package:client/screens/auth/widgets/title_sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
@@ -26,7 +26,10 @@ class SignUpScreen extends StatelessWidget {
           children: [
             Positioned(
               top: constraints.maxHeight / 20,
-              child: const TitleSingUp(),
+              child: const TitleForScreen(
+                titleText: 'Let’s get started',
+                subTitleText: 'The latest movies and series are here',
+              ),
             ),
             Positioned(
               top: constraints.maxHeight / 5,

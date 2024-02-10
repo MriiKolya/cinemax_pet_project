@@ -1,3 +1,4 @@
+import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
@@ -35,6 +36,10 @@ class StoryBookApp extends StatelessWidget {
                 Story(
                   name: 'SignUp',
                   builder: (context) => const SignUpScreen(),
+                ),
+                Story(
+                  name: 'Login',
+                  builder: (context) => const LoginScreen(),
                 ),
                 Story(
                   name: 'NabBar',

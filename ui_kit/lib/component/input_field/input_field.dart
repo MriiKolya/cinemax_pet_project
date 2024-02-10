@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
 class InputField extends StatefulWidget {
@@ -75,6 +76,7 @@ class _InputFieldState extends State<InputField> {
                 },
                 icon: Icon(
                   isObscure ? Icons.visibility_off : Icons.visibility,
+                  color: TextColor.grey,
                 ),
               )
             : widget.suffixIcon != null
@@ -84,6 +86,7 @@ class _InputFieldState extends State<InputField> {
                       onTap: widget.suffixOnTap,
                       child: Icon(
                         widget.suffixIcon,
+                        color: TextColor.grey,
                       ),
                     ),
                   )

@@ -1,4 +1,5 @@
 import 'package:client/config/router/app_router_name.dart';
+import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/welcome/welcome_screen.dart';
@@ -23,6 +24,7 @@ class AppRoutes {
   static const String _splashPath = '/splash';
   static const String _welcomePath = '/welcome';
   static const String _logInPath = 'logIn';
+  static const String _resetPasswordPath = 'resetPassword';
   static const String _singUpPath = 'singUp';
   static const String _homePath = '/home';
   static const String _searchPath = '/search';
@@ -86,12 +88,20 @@ class AppRoutes {
               ),
           routes: [
             GoRoute(
-              path: AppRoutes._logInPath,
-              name: AppRouterName.logInName,
-              pageBuilder: (_, state) => const CupertinoPage<void>(
-                child: LoginScreen(),
-              ),
-            ),
+                path: AppRoutes._logInPath,
+                name: AppRouterName.logInName,
+                pageBuilder: (_, state) => const CupertinoPage<void>(
+                      child: LoginScreen(),
+                    ),
+                routes: [
+                  GoRoute(
+                    path: AppRoutes._resetPasswordPath,
+                    name: AppRouterName.resetPasswordName,
+                    pageBuilder: (_, state) => const CupertinoPage<void>(
+                      child: ResetPasswordScreen(),
+                    ),
+                  )
+                ]),
             GoRoute(
               path: AppRoutes._singUpPath,
               name: AppRouterName.singUpName,

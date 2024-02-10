@@ -6,10 +6,12 @@ class CinemaxTextButton extends StatefulWidget {
     super.key,
     required this.label,
     this.onPressed,
+    this.fontSize,
   });
 
   final String label;
   final VoidCallback? onPressed;
+  final double? fontSize;
 
   @override
   State<CinemaxTextButton> createState() => _CinemaxTextButtonState();
@@ -120,7 +122,7 @@ class _CinemaxTextButtonState extends State<CinemaxTextButton>
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: enabled
-                  ? style.textStyle
+                  ? style.textStyle.copyWith(fontSize: widget.fontSize)
                   : style.textStyle.copyWith(color: style.disabledTextColor),
             ),
           ),
