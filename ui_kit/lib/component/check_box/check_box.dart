@@ -30,8 +30,8 @@ class _CinemaxCheckBoxState extends State<CinemaxCheckBox>
       duration: _animationDuration,
     );
     _scaleAnimation = Tween<double>(
-      begin: 1,
-      end: 0,
+      begin: 0,
+      end: 1,
     ).animate(
       CurvedAnimation(
         parent: _buttonAnimationController,

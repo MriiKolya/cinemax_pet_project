@@ -1,7 +1,9 @@
+import 'package:client/config/router/app_router_name.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/features/form_sign_up/cubit/sign_up_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';
 import 'package:ui_kit/component/check_box/check_box.dart';
 import 'package:ui_kit/component/input_field/input_field.dart';
@@ -78,7 +80,6 @@ class SingUpForm extends StatelessWidget {
                     value: state.agreeTerms,
                     onChanged: () {
                       context.read<SignUpFormCubit>().agreeTermsToggled();
-                      debugPrint(state.agreeTerms.toString());
                     }),
                 const SizedBox(width: 5),
                 Flexible(
@@ -87,8 +88,8 @@ class SingUpForm extends StatelessWidget {
                     style: context.textStyle.h4.copyWith(
                       fontWeight: FontWeightStyle.medium.fontWeight,
                       color: state.agreeTerms
-                          ? SecondaryColor.red
-                          : TextColor.grey,
+                          ? TextColor.grey
+                          : SecondaryColor.red,
                       overflow: TextOverflow.clip,
                     ),
                   ),
@@ -104,7 +105,7 @@ class SingUpForm extends StatelessWidget {
         );
       }, listener: (context, state) {
         if (state.isSubmitting) {
-          debugPrint('Navigation');
+          context.goNamed(AppRouterName.homeName);
         }
       }),
     );

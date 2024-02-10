@@ -8,7 +8,7 @@ class SignUpFormState with _$SignUpFormState {
     required Name name,
     @Default(false) bool isSubmitting,
     @Default(false) bool showErrorMessage,
-    @Default(false) bool agreeTerms,
+    @Default(true) bool agreeTerms,
     Either<AuthFailure, Unit>? authFailureOrSuccess,
   }) = _SignUpFormState;
 

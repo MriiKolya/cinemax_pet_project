@@ -179,7 +179,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
       required this.name,
       this.isSubmitting = false,
       this.showErrorMessage = false,
-      this.agreeTerms = false,
+      this.agreeTerms = true,
       this.authFailureOrSuccess});
 
   @override

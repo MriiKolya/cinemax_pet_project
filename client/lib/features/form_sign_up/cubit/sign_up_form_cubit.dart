@@ -36,30 +36,33 @@ class SignUpFormCubit extends Cubit<SignUpFormState> {
 
   void agreeTermsToggled() {
     emit(state.copyWith(agreeTerms: !state.agreeTerms));
+    debugPrint('isAgreeTerms ${state.agreeTerms.toString()}');
   }
 
   void signUpSubmitted() {
     final isEmailValid = state.emailAddress.value.isRight();
     final isPasswordValid = state.password.value.isRight();
     final isNameValid = state.name.value.isRight();
+    final isAgreeTerms = state.agreeTerms;
 
-    debugPrint(
-        'email $isEmailValid password $isPasswordValid  name $isNameValid');
-    // final agreeTerms = state.agreeTerms;
-
-    if (isEmailValid && isPasswordValid && isNameValid) {
+    if (isEmailValid && isPasswordValid && isNameValid && isAgreeTerms) {
+      debugPrint('succes');
       emit(
         state.copyWith(
           isSubmitting: true,
           authFailureOrSuccess: null,
         ),
       );
+      return;
     }
+    debugPrint('error');
     emit(state.copyWith(
       isSubmitting: false,
       showErrorMessage: true,
       authFailureOrSuccess:
-          (isEmailValid && isPasswordValid && isNameValid) ? right(unit) : null,
+          (isEmailValid && isPasswordValid && isNameValid && isAgreeTerms)
+              ? right(unit)
+              : null,
     ));
   }
 }
