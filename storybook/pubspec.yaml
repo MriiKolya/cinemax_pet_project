@@ -19,6 +19,7 @@ dependencies:
   client:
     path: ../client
   go_router: ^13.2.0
+  pinput: ^4.0.0
 
 dev_dependencies:
   flutter_test:

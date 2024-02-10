@@ -5,4 +5,5 @@ abstract class AppRouterName {
   static const String singUpName = 'singUp';
   static const String homeName = 'home';
   static const String resetPasswordName = 'resetPassword';
+  static const String verificationEmailName = 'verificationEmai';
 }

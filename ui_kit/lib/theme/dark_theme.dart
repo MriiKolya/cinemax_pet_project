@@ -8,6 +8,7 @@ import 'package:ui_kit/component_style/icon_style/icon_style.dart';
 import 'package:ui_kit/component_style/input_field_style/input_field_style.dart';
 import 'package:ui_kit/component_style/logo_style/cinemax_logo_style.dart';
 import 'package:ui_kit/component_style/nav_bar_style/nav_bar_style.dart';
+import 'package:ui_kit/component_style/pinput_style/pinput_style.dart';
 import 'package:ui_kit/component_style/switch_style/switch_style.dart';
 import 'package:ui_kit/component_style/text_style/text_style.dart';
 
@@ -29,5 +30,6 @@ final ThemeData darkTheme = ThemeData(
     TextStyles.dark(),
     InputFieldStyle.dark(),
     NavBarStyle.dark(),
+    PinputStyle.dark()
   ],
 );

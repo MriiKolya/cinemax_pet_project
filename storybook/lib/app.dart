@@ -1,11 +1,9 @@
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
+import 'package:client/screens/auth/reset_password/verification_email/verification_email_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
-import 'package:client/screens/tab_pages/tab_page.dart';
-
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:storybook/cinemax_storybook.dart';
 import 'package:storybook/pages/component_page.dart';
@@ -44,6 +42,12 @@ class StoryBookApp extends StatelessWidget {
                 Story(
                   name: 'NabBar',
                   builder: (context) => const NavBar(),
+                ),
+                Story(
+                  name: 'PinPut',
+                  builder: (context) => const VerificationEmailScreen(
+                    emailAddress: 'kolyamriy16@gmail.com',
+                  ),
                 ),
                 Story(
                   name: 'Component/InputText',

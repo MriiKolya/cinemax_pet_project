@@ -19,9 +19,8 @@ class TitleForScreen extends StatelessWidget {
       children: [
         Text(
           titleText,
-          style: context.textStyle.h2.copyWith(
-              color: TextColor.white,
-              fontWeight: FontWeightStyle.semiBold.fontWeight),
+          style: context.textStyle.h2
+              .copyWith(fontWeight: FontWeightStyle.semiBold.fontWeight),
         ),
         if (subTitleText != null)
           Text(

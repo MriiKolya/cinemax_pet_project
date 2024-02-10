@@ -1,6 +1,7 @@
 import 'package:client/config/router/app_router_name.dart';
-import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
+import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
+import 'package:client/screens/auth/reset_password/verification_email/verification_email_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
@@ -9,7 +10,6 @@ import 'package:client/screens/tab_pages/pages/home/home_screen.dart';
 import 'package:client/screens/tab_pages/pages/profile/profile_screen.dart';
 import 'package:client/screens/tab_pages/pages/search/search_screen.dart';
 import 'package:client/screens/tab_pages/tab_page.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,6 +25,7 @@ class AppRoutes {
   static const String _welcomePath = '/welcome';
   static const String _logInPath = 'logIn';
   static const String _resetPasswordPath = 'resetPassword';
+  static const String _verificationEmailPath = 'verificationEmail';
   static const String _singUpPath = 'singUp';
   static const String _homePath = '/home';
   static const String _searchPath = '/search';
@@ -88,20 +89,33 @@ class AppRoutes {
               ),
           routes: [
             GoRoute(
-                path: AppRoutes._logInPath,
-                name: AppRouterName.logInName,
-                pageBuilder: (_, state) => const CupertinoPage<void>(
-                      child: LoginScreen(),
-                    ),
-                routes: [
-                  GoRoute(
+              path: AppRoutes._logInPath,
+              name: AppRouterName.logInName,
+              pageBuilder: (_, state) => const CupertinoPage<void>(
+                child: LoginScreen(),
+              ),
+              routes: [
+                GoRoute(
                     path: AppRoutes._resetPasswordPath,
                     name: AppRouterName.resetPasswordName,
                     pageBuilder: (_, state) => const CupertinoPage<void>(
-                      child: ResetPasswordScreen(),
-                    ),
-                  )
-                ]),
+                          child: ResetPasswordScreen(),
+                        ),
+                    routes: [
+                      GoRoute(
+                          path: AppRoutes._verificationEmailPath,
+                          name: AppRouterName.verificationEmailName,
+                          pageBuilder: (_, state) {
+                            final emailAddress = state.extra! as String;
+                            return CupertinoPage<void>(
+                              child: VerificationEmailScreen(
+                                emailAddress: emailAddress,
+                              ),
+                            );
+                          })
+                    ])
+              ],
+            ),
             GoRoute(
               path: AppRoutes._singUpPath,
               name: AppRouterName.singUpName,
