@@ -5,6 +5,8 @@ import 'package:ui_kit/theme/typography.dart';
 
 class _Constant {
   static const double borderRadius = 12;
+  static const double widthPinput = 64;
+  static const double heightPinput = 64;
 }
 
 class PinputStyle extends ThemeExtension<PinputStyle> {
@@ -12,16 +14,20 @@ class PinputStyle extends ThemeExtension<PinputStyle> {
   final PinTheme focusedPinTheme;
   final PinTheme defaultPinTheme;
   final PinTheme errorPinTheme;
+  final TextStyle errorTextStyle;
 
   PinputStyle({
     required this.submittedPinTheme,
     required this.focusedPinTheme,
+    required this.errorTextStyle,
     required this.defaultPinTheme,
     required this.errorPinTheme,
   });
 
   factory PinputStyle.dark() => PinputStyle(
         submittedPinTheme: PinTheme(
+          width: _Constant.widthPinput,
+          height: _Constant.heightPinput,
           textStyle: CinemaxTypography.h1().copyWith(
             fontWeight: FontWeight.w600,
             color: TextColor.white,
@@ -35,6 +41,8 @@ class PinputStyle extends ThemeExtension<PinputStyle> {
           ),
         ),
         focusedPinTheme: PinTheme(
+          width: _Constant.widthPinput,
+          height: _Constant.heightPinput,
           textStyle: CinemaxTypography.h1().copyWith(
             fontWeight: FontWeight.w600,
             color: TextColor.white,
@@ -48,6 +56,8 @@ class PinputStyle extends ThemeExtension<PinputStyle> {
           ),
         ),
         defaultPinTheme: PinTheme(
+          width: _Constant.widthPinput,
+          height: _Constant.heightPinput,
           textStyle: CinemaxTypography.h1().copyWith(
             fontWeight: FontWeight.w600,
             color: TextColor.white,
@@ -58,6 +68,8 @@ class PinputStyle extends ThemeExtension<PinputStyle> {
           ),
         ),
         errorPinTheme: PinTheme(
+          width: _Constant.widthPinput,
+          height: _Constant.heightPinput,
           textStyle: CinemaxTypography.h1().copyWith(
             fontWeight: FontWeight.w600,
             color: SecondaryColor.red,
@@ -69,6 +81,10 @@ class PinputStyle extends ThemeExtension<PinputStyle> {
               color: SecondaryColor.red,
             ),
           ),
+        ),
+        errorTextStyle: CinemaxTypography.h4().copyWith(
+          color: SecondaryColor.red,
+          fontWeight: FontWeight.w400,
         ),
       );
 
@@ -122,20 +138,25 @@ class PinputStyle extends ThemeExtension<PinputStyle> {
             ),
           ),
         ),
+        errorTextStyle: CinemaxTypography.h4().copyWith(
+          color: SecondaryColor.red,
+          fontWeight: FontWeight.w400,
+        ),
       );
 
   @override
-  PinputStyle copyWith({
-    PinTheme? submittedPinTheme,
-    PinTheme? focusedPinTheme,
-    PinTheme? defaultPinTheme,
-    PinTheme? errorPinTheme,
-  }) {
+  PinputStyle copyWith(
+      {PinTheme? submittedPinTheme,
+      PinTheme? focusedPinTheme,
+      PinTheme? defaultPinTheme,
+      PinTheme? errorPinTheme,
+      TextStyle? errorTextStyle}) {
     return PinputStyle(
       submittedPinTheme: submittedPinTheme ?? this.submittedPinTheme,
       focusedPinTheme: focusedPinTheme ?? this.focusedPinTheme,
       defaultPinTheme: defaultPinTheme ?? this.defaultPinTheme,
       errorPinTheme: errorPinTheme ?? this.errorPinTheme,
+      errorTextStyle: errorTextStyle ?? this.errorTextStyle,
     );
   }
 
