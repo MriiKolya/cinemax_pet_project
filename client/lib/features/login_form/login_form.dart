@@ -16,63 +16,67 @@ class LoginForm extends StatelessWidget {
       create: (context) => LoginFormCubit(),
       child: BlocConsumer<LoginFormCubit, LoginFormState>(
           builder: (context, state) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const Spacer(),
-            InputField(
-              autovalidateMode: state.showErrorMessage == true
-                  ? AutovalidateMode.always
-                  : AutovalidateMode.disabled,
-              labelText: 'Email Address',
-              validator: (_) => state.emailAddress.value.fold<String?>(
-                (f) => f.maybeMap<String?>(
-                  invalidEmail: (_) => '*Invalid Email',
-                  emptyValue: (_) => '*required value',
-                  orElse: () => null,
+        return Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const Spacer(),
+              InputField(
+                autovalidateMode: state.showErrorMessage == true
+                    ? AutovalidateMode.always
+                    : AutovalidateMode.disabled,
+                labelText: 'Email Address',
+                validator: (_) => state.emailAddress.value.fold<String?>(
+                  (f) => f.maybeMap<String?>(
+                    invalidEmail: (_) => '*Invalid Email',
+                    emptyValue: (_) => '*required value',
+                    orElse: () => null,
+                  ),
+                  (_) => null,
                 ),
-                (_) => null,
+                onChanged: (emal) =>
+                    context.read<LoginFormCubit>().emailChanged(emal),
               ),
-              onChanged: (emal) =>
-                  context.read<LoginFormCubit>().emailChanged(emal),
-            ),
-            const Spacer(),
-            InputField(
-              validator: (_) => state.password.value.fold<String?>(
-                (f) => f.maybeMap<String?>(
-                  invalidPasswordFormat: (_) => '*Invalid password format',
-                  shortInput: (_) => '*value is short',
-                  emptyValue: (_) => '*required value',
-                  orElse: () => null,
+              const SizedBox(height: 50),
+              InputField(
+                validator: (_) => state.password.value.fold<String?>(
+                  (f) => f.maybeMap<String?>(
+                    invalidPasswordFormat: (_) => '*Invalid password format',
+                    shortInput: (_) => '*value is short',
+                    emptyValue: (_) => '*required value',
+                    orElse: () => null,
+                  ),
+                  (_) => null,
                 ),
-                (_) => null,
+                autovalidateMode: state.showErrorMessage == true
+                    ? AutovalidateMode.always
+                    : AutovalidateMode.disabled,
+                labelText: 'Password',
+                isPassword: true,
+                onChanged: (password) =>
+                    context.read<LoginFormCubit>().passwordChanged(password),
               ),
-              autovalidateMode: state.showErrorMessage == true
-                  ? AutovalidateMode.always
-                  : AutovalidateMode.disabled,
-              labelText: 'Password',
-              isPassword: true,
-              onChanged: (password) =>
-                  context.read<LoginFormCubit>().passwordChanged(password),
-            ),
-            SizedBox(
-              width: 150,
-              child: CinemaxTextButton(
-                  label: 'Forgot Password?',
-                  fontSize: 13,
-                  onPressed: () => context.goNamed(
-                        AppRouterName.resetPasswordName,
-                      )),
-            ),
-            const Spacer(),
-            CinemaxFilledButton(
-              label: 'Login',
-              onPressed: () async {
-                context.read<LoginFormCubit>().loginSubmitted();
-              },
-            ),
-            const Spacer(),
-          ],
+              SizedBox(
+                width: 150,
+                child: CinemaxTextButton(
+                    label: 'Forgot Password?',
+                    fontSize: 13,
+                    onPressed: () => context.goNamed(
+                          AppRouterName.resetPasswordName,
+                        )),
+              ),
+              const Spacer(),
+              CinemaxFilledButton(
+                label: 'Login',
+                onPressed: () async {
+                  context.read<LoginFormCubit>().loginSubmitted();
+                },
+              ),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+            ],
+          ),
         );
       }, listener: (context, state) {
         if (state.isSubmitting) {

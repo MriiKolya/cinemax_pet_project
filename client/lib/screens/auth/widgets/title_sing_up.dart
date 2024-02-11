@@ -25,9 +25,11 @@ class TitleForScreen extends StatelessWidget {
         if (subTitleText != null)
           Text(
             subTitleText!,
-            style: context.textStyle.h6.copyWith(
+            textAlign: TextAlign.center,
+            style: context.textStyle.h5.copyWith(
               color: TextColor.grey,
               fontWeight: FontWeightStyle.medium.fontWeight,
+              overflow: TextOverflow.clip,
             ),
           )
       ],

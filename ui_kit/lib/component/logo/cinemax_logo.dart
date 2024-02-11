@@ -25,8 +25,8 @@ class CinemaxLogo extends StatelessWidget {
         children: <Widget>[
           ConstrainedBox(
             constraints: const BoxConstraints(
-              maxWidth: 80,
-              maxHeight: 100,
+              maxWidth: 120,
+              maxHeight: 180,
             ),
             child: SvgPicture.asset(
               ImageAssets.cinemaxLogo,

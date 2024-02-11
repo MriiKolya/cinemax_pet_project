@@ -14,10 +14,7 @@ class VerificationEmailForm extends StatelessWidget {
     final textStyle = context.textStyle;
     return BlocProvider(
       create: (context) => VerificationEmailCubit(),
-      child: BlocConsumer<VerificationEmailCubit, VerificationEmailState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+      child: BlocBuilder<VerificationEmailCubit, VerificationEmailState>(
         builder: (context, state) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
