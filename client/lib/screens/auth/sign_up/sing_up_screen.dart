@@ -13,6 +13,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: CinemaxAppBar(
         titleText: 'Sign Up',
         leadingIcon: CinemaxIcon(
