@@ -1,4 +1,4 @@
-import 'package:client/config/router/app_router_name.dart';
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 
 import 'package:client/features/sign_up_form/cubit/sign_up_form_cubit.dart';

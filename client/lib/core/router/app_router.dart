@@ -1,4 +1,4 @@
-import 'package:client/config/router/app_router_name.dart';
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';

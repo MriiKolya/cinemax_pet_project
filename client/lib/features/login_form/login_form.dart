@@ -1,4 +1,4 @@
-import 'package:client/config/router/app_router_name.dart';
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/login_form/cubit/login_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

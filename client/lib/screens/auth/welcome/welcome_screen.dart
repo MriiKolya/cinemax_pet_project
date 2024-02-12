@@ -1,4 +1,4 @@
-import 'package:client/config/router/app_router_name.dart';
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/screens/auth/welcome/widgets/message_login.dart';
 import 'package:client/screens/auth/welcome/widgets/or_sing_up_with.dart';
 import 'package:client/screens/auth/widgets/title_sing_up.dart';

@@ -9,8 +9,10 @@ environment:
   sdk: ">=3.2.3 <4.0.0"
 
 dependencies:
+  cloud_firestore: ^4.15.4
   dartz: ^0.10.1
   equatable: ^2.0.5
+  firebase_core: ^2.25.4
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
