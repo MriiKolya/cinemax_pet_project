@@ -32,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
                 titleText: 'Let’s get started',
                 subTitleText: 'The latest movies and series are here',
               ),
-              SingUpForm(),
+              Expanded(child: SingUpForm()),
             ],
           ),
         ),

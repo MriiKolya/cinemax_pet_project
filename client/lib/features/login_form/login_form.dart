@@ -22,6 +22,7 @@ class LoginForm extends StatelessWidget {
             children: [
               const Spacer(),
               InputField(
+                keyboardType: TextInputType.emailAddress,
                 autovalidateMode: state.showErrorMessage == true
                     ? AutovalidateMode.always
                     : AutovalidateMode.disabled,
@@ -39,6 +40,7 @@ class LoginForm extends StatelessWidget {
               ),
               const SizedBox(height: 50),
               InputField(
+                keyboardType: TextInputType.visiblePassword,
                 validator: (_) => state.password.value.fold<String?>(
                   (f) => f.maybeMap<String?>(
                     invalidPasswordFormat: (_) => '*Invalid password format',
@@ -72,8 +74,6 @@ class LoginForm extends StatelessWidget {
                   context.read<LoginFormCubit>().loginSubmitted();
                 },
               ),
-              const Spacer(),
-              const Spacer(),
               const Spacer(),
             ],
           ),

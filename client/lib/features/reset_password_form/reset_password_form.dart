@@ -17,13 +17,14 @@ class ResetPasswordForm extends StatelessWidget {
           builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Spacer(),
             InputField(
               autovalidateMode: state.showErrorMessage == true
                   ? AutovalidateMode.always
                   : AutovalidateMode.disabled,
               labelText: 'Email Address',
+              keyboardType: TextInputType.emailAddress,
               validator: (_) => state.emailAddress.value.fold<String?>(
                 (f) => f.maybeMap<String?>(
                   invalidEmail: (_) => '*Invalid Email',
@@ -35,15 +36,12 @@ class ResetPasswordForm extends StatelessWidget {
               onChanged: (emal) =>
                   context.read<ResetPasswordCubit>().emailChanged(emal),
             ),
-            const Spacer(),
             CinemaxFilledButton(
               label: 'Next',
               onPressed: () async {
                 context.read<ResetPasswordCubit>().resetPasswordSubmitted();
               },
             ),
-            const Spacer(),
-            const Spacer(),
           ],
         );
       }, listener: (context, state) {

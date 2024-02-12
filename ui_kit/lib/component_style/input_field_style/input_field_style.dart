@@ -3,8 +3,8 @@ import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/typography.dart';
 
 abstract class _Constants {
-  static const double contentPaddingV = 8;
-  static const double contentPaddingH = 16;
+  static const double contentPaddingV = 16;
+  static const double contentPaddingH = 20;
   static const double amountBorderRadius = 15;
   static const double iconPadding = 15;
 }
@@ -37,9 +37,9 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
   });
 
   factory InputFieldStyle.dark() => InputFieldStyle(
-        labelStyle: CinemaxTypography.h5()
+        labelStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.grey),
-        textStyle: CinemaxTypography.h5()
+        textStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.white),
         contentPadding: const EdgeInsets.symmetric(
             vertical: _Constants.contentPaddingV,
@@ -54,7 +54,7 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
             const EdgeInsets.symmetric(horizontal: _Constants.iconPadding),
         errorTextStyle: CinemaxTypography.h6()
             .copyWith(fontWeight: FontWeight.w400, color: SecondaryColor.red),
-        floatingLabelStyle: CinemaxTypography.h5()
+        floatingLabelStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.whiteGrey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
@@ -67,9 +67,9 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
       );
 
   factory InputFieldStyle.light() => InputFieldStyle(
-        labelStyle: CinemaxTypography.h5()
+        labelStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.grey),
-        textStyle: CinemaxTypography.h5()
+        textStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.black),
         contentPadding: const EdgeInsets.symmetric(
             vertical: _Constants.contentPaddingV,
@@ -91,7 +91,7 @@ class InputFieldStyle extends ThemeExtension<InputFieldStyle> {
         amountIconPadding: const EdgeInsets.only(left: _Constants.iconPadding),
         errorTextStyle: CinemaxTypography.h6()
             .copyWith(fontWeight: FontWeight.w400, color: SecondaryColor.red),
-        floatingLabelStyle: CinemaxTypography.h5()
+        floatingLabelStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w500, color: TextColor.darkGrey),
       );
 

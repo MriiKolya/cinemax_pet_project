@@ -23,22 +23,17 @@ class VerificationEmailScreen extends StatelessWidget {
         ),
       ),
       body: LayoutBuilder(
-        builder: (context, constraints) => Stack(
-          alignment: Alignment.center,
-          children: [
-            Positioned(
-              top: constraints.maxHeight / 20,
-              width: constraints.maxWidth / 1.2,
-              child: VerificationTitle(emailAddress: emailAddress),
-            ),
-            Positioned(
-              top: constraints.maxHeight / 5,
-              width: constraints.maxWidth / 1.2,
-              child: SizedBox(
-                  height: constraints.maxHeight / 1.5,
-                  child: const VerificationEmailForm()),
-            ),
-          ],
+        builder: (context, constraints) => Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: constraints.maxWidth / 15,
+          ),
+          child: Column(
+            children: [
+              VerificationTitle(emailAddress: emailAddress),
+              const Expanded(child: VerificationEmailForm()),
+              const Spacer(),
+            ],
+          ),
         ),
       ),
     );

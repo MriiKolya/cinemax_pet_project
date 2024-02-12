@@ -18,25 +18,18 @@ class ResetPasswordScreen extends StatelessWidget {
         onTap: () => context.pop(),
       )),
       body: LayoutBuilder(
-        builder: (context, constraints) => Stack(
-          alignment: Alignment.center,
-          children: [
-            Positioned(
-              top: constraints.maxHeight / 20,
-              child: const TitleForScreen(
+        builder: (context, constraints) => Padding(
+          padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 15),
+          child: const Column(
+            children: [
+              TitleForScreen(
                 titleText: 'Reset Password',
                 subTitleText: 'Recover your account password',
               ),
-            ),
-            Positioned(
-              top: constraints.maxHeight / 5,
-              child: SizedBox(
-                width: constraints.maxWidth / 1.2,
-                height: constraints.maxHeight / 1.5,
-                child: const ResetPasswordForm(),
-              ),
-            ),
-          ],
+              Expanded(child: ResetPasswordForm()),
+              Spacer(),
+            ],
+          ),
         ),
       ),
     );
