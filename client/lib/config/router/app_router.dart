@@ -1,8 +1,8 @@
 import 'package:client/config/router/app_router_name.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
-import 'package:client/screens/auth/reset_password/verification_email/verification_email_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
+import 'package:client/screens/auth/verification_email/verification_email_screen.dart';
 import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
 import 'package:client/screens/tab_pages/pages/favorite/favorite_screen.dart';

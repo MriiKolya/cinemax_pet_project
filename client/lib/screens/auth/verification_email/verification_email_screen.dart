@@ -1,5 +1,5 @@
 import 'package:client/features/verification_email/verification_email.dart';
-import 'package:client/screens/auth/reset_password/verification_email/widget/verification_title.dart';
+import 'package:client/screens/auth/verification_email/widget/verification_title.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
