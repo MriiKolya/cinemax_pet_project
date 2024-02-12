@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_kit/component/app_bar/title_app_bar.dart';
 import 'package:ui_kit/component/icon/cinemax_icon.dart';
-import 'package:ui_kit/component_style/app_bar_style/app_bar_style.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
 class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -13,6 +13,7 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leading,
     this.action,
     this.title,
+    this.centerTitle = true,
   }) : super(key: key);
 
   final CinemaxIcon? actionIcon;
@@ -22,6 +23,7 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final Widget? action;
   final Widget? title;
+  final bool? centerTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -29,37 +31,16 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: AppBar(
+        centerTitle: centerTitle,
         backgroundColor: style.backgroundColor,
-        title: _buildTitle(style),
+        title: TitleAppBar(title: title, titleText: titleText),
         leadingWidth: 40,
         toolbarHeight: 40,
-        leading: _buildLeadingIcon(),
+        leading: leadingIcon != null ? leadingIcon! : leading,
         actions: _buildActions(),
         automaticallyImplyLeading: false,
       ),
     );
-  }
-
-  Widget _buildTitle(AppBarStyle style) {
-    if (titleText != null) {
-      return Text(
-        titleText!,
-        textAlign: TextAlign.center,
-        style: style.titleTextStyle,
-      );
-      // subtitle: subTitle != null
-      //     ? Text(
-      //         subTitle!,
-      //         style: context.appBarStyle.subTitleTextStyle,
-      //       )
-      //     : null,
-    } else {
-      return title ?? const SizedBox.shrink();
-    }
-  }
-
-  Widget? _buildLeadingIcon() {
-    return leadingIcon != null ? leadingIcon! : leading;
   }
 
   List<Widget>? _buildActions() {
