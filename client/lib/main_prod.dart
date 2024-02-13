@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:client/core/flavor/flavor.dart';
 import 'package:client/core/flavor/flavor_banner.dart';
 import 'package:client/core/flavor/flavor_config.dart';
@@ -10,14 +12,17 @@ import 'package:ui_kit/theme/dark_theme.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
+  if (Platform.isAndroid) {
+    await initializeFireBase(
       apiKey: 'AIzaSyAhTRxvO1pf7WVbC0E2ZEyCyaWObOpAX68',
       appId: '1:182735058765:android:743369296169a5618ee904',
       messagingSenderId: '1:182735058765',
       projectId: 'cinemax--prod',
-    ),
-  );
+    );
+  } else if (Platform.isIOS) {
+    await Firebase.initializeApp();
+  }
+
   final devConfig = FlavorConfig(
     flavor: Flavor.prod,
     values: FlavorValues(),
@@ -42,4 +47,21 @@ class Cinemax extends StatelessWidget {
       routerConfig: AppRoutes.router,
     );
   }
+}
+
+Future<void> initializeFireBase({
+  required String apiKey,
+  required String appId,
+  required String messagingSenderId,
+  required String projectId,
+  String? iosBundleId,
+}) async {
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+    ),
+  );
 }
