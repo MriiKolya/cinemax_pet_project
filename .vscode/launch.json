@@ -1,48 +1,25 @@
 {
-    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
-    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
-    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "client",
-            "cwd": "client",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "client (profile mode)",
-            "cwd": "client",
+            "name": "cinemax -prod",
+            "program": "client/lib/main_prod.dart",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "args": [
+                "--flavor",
+                "prod"
+            ]
         },
         {
-            "name": "client (release mode)",
-            "cwd": "client",
+            "name": "cinemax -dev",
+            "program": "client/lib/main_dev.dart",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "ui_kit",
-            "cwd": "ui_kit",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "ui_kit (profile mode)",
-            "cwd": "ui_kit",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "ui_kit (release mode)",
-            "cwd": "ui_kit",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
+            "args": [
+                "--flavor",
+                "dev"
+            ]
         }
     ]
 }
