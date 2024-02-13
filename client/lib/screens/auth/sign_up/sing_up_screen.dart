@@ -1,11 +1,9 @@
-import 'package:client/features/sign_up_form/sign_up_form.dart';
+import 'package:client/features/sing_up/sign_up_form/sign_up_form.dart';
 import 'package:client/screens/auth/widgets/title_sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
-import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
-
-import 'package:ui_kit/component/icon/cinemax_icon.dart';
+import 'package:ui_kit/component/conponent.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

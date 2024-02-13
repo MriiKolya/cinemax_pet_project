@@ -1,13 +1,10 @@
-import 'package:client/core/router/app_router_name.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
-
-import 'package:client/features/sign_up_form/cubit/sign_up_form_cubit.dart';
+import 'package:client/core/router/app_router_name.dart';
+import 'package:client/features/sing_up/sign_up_form/cubit/sign_up_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';
-import 'package:ui_kit/component/check_box/check_box.dart';
-import 'package:ui_kit/component/input_field/input_field.dart';
+import 'package:ui_kit/component/conponent.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 

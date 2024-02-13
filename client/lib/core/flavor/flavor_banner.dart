@@ -31,7 +31,7 @@ class FlavorBannerState extends State<FlavorBanner> {
       textDirection: TextDirection.ltr,
       child: Banner(
         color: widget.color ?? PrimaryColor.blueAccent,
-        message: '',
+        message: 'dev',
         location: widget.bannerLocation ?? BannerLocation.bottomEnd,
         child: widget.child,
       ),

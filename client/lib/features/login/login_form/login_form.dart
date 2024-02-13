@@ -1,11 +1,9 @@
 import 'package:client/core/router/app_router_name.dart';
-import 'package:client/features/login_form/cubit/login_form_cubit.dart';
+import 'package:client/features/login/login_form/cubit/login_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';
-import 'package:ui_kit/component/buttons/cinemax_text_button.dart';
-import 'package:ui_kit/component/input_field/input_field.dart';
+import 'package:ui_kit/component/conponent.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});

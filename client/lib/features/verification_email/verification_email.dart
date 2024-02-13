@@ -1,8 +1,7 @@
 import 'package:client/features/verification_email/cubit/verification_email_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ui_kit/component/buttons/cinemax_text_button.dart';
-import 'package:ui_kit/component/pinput/pinput.dart';
+import 'package:ui_kit/component/conponent.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 

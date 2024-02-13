@@ -1,10 +1,9 @@
 import 'package:client/core/router/app_router_name.dart';
-import 'package:client/features/reset_password_form/cubit/reset_password_cubit.dart';
+import 'package:client/features/reset_password/reset_password_form/cubit/reset_password_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';
-import 'package:ui_kit/component/input_field/input_field.dart';
+import 'package:ui_kit/component/conponent.dart';
 
 class ResetPasswordForm extends StatelessWidget {
   const ResetPasswordForm({super.key});

@@ -1,10 +1,9 @@
-import 'package:client/features/reset_password_form/reset_password_form.dart';
+import 'package:client/features/reset_password/reset_password_form/reset_password_form.dart';
 import 'package:client/screens/auth/widgets/title_sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
-import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
-import 'package:ui_kit/component/icon/cinemax_icon.dart';
+import 'package:ui_kit/component/conponent.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});

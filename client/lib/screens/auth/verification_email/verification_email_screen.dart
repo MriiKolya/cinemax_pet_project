@@ -3,8 +3,7 @@ import 'package:client/screens/auth/verification_email/widget/verification_title
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
-import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
-import 'package:ui_kit/component/icon/cinemax_icon.dart';
+import 'package:ui_kit/component/conponent.dart';
 
 class VerificationEmailScreen extends StatelessWidget {
   const VerificationEmailScreen({
