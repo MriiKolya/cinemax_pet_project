@@ -1,19 +1,27 @@
 import 'package:client/core/router/app_router_name.dart';
+
+import 'package:client/features/app_user_observer/bloc/app_bloc.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/verification_email/verification_email_screen.dart';
-import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
 import 'package:client/screens/tab_pages/pages/favorite/favorite_screen.dart';
 import 'package:client/screens/tab_pages/pages/home/home_screen.dart';
 import 'package:client/screens/tab_pages/pages/profile/profile_screen.dart';
 import 'package:client/screens/tab_pages/pages/search/search_screen.dart';
 import 'package:client/screens/tab_pages/tab_page.dart';
+import 'package:client/screens/welcome/welcome_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRoutes {
+  final AppBloc _authBloc;
+
+  AppRoutes({
+    required AppBloc authBloc,
+  }) : _authBloc = authBloc;
+
   static final rootNavigationKey = GlobalKey<NavigatorState>();
   static final homeNavigationKey = GlobalKey<NavigatorState>();
   static final homeTab = GlobalKey<NavigatorState>();
@@ -32,8 +40,22 @@ class AppRoutes {
   static const String _favoritePath = '/favorite';
   static const String _profilePath = '/profile';
 
-  static final GoRouter router = GoRouter(
+  late final GoRouter router = GoRouter(
     navigatorKey: rootNavigationKey,
+    redirect: (context, state) {
+      final loggedIn = _authBloc.state.status == AppStatus.authenticated;
+      // Разрешить навигацию на страницу dashboard только
+      // для авторизованных пользователей
+      if (state.matchedLocation == '/home' && !loggedIn) {
+        return _welcomePath;
+      }
+      // Разрешить навигацию на другие страницы для авторизованных пользователей
+      if (!loggedIn) {
+        return null;
+      }
+      // Разрешить навигацию для авторизованных пользователей
+      return null;
+    },
     initialLocation: AppRoutes._splashPath,
     routes: [
       GoRoute(

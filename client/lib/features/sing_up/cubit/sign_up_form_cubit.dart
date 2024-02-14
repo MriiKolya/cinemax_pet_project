@@ -46,7 +46,6 @@ class SignUpFormCubit extends Cubit<SignUpFormState> {
     final isAgreeTerms = state.agreeTerms;
 
     if (isEmailValid && isPasswordValid && isNameValid && isAgreeTerms) {
-      debugPrint('succes');
       emit(
         state.copyWith(
           isSubmitting: true,
@@ -55,7 +54,6 @@ class SignUpFormCubit extends Cubit<SignUpFormState> {
       );
       return;
     }
-    debugPrint('error');
     emit(state.copyWith(
       isSubmitting: false,
       showErrorMessage: true,
