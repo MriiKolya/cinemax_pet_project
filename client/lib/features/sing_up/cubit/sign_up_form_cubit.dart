@@ -2,6 +2,7 @@ import 'package:client/core/validator/auth_failure/auth_failure.dart';
 import 'package:client/core/validator/email/email.dart';
 import 'package:client/core/validator/name/name.dart';
 import 'package:client/core/validator/password/password.dart';
+import 'package:client/features/auth/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +12,10 @@ part 'sign_up_form_cubit.freezed.dart';
 part 'sign_up_form_state.dart';
 
 class SignUpFormCubit extends Cubit<SignUpFormState> {
-  SignUpFormCubit() : super(SignUpFormState.initial());
+  final AuthRepository _repository;
+  SignUpFormCubit({required AuthRepository repository})
+      : _repository = repository,
+        super(SignUpFormState.initial());
 
   void emailChanged(String email) {
     emit(state.copyWith(
@@ -39,28 +43,43 @@ class SignUpFormCubit extends Cubit<SignUpFormState> {
     debugPrint('isAgreeTerms ${state.agreeTerms.toString()}');
   }
 
-  void signUpSubmitted() {
+  Future<void> signUpSubmitted() async {
     final isEmailValid = state.emailAddress.value.isRight();
     final isPasswordValid = state.password.value.isRight();
     final isNameValid = state.name.value.isRight();
     final isAgreeTerms = state.agreeTerms;
 
     if (isEmailValid && isPasswordValid && isNameValid && isAgreeTerms) {
-      emit(
-        state.copyWith(
-          isSubmitting: true,
-          authFailureOrSuccess: null,
-        ),
+      final loginResult = await _repository.signUp(
+          email: state.emailAddress.value.getOrElse(() => 'null'),
+          password: state.password.value.getOrElse(() => 'null'),
+          name: state.name.value.getOrElse(() => 'null'));
+
+      loginResult.fold(
+        (failure) {
+          emit(state.copyWith(
+            isSubmitting: true,
+            authFailureOrSuccess: left(failure),
+          ));
+        },
+        (_) {
+          emit(state.copyWith(
+            isSubmitting: true,
+            authFailureOrSuccess: right(unit),
+          ));
+        },
       );
       return;
     }
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessage: true,
-      authFailureOrSuccess:
-          (isEmailValid && isPasswordValid && isNameValid && isAgreeTerms)
-              ? right(unit)
-              : null,
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        authFailureOrSuccess:
+            (isEmailValid && isPasswordValid && isNameValid && isAgreeTerms)
+                ? right(unit)
+                : left(const AuthFailure.serverError()),
+      ),
+    );
   }
 }

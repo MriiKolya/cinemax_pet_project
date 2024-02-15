@@ -1,3 +1,4 @@
+import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/login/cubit/login_form_cubit.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginFormCubit(),
+      create: (context) => DependencyProvider.get<LoginFormCubit>(),
       child: BlocConsumer<LoginFormCubit, LoginFormState>(
           builder: (context, state) {
         return Expanded(
@@ -69,7 +70,7 @@ class LoginForm extends StatelessWidget {
               CinemaxFilledButton(
                 label: 'Login',
                 onPressed: () async {
-                  context.read<LoginFormCubit>().loginSubmitted();
+                  await context.read<LoginFormCubit>().loginSubmitted();
                 },
               ),
               const Spacer(),
@@ -77,8 +78,17 @@ class LoginForm extends StatelessWidget {
           ),
         );
       }, listener: (context, state) {
-        if (state.isSubmitting) {
-          context.goNamed(AppRouterName.homeName);
+        if (state.authFailureOrSuccess != null) {
+          state.authFailureOrSuccess!.fold(
+            (failure) {
+              // Обработка ошибки аутентификации
+              debugPrint('Ошибка аутентификации: $failure');
+            },
+            (success) {
+              // Обработка успешной аутентификации
+              context.goNamed(AppRouterName.homeName);
+            },
+          );
         }
       }),
     );

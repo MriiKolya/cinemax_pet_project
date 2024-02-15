@@ -1,3 +1,4 @@
+import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/sing_up/cubit/sign_up_form_cubit.dart';
@@ -14,7 +15,7 @@ class SingUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SignUpFormCubit(),
+      create: (context) => DependencyProvider.get<SignUpFormCubit>(),
       child: BlocConsumer<SignUpFormCubit, SignUpFormState>(
           builder: (context, state) {
         return Column(

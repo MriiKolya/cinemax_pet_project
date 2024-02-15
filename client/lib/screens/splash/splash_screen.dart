@@ -1,4 +1,3 @@
-import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/auth/bloc/auth_bloc.dart';
@@ -25,8 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 1), () {
       if (mounted) {
         context.goNamed(
-          DependencyProvider.get<AuthBloc>().state.status ==
-                  AuthStatus.authenticated
+          widget.bloc.state.status == AuthStatus.authenticated
               ? AppRouterName.homeName
               : AppRouterName.welcomeName,
         );

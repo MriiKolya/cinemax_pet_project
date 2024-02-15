@@ -21,6 +21,10 @@ class ProfileScreen extends StatelessWidget {
               'ProfileScreen',
               style: style.h1,
             ),
+            Text(
+              DependencyProvider.get<AuthBloc>().state.user.name.toString(),
+              style: style.h1,
+            ),
             CinemaxFilledButton(
                 label: 'logout',
                 onPressed: () {

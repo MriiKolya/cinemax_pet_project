@@ -168,7 +168,7 @@ linter:
     annotate_overrides: true
     avoid_annotating_with_dynamic: true
     avoid_bool_literals_in_conditional_expressions: true
-    avoid_catches_without_on_clauses: true
+    # avoid_catches_without_on_clauses: true
     avoid_catching_errors: true
     avoid_equals_and_hash_code_on_mutable_classes: true
     avoid_escaping_inner_quotes: true

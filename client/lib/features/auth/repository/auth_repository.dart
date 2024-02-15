@@ -1,5 +1,8 @@
+import 'package:client/core/validator/auth_failure/auth_failure.dart';
 import 'package:client/features/login/model/user_model.dart';
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AuthRepository {
@@ -18,28 +21,36 @@ class AuthRepository {
     });
   }
 
-  Future<void> signUp({
-    required String name,
+  Future<Either<AuthFailure, Unit?>> signUp({
     required String email,
     required String password,
+    required String name,
   }) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
-          email: email, password: password);
+        email: email,
+        password: password,
+      );
+      return right(unit);
+    } on FirebaseAuthException catch (_) {
+      return left(const AuthFailure.invalidValue());
     } catch (e) {
-      debugPrint(e.toString());
+      return left(const AuthFailure.serverError());
     }
   }
 
-  Future<void> loginWithEmailAndPassword({
+  Future<Either<AuthFailure, Unit?>> loginWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
+      return right(unit);
+    } on FirebaseAuthException catch (_) {
+      return left(const AuthFailure.invalidValue());
     } catch (e) {
-      debugPrint(e.toString());
+      return left(const AuthFailure.serverError());
     }
   }
 
