@@ -29,7 +29,10 @@ class VerificationEmailScreen extends StatelessWidget {
           child: Column(
             children: [
               VerificationTitle(emailAddress: emailAddress),
-              const Expanded(child: VerificationEmailForm()),
+              Expanded(
+                  child: VerificationEmailForm(
+                email: emailAddress,
+              )),
               const Spacer(),
             ],
           ),

@@ -61,6 +61,32 @@ class AuthRepository {
       debugPrint(e.toString());
     }
   }
+
+  Future<Either<AuthFailure, Unit?>> resetPassword(
+      {required String email}) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+      return right(unit);
+    } on FirebaseAuthException catch (_) {
+      return left(const AuthFailure.invalidValue());
+    } catch (e) {
+      return left(const AuthFailure.serverError());
+    }
+  }
+
+
+  @Deprecated('If Otp code')
+  Future<Either<AuthFailure, Unit?>> confirmCode() async {
+    try {
+      await _firebaseAuth.confirmPasswordReset(
+          code: 'code', newPassword: 'newPassword');
+      return right(unit);
+    } on FirebaseAuthException catch (_) {
+      return left(const AuthFailure.invalidValue());
+    } catch (e) {
+      return left(const AuthFailure.serverError());
+    }
+  }
 }
 
 extension on firebase_auth.User {

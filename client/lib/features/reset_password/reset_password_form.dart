@@ -1,3 +1,4 @@
+import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/reset_password/cubit/reset_password_cubit.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class ResetPasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ResetPasswordCubit(),
+      create: (context) => DependencyProvider.get<ResetPasswordCubit>(),
       child: BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
           builder: (context, state) {
         return Column(
@@ -38,7 +39,9 @@ class ResetPasswordForm extends StatelessWidget {
             CinemaxFilledButton(
               label: 'Next',
               onPressed: () async {
-                context.read<ResetPasswordCubit>().resetPasswordSubmitted();
+                await context
+                    .read<ResetPasswordCubit>()
+                    .resetPasswordSubmitted();
               },
             ),
           ],

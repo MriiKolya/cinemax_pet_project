@@ -9,7 +9,7 @@ part 'login_form_state.dart';
 part 'login_form_cubit.freezed.dart';
 
 class LoginFormCubit extends Cubit<LoginFormState> {
-  AuthRepository _repository;
+  final AuthRepository _repository;
   LoginFormCubit({required AuthRepository repository})
       : _repository = repository,
         super(LoginFormState.initial());

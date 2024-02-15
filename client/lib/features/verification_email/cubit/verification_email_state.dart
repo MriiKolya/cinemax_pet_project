@@ -1,5 +1,6 @@
 part of 'verification_email_cubit.dart';
 
+
 @freezed
 class VerificationEmailState with _$VerificationEmailState {
   const factory VerificationEmailState({

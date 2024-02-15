@@ -26,7 +26,8 @@ class VerificationTitle extends StatelessWidget {
           text: TextSpan(
             children: [
               TextSpan(
-                text: 'We have just sent you 4 digit code via your email',
+                text:
+                    'Your Account Security is Our Priotyyel Weve Send you a Secure Lonk to Safely Change Your Password and Keep Your Account Protecred',
                 style: textStyle.h5.copyWith(
                   color: TextColor.grey,
                   overflow: TextOverflow.clip,
@@ -35,7 +36,7 @@ class VerificationTitle extends StatelessWidget {
               ),
               const TextSpan(text: ' '),
               TextSpan(
-                text: emailAddress,
+                text: '($emailAddress)',
                 style: textStyle.h5.copyWith(
                   overflow: TextOverflow.clip,
                   fontWeight: FontWeightStyle.medium.fontWeight,

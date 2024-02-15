@@ -1,32 +1,36 @@
+import 'package:client/core/di/dependency_provider.dart';
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/verification_email/cubit/verification_email_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/conponent.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
 class VerificationEmailForm extends StatelessWidget {
-  const VerificationEmailForm({super.key});
+  const VerificationEmailForm({super.key, required this.email});
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
     final textStyle = context.textStyle;
     return BlocProvider(
-      create: (context) => VerificationEmailCubit(),
+      create: (context) => DependencyProvider.get<VerificationEmailCubit>(),
       child: BlocBuilder<VerificationEmailCubit, VerificationEmailState>(
         builder: (context, state) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Spacer(),
-              CinemaxPinput(
-                errorText: 'Invalid code',
-                forceErrorState: state.showErrorMessage,
-                onCompleted: (_) =>
-                    context.read<VerificationEmailCubit>().onSubmited(),
-                onChanged: (code) =>
-                    context.read<VerificationEmailCubit>().codeChanged(code),
+              CinemaxOutlinedButton(
+                label: 'Confrim',
+                onPressed: () {
+                  context.pushNamed(AppRouterName.welcomeName);
+                },
               ),
+              //
               const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +49,7 @@ class VerificationEmailForm extends StatelessWidget {
                           ? null
                           : () => context
                               .read<VerificationEmailCubit>()
-                              .resetCode(),
+                              .resendActionLink(email: email),
                     ),
                   ),
                 ],
