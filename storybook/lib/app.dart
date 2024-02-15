@@ -1,8 +1,8 @@
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
 import 'package:client/screens/auth/verification_email/verification_email_screen.dart';
-import 'package:client/screens/auth/welcome/welcome_screen.dart';
 import 'package:client/screens/splash/splash_screen.dart';
+import 'package:client/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storybook/cinemax_storybook.dart';

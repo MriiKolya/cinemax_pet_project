@@ -8,11 +8,11 @@ class AuthRepository {
   AuthRepository({firebase_auth.FirebaseAuth? firebaseAuth})
       : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
-  UserModel? currentUser;
+  UserModel currentUser = UserModel.empty;
 
-  Stream<UserModel?> get user {
+  Stream<UserModel> get user {
     return _firebaseAuth.authStateChanges().map((firebaseUser) {
-      final user = firebaseUser?.toUser;
+      final user = firebaseUser == null ? UserModel.empty : firebaseUser.toUser;
       currentUser = user;
       return user;
     });
@@ -55,6 +55,6 @@ class AuthRepository {
 extension on firebase_auth.User {
   UserModel get toUser {
     return UserModel(
-        id: uid, name: email!, email: displayName!, photoUrl: photoURL ?? '');
+        id: uid, name: email, email: displayName, photoUrl: photoURL ?? '');
   }
 }

@@ -1,15 +1,15 @@
 import 'package:client/core/di/dependency_provider.dart';
-import 'package:client/features/app_user_observer/bloc/app_bloc.dart';
-import 'package:client/features/app_user_observer/repository/auth_repository.dart';
+import 'package:client/features/auth/bloc/auth_bloc.dart';
+import 'package:client/features/auth/repository/auth_repository.dart';
 
-class AppAuthDependencyResolver {
+class AuthDependencyResolver {
   static void register() {
     DependencyProvider.registerLazySingleton<AuthRepository>(
       () => AuthRepository(),
     );
 
-    DependencyProvider.registerLazySingleton<AppBloc>(
-      () => AppBloc(
+    DependencyProvider.registerLazySingleton<AuthBloc>(
+      () => AuthBloc(
         repository: DependencyProvider.get<AuthRepository>(),
       ),
     );

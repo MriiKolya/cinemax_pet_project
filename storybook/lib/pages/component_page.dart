@@ -1,6 +1,6 @@
-import 'package:client/config/router/app_router_name.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:storybook/router/app_router_name.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
 import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
 import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';

@@ -12,6 +12,12 @@ class Password extends Equatable {
 }
 
 Either<ValueFailure, String> _validatePassword(String input) {
+  if (input.isEmpty || input == ' ') {
+    return left(
+      ValueFailure.emptyValue(failedValue: input),
+    );
+  }
+
   if (input.length <= 8) {
     return left(
       ValueFailure.shortInput(failedValue: input),

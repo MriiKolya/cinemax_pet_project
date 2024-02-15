@@ -1,14 +1,15 @@
-import 'package:client/config/router/app_router_name.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
-import 'package:client/screens/auth/welcome/welcome_screen.dart';
+
 import 'package:client/screens/splash/splash_screen.dart';
 import 'package:client/screens/tab_pages/pages/home/home_screen.dart';
 import 'package:client/screens/tab_pages/pages/search/search_screen.dart';
 import 'package:client/screens/tab_pages/tab_page.dart';
+import 'package:client/screens/welcome/welcome_screen.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:storybook/router/app_router_name.dart';
 
 class AppRoutes {
   static final rootNavigationKey = GlobalKey<NavigatorState>();

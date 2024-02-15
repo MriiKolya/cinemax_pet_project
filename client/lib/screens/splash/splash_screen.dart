@@ -1,12 +1,19 @@
-import 'package:client/core/router/app_router_name.dart';
+import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
+import 'package:client/core/router/app_router_name.dart';
+import 'package:client/features/auth/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/logo/cinemax_logo.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({
+    super.key,
+    required this.bloc,
+  });
+
+  final AuthBloc bloc;
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -17,7 +24,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(seconds: 1), () {
       if (mounted) {
-        context.goNamed(AppRouterName.homeName);
+        context.goNamed(
+          DependencyProvider.get<AuthBloc>().state.status ==
+                  AuthStatus.authenticated
+              ? AppRouterName.homeName
+              : AppRouterName.welcomeName,
+        );
       }
     });
     super.initState();

@@ -1,6 +1,6 @@
+import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/router/app_router_name.dart';
-
-import 'package:client/features/app_user_observer/bloc/app_bloc.dart';
+import 'package:client/features/auth/bloc/auth_bloc.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
@@ -16,12 +16,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRoutes {
-  final AppBloc _authBloc;
-
-  AppRoutes({
-    required AppBloc authBloc,
-  }) : _authBloc = authBloc;
-
   static final rootNavigationKey = GlobalKey<NavigatorState>();
   static final homeNavigationKey = GlobalKey<NavigatorState>();
   static final homeTab = GlobalKey<NavigatorState>();
@@ -40,29 +34,17 @@ class AppRoutes {
   static const String _favoritePath = '/favorite';
   static const String _profilePath = '/profile';
 
-  late final GoRouter router = GoRouter(
+  final GoRouter router = GoRouter(
     navigatorKey: rootNavigationKey,
-    redirect: (context, state) {
-      final loggedIn = _authBloc.state.status == AppStatus.authenticated;
-      // Разрешить навигацию на страницу dashboard только
-      // для авторизованных пользователей
-      if (state.matchedLocation == '/home' && !loggedIn) {
-        return _welcomePath;
-      }
-      // Разрешить навигацию на другие страницы для авторизованных пользователей
-      if (!loggedIn) {
-        return null;
-      }
-      // Разрешить навигацию для авторизованных пользователей
-      return null;
-    },
     initialLocation: AppRoutes._splashPath,
     routes: [
       GoRoute(
         path: AppRoutes._splashPath,
         name: AppRouterName.splashName,
-        pageBuilder: (_, state) => const CupertinoPage<void>(
-          child: SplashScreen(),
+        pageBuilder: (_, state) => CupertinoPage<void>(
+          child: SplashScreen(
+            bloc: DependencyProvider.get<AuthBloc>(),
+          ),
         ),
       ),
       StatefulShellRoute.indexedStack(
@@ -97,6 +79,7 @@ class AppRoutes {
             routes: <RouteBase>[
               GoRoute(
                 path: AppRoutes._profilePath,
+                name: AppRouterName.profilelName,
                 builder: (_, state) => const ProfileScreen(),
               ),
             ],
