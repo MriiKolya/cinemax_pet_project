@@ -10,22 +10,17 @@ class AvatarUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-      ),
-      child: CachedNetworkImage(
-        imageUrl: photoUrl,
-        progressIndicatorBuilder: (context, url, progress) =>
-            CircularProgressIndicator(
-          color: PrimaryColor.blueAccent,
-          strokeWidth: 1,
-        ),
-        errorWidget: (context, url, error) => Image.asset(
-          ImageAssets.avatarPlaceholder,
-          package: 'ui_kit',
-        ),
-      ),
+    return CircleAvatar(
+      radius: 20,
+      backgroundColor: PrimaryColor.blueAccent,
+      child: CircleAvatar(
+          radius: 19,
+          foregroundImage: CachedNetworkImageProvider(photoUrl),
+          onForegroundImageError: (exception, stackTrace) {},
+          backgroundImage: const AssetImage(
+            ImageAssets.avatarPlaceholder,
+            package: 'ui_kit',
+          )),
     );
   }
 }

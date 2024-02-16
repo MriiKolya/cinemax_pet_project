@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field, cancel_subscriptions
-
 import 'dart:async';
 
 import 'package:client/features/auth/repository/auth_repository.dart';

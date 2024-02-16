@@ -105,7 +105,7 @@ class SingUpForm extends StatelessWidget {
             CinemaxFilledButton(
               label: 'Sign Up',
               onPressed: () async {
-                context.read<SignUpFormCubit>().signUpSubmitted();
+                await context.read<SignUpFormCubit>().signUpSubmitted();
               },
             ),
             const Spacer(),

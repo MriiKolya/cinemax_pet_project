@@ -16,6 +16,8 @@ Future<void> main() async {
     );
   } else if (Platform.isIOS) {
     await Firebase.initializeApp();
+  } else {
+    await Firebase.initializeApp();
   }
 
   final devConfig = FlavorConfig(
