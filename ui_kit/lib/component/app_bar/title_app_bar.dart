@@ -6,25 +6,35 @@ class TitleAppBar extends StatelessWidget {
     super.key,
     this.title,
     this.titleText,
+    this.subTitle,
   });
 
   final Widget? title;
   final String? titleText;
+  final String? subTitle;
 
   @override
   Widget build(BuildContext context) {
     if (titleText != null) {
-      return Text(
-        titleText!,
-        textAlign: TextAlign.center,
-        style: context.appBarStyle.titleTextStyle,
-      );
-      // subtitle: subTitle != null
-      //     ? Text(
-      //         subTitle!,
-      //         style: context.appBarStyle.subTitleTextStyle,
-      //       )
-      //     : null,
+      return RichText(
+          text: TextSpan(children: [
+        TextSpan(
+          text: titleText,
+          style: context.appBarStyle.titleTextStyle,
+        ),
+        if (subTitle != null)
+          TextSpan(
+            children: [
+              const TextSpan(text: '\n'),
+              TextSpan(
+                text: subTitle,
+                style: context.appBarStyle.subTitleTextStyle,
+              )
+            ],
+          )
+        else
+          const TextSpan()
+      ]));
     } else {
       return title ?? const SizedBox.shrink();
     }

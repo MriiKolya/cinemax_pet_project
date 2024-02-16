@@ -33,7 +33,11 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         centerTitle: centerTitle,
         backgroundColor: style.backgroundColor,
-        title: TitleAppBar(title: title, titleText: titleText),
+        title: TitleAppBar(
+          title: title,
+          titleText: titleText,
+          subTitle: subTitle,
+        ),
         leadingWidth: 40,
         toolbarHeight: 40,
         leading: leadingIcon != null ? leadingIcon! : leading,

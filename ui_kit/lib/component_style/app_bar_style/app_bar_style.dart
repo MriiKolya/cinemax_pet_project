@@ -21,18 +21,24 @@ class AppBarStyle extends ThemeExtension<AppBarStyle> {
         backgroundColor: TextColor.black,
         titleTextStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w600, color: TextColor.white),
-        subTitleTextStyle: CinemaxTypography.h6()
-            .copyWith(color: TextColor.grey, fontWeight: FontWeight.w500),
+        subTitleTextStyle: CinemaxTypography.h6().copyWith(
+            color: TextColor.grey,
+            fontWeight: FontWeight.w500,
+            overflow: TextOverflow.ellipsis),
         actionTextStyle: CinemaxTypography.h6()
             .copyWith(color: TextColor.white, fontWeight: FontWeight.w500),
       );
 
   factory AppBarStyle.light() => AppBarStyle(
         backgroundColor: PrimaryColor.light,
-        titleTextStyle: CinemaxTypography.h4()
-            .copyWith(fontWeight: FontWeight.w600, color: TextColor.black),
-        subTitleTextStyle: CinemaxTypography.h6()
-            .copyWith(color: TextColor.grey, fontWeight: FontWeight.w500),
+        titleTextStyle: CinemaxTypography.h4().copyWith(
+            fontWeight: FontWeight.w600,
+            color: TextColor.black,
+            overflow: TextOverflow.ellipsis),
+        subTitleTextStyle: CinemaxTypography.h6().copyWith(
+            color: TextColor.grey,
+            fontWeight: FontWeight.w500,
+            overflow: TextOverflow.ellipsis),
         actionTextStyle: CinemaxTypography.h6()
             .copyWith(color: TextColor.black, fontWeight: FontWeight.w500),
       );

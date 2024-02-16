@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
               style: style.h1,
             ),
             Text(
-              DependencyProvider.get<AuthBloc>().state.user.name.toString(),
+              DependencyProvider.get<AuthBloc>().state.user.email.toString(),
               style: style.h1,
             ),
             CinemaxFilledButton(

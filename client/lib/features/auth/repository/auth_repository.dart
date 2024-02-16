@@ -74,7 +74,6 @@ class AuthRepository {
     }
   }
 
-
   @Deprecated('If Otp code')
   Future<Either<AuthFailure, Unit?>> confirmCode() async {
     try {
@@ -92,6 +91,9 @@ class AuthRepository {
 extension on firebase_auth.User {
   UserModel get toUser {
     return UserModel(
-        id: uid, name: email, email: displayName, photoUrl: photoURL ?? '');
+        id: uid,
+        name: displayName ?? 'N/A',
+        email: email,
+        photoUrl: photoURL ?? '');
   }
 }
