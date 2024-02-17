@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/component_style/app_bar_style/app_bar_style.dart';
+import 'package:ui_kit/component_style/avatar_style/avatar_style.dart';
 import 'package:ui_kit/component_style/button_style/filled_button_style.dart';
 import 'package:ui_kit/component_style/button_style/outlined_button_style.dart';
 import 'package:ui_kit/component_style/button_style/text_button_style.dart';
@@ -29,4 +30,5 @@ extension ThemeContextExtention on BuildContext {
       Theme.of(this).extension<InputFieldStyle>()!;
   NavBarStyle get navBarStyle => Theme.of(this).extension<NavBarStyle>()!;
   PinputStyle get pinputStyle => Theme.of(this).extension<PinputStyle>()!;
+  AvatarStyle get avatarStyle => Theme.of(this).extension<AvatarStyle>()!;
 }
