@@ -7,7 +7,7 @@ class NewMovieCardEntity extends Equatable {
   final String? description;
   final double? popularity;
   final String? picture;
-  final String? releaseDate;
+  final DateTime? releaseDate;
   final double? voteAverage;
 
   const NewMovieCardEntity({

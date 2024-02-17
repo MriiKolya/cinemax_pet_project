@@ -2,13 +2,15 @@ import 'package:client/features/new_movie_list/data/dtos/movie_card/new_movie_ca
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'list_new_movie_dto.g.dart';
+part 'list_new_movie_dto.freezed.dart';
 
-@JsonSerializable()
-class ListNewMovieDTO {
-  @JsonKey(name: 'results')
-  final List<MovieCardDTO>? movies;
+@freezed
+class ListNewMovieDTO with _$ListNewMovieDTO {
+  ListNewMovieDTO._();
 
-  ListNewMovieDTO({required this.movies});
+  const factory ListNewMovieDTO({
+    @JsonKey(name: 'results') required List<MovieCardDTO>? movies,
+  }) = _ListNewMovieDTO;
 
   factory ListNewMovieDTO.fromJson(Map<String, dynamic> json) =>
       _$ListNewMovieDTOFromJson(json);

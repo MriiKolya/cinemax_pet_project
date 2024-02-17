@@ -4,7 +4,7 @@ import 'package:client/features/login/cubit/login_form_cubit.dart';
 
 class LoginDependencyResolver {
   static void register() {
-    DependencyProvider.registerLazySingleton<LoginFormCubit>(
+    DependencyProvider.registerFactory<LoginFormCubit>(
       () => LoginFormCubit(
         repository: DependencyProvider.get<AuthRepository>(),
       ),

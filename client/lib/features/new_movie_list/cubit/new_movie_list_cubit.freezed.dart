@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$NewMovieListState {
   ListNewMovieEntity get listNewMovie => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
+  Failure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewMovieListStateCopyWith<NewMovieListState> get copyWith =>
@@ -31,7 +31,9 @@ abstract class $NewMovieListStateCopyWith<$Res> {
           NewMovieListState value, $Res Function(NewMovieListState) then) =
       _$NewMovieListStateCopyWithImpl<$Res, NewMovieListState>;
   @useResult
-  $Res call({ListNewMovieEntity listNewMovie, bool loading, String? error});
+  $Res call({ListNewMovieEntity listNewMovie, bool loading, Failure? failure});
+
+  $FailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
@@ -49,7 +51,7 @@ class _$NewMovieListStateCopyWithImpl<$Res, $Val extends NewMovieListState>
   $Res call({
     Object? listNewMovie = null,
     Object? loading = null,
-    Object? error = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
       listNewMovie: null == listNewMovie
@@ -60,11 +62,23 @@ class _$NewMovieListStateCopyWithImpl<$Res, $Val extends NewMovieListState>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FailureCopyWith<$Res>? get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+
+    return $FailureCopyWith<$Res>(_value.failure!, (value) {
+      return _then(_value.copyWith(failure: value) as $Val);
+    });
   }
 }
 
@@ -76,7 +90,10 @@ abstract class _$$NewMovieListStateImplCopyWith<$Res>
       __$$NewMovieListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ListNewMovieEntity listNewMovie, bool loading, String? error});
+  $Res call({ListNewMovieEntity listNewMovie, bool loading, Failure? failure});
+
+  @override
+  $FailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
@@ -92,7 +109,7 @@ class __$$NewMovieListStateImplCopyWithImpl<$Res>
   $Res call({
     Object? listNewMovie = null,
     Object? loading = null,
-    Object? error = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_$NewMovieListStateImpl(
       listNewMovie: null == listNewMovie
@@ -103,10 +120,10 @@ class __$$NewMovieListStateImplCopyWithImpl<$Res>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
     ));
   }
 }
@@ -115,7 +132,7 @@ class __$$NewMovieListStateImplCopyWithImpl<$Res>
 
 class _$NewMovieListStateImpl implements _NewMovieListState {
   const _$NewMovieListStateImpl(
-      {required this.listNewMovie, this.loading = false, this.error});
+      {required this.listNewMovie, this.loading = false, this.failure});
 
   @override
   final ListNewMovieEntity listNewMovie;
@@ -123,11 +140,11 @@ class _$NewMovieListStateImpl implements _NewMovieListState {
   @JsonKey()
   final bool loading;
   @override
-  final String? error;
+  final Failure? failure;
 
   @override
   String toString() {
-    return 'NewMovieListState(listNewMovie: $listNewMovie, loading: $loading, error: $error)';
+    return 'NewMovieListState(listNewMovie: $listNewMovie, loading: $loading, failure: $failure)';
   }
 
   @override
@@ -138,11 +155,11 @@ class _$NewMovieListStateImpl implements _NewMovieListState {
             (identical(other.listNewMovie, listNewMovie) ||
                 other.listNewMovie == listNewMovie) &&
             (identical(other.loading, loading) || other.loading == loading) &&
-            (identical(other.error, error) || other.error == error));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, listNewMovie, loading, error);
+  int get hashCode => Object.hash(runtimeType, listNewMovie, loading, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -156,14 +173,14 @@ abstract class _NewMovieListState implements NewMovieListState {
   const factory _NewMovieListState(
       {required final ListNewMovieEntity listNewMovie,
       final bool loading,
-      final String? error}) = _$NewMovieListStateImpl;
+      final Failure? failure}) = _$NewMovieListStateImpl;
 
   @override
   ListNewMovieEntity get listNewMovie;
   @override
   bool get loading;
   @override
-  String? get error;
+  Failure? get failure;
   @override
   @JsonKey(ignore: true)
   _$$NewMovieListStateImplCopyWith<_$NewMovieListStateImpl> get copyWith =>

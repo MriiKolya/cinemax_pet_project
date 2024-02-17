@@ -4,7 +4,7 @@ import 'package:client/features/reset_password/cubit/reset_password_cubit.dart';
 
 class ResetPasswordDependencyResolver {
   static void register() {
-    DependencyProvider.registerLazySingleton<ResetPasswordCubit>(
+    DependencyProvider.registerFactory<ResetPasswordCubit>(
       () => ResetPasswordCubit(
         repository: DependencyProvider.get<AuthRepository>(),
       ),

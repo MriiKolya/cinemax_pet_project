@@ -7,8 +7,7 @@ class AuthDependencyResolver {
     DependencyProvider.registerLazySingleton<AuthRepository>(
       () => AuthRepository(),
     );
-
-    DependencyProvider.registerLazySingleton<AuthBloc>(
+    DependencyProvider.registerFactory<AuthBloc>(
       () => AuthBloc(
         repository: DependencyProvider.get<AuthRepository>(),
       ),

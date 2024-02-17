@@ -1,9 +1,9 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/features/auth/bloc/auth_bloc.dart';
-import 'package:client/features/new_movie_list/presentation/dasboard_new_movie_list.dart';
+import 'package:client/features/new_movie_list/presentation/new_movie_list.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_kit/component/app_bar/avatar_user.dart';
 import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
+import 'package:ui_kit/component/avatar/avatar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,8 +13,8 @@ class HomeScreen extends StatelessWidget {
     final user = DependencyProvider.get<AuthBloc>().state.user;
     return Scaffold(
       appBar: CinemaxAppBar(
-        leading: const AvatarUser(
-          photoUrl: 'https://variety.com/wp-content/uploads/2021/04/Avatar.jpg',
+        leading: Avatar(
+          photoUrl: user.photoUrl.toString(),
         ),
         centerTitle: false,
         titleText: 'Hello, ${user.email}',
@@ -22,7 +22,10 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const SingleChildScrollView(
         child: Column(
-          children: [NewMovieList()],
+          children: [
+            SizedBox(height: 35),
+            NewMovieList(),
+          ],
         ),
       ),
     );

@@ -6,14 +6,16 @@ part of 'list_new_movie_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ListNewMovieDTO _$ListNewMovieDTOFromJson(Map<String, dynamic> json) =>
-    ListNewMovieDTO(
+_$ListNewMovieDTOImpl _$$ListNewMovieDTOImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ListNewMovieDTOImpl(
       movies: (json['results'] as List<dynamic>?)
           ?.map((e) => MovieCardDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$ListNewMovieDTOToJson(ListNewMovieDTO instance) =>
+Map<String, dynamic> _$$ListNewMovieDTOImplToJson(
+        _$ListNewMovieDTOImpl instance) =>
     <String, dynamic>{
       'results': instance.movies,
     };

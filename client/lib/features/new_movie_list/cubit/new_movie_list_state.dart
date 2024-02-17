@@ -5,6 +5,6 @@ class NewMovieListState with _$NewMovieListState {
   const factory NewMovieListState({
     required ListNewMovieEntity listNewMovie,
     @Default(false) bool loading,
-    String? error,
+    Failure? failure,
   }) = _NewMovieListState;
 }

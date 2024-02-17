@@ -4,7 +4,7 @@ import 'package:client/features/verification_email/cubit/verification_email_cubi
 
 class VerificationDependencyResolver {
   static void register() {
-    DependencyProvider.registerLazySingleton<VerificationEmailCubit>(
+    DependencyProvider.registerFactory<VerificationEmailCubit>(
       () => VerificationEmailCubit(
         repository: DependencyProvider.get<AuthRepository>(),
       ),

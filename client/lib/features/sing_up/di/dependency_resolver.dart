@@ -4,7 +4,7 @@ import 'package:client/features/sing_up/cubit/sign_up_form_cubit.dart';
 
 class SignUpDependencyResolver {
   static void register() {
-    DependencyProvider.registerLazySingleton<SignUpFormCubit>(
+    DependencyProvider.registerFactory<SignUpFormCubit>(
       () => SignUpFormCubit(
         repository: DependencyProvider.get<AuthRepository>(),
       ),
