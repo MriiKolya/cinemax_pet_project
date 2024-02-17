@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'new_movie_card_dto.dart';
+part of 'new_movie_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

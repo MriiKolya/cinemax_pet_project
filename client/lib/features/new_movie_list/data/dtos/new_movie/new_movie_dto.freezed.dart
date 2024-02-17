@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'new_movie_card_dto.dart';
+part of 'new_movie_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-MovieCardDTO _$MovieCardDTOFromJson(Map<String, dynamic> json) {
+NewMovieDTO _$NewMovieDTOFromJson(Map<String, dynamic> json) {
   return _MovieCardDTO.fromJson(json);
 }
 
 /// @nodoc
-mixin _$MovieCardDTO {
+mixin _$NewMovieDTO {
   @JsonKey(name: 'backdrop_path')
   String get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'id', defaultValue: 0)
@@ -39,15 +39,15 @@ mixin _$MovieCardDTO {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieCardDTOCopyWith<MovieCardDTO> get copyWith =>
+  $NewMovieDTOCopyWith<NewMovieDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MovieCardDTOCopyWith<$Res> {
-  factory $MovieCardDTOCopyWith(
-          MovieCardDTO value, $Res Function(MovieCardDTO) then) =
-      _$MovieCardDTOCopyWithImpl<$Res, MovieCardDTO>;
+abstract class $NewMovieDTOCopyWith<$Res> {
+  factory $NewMovieDTOCopyWith(
+          NewMovieDTO value, $Res Function(NewMovieDTO) then) =
+      _$NewMovieDTOCopyWithImpl<$Res, NewMovieDTO>;
   @useResult
   $Res call(
       {@JsonKey(name: 'backdrop_path') String backdropPath,
@@ -61,9 +61,9 @@ abstract class $MovieCardDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MovieCardDTOCopyWithImpl<$Res, $Val extends MovieCardDTO>
-    implements $MovieCardDTOCopyWith<$Res> {
-  _$MovieCardDTOCopyWithImpl(this._value, this._then);
+class _$NewMovieDTOCopyWithImpl<$Res, $Val extends NewMovieDTO>
+    implements $NewMovieDTOCopyWith<$Res> {
+  _$NewMovieDTOCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -121,7 +121,7 @@ class _$MovieCardDTOCopyWithImpl<$Res, $Val extends MovieCardDTO>
 
 /// @nodoc
 abstract class _$$MovieCardDTOImplCopyWith<$Res>
-    implements $MovieCardDTOCopyWith<$Res> {
+    implements $NewMovieDTOCopyWith<$Res> {
   factory _$$MovieCardDTOImplCopyWith(
           _$MovieCardDTOImpl value, $Res Function(_$MovieCardDTOImpl) then) =
       __$$MovieCardDTOImplCopyWithImpl<$Res>;
@@ -140,7 +140,7 @@ abstract class _$$MovieCardDTOImplCopyWith<$Res>
 
 /// @nodoc
 class __$$MovieCardDTOImplCopyWithImpl<$Res>
-    extends _$MovieCardDTOCopyWithImpl<$Res, _$MovieCardDTOImpl>
+    extends _$NewMovieDTOCopyWithImpl<$Res, _$MovieCardDTOImpl>
     implements _$$MovieCardDTOImplCopyWith<$Res> {
   __$$MovieCardDTOImplCopyWithImpl(
       _$MovieCardDTOImpl _value, $Res Function(_$MovieCardDTOImpl) _then)
@@ -239,7 +239,7 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
 
   @override
   String toString() {
-    return 'MovieCardDTO(backdropPath: $backdropPath, id: $id, title: $title, originalTitle: $originalTitle, description: $description, popularity: $popularity, releaseDate: $releaseDate, voteAverage: $voteAverage)';
+    return 'NewMovieDTO(backdropPath: $backdropPath, id: $id, title: $title, originalTitle: $originalTitle, description: $description, popularity: $popularity, releaseDate: $releaseDate, voteAverage: $voteAverage)';
   }
 
   @override
@@ -282,7 +282,7 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
   }
 }
 
-abstract class _MovieCardDTO extends MovieCardDTO {
+abstract class _MovieCardDTO extends NewMovieDTO {
   factory _MovieCardDTO(
           {@JsonKey(name: 'backdrop_path') required final String backdropPath,
           @JsonKey(name: 'id', defaultValue: 0) required final int id,

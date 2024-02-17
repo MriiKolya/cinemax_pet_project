@@ -21,7 +21,7 @@ ListNewMovieDTO _$ListNewMovieDTOFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ListNewMovieDTO {
   @JsonKey(name: 'results')
-  List<MovieCardDTO>? get movies => throw _privateConstructorUsedError;
+  List<NewMovieDTO>? get movies => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $ListNewMovieDTOCopyWith<$Res> {
           ListNewMovieDTO value, $Res Function(ListNewMovieDTO) then) =
       _$ListNewMovieDTOCopyWithImpl<$Res, ListNewMovieDTO>;
   @useResult
-  $Res call({@JsonKey(name: 'results') List<MovieCardDTO>? movies});
+  $Res call({@JsonKey(name: 'results') List<NewMovieDTO>? movies});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$ListNewMovieDTOCopyWithImpl<$Res, $Val extends ListNewMovieDTO>
       movies: freezed == movies
           ? _value.movies
           : movies // ignore: cast_nullable_to_non_nullable
-              as List<MovieCardDTO>?,
+              as List<NewMovieDTO>?,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$ListNewMovieDTOImplCopyWith<$Res>
       __$$ListNewMovieDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'results') List<MovieCardDTO>? movies});
+  $Res call({@JsonKey(name: 'results') List<NewMovieDTO>? movies});
 }
 
 /// @nodoc
@@ -90,7 +90,7 @@ class __$$ListNewMovieDTOImplCopyWithImpl<$Res>
       movies: freezed == movies
           ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
-              as List<MovieCardDTO>?,
+              as List<NewMovieDTO>?,
     ));
   }
 }
@@ -99,17 +99,17 @@ class __$$ListNewMovieDTOImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
   const _$ListNewMovieDTOImpl(
-      {@JsonKey(name: 'results') required final List<MovieCardDTO>? movies})
+      {@JsonKey(name: 'results') required final List<NewMovieDTO>? movies})
       : _movies = movies,
         super._();
 
   factory _$ListNewMovieDTOImpl.fromJson(Map<String, dynamic> json) =>
       _$$ListNewMovieDTOImplFromJson(json);
 
-  final List<MovieCardDTO>? _movies;
+  final List<NewMovieDTO>? _movies;
   @override
   @JsonKey(name: 'results')
-  List<MovieCardDTO>? get movies {
+  List<NewMovieDTO>? get movies {
     final value = _movies;
     if (value == null) return null;
     if (_movies is EqualUnmodifiableListView) return _movies;
@@ -153,7 +153,7 @@ class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
 abstract class _ListNewMovieDTO extends ListNewMovieDTO {
   const factory _ListNewMovieDTO(
       {@JsonKey(name: 'results')
-      required final List<MovieCardDTO>? movies}) = _$ListNewMovieDTOImpl;
+      required final List<NewMovieDTO>? movies}) = _$ListNewMovieDTOImpl;
   const _ListNewMovieDTO._() : super._();
 
   factory _ListNewMovieDTO.fromJson(Map<String, dynamic> json) =
@@ -161,7 +161,7 @@ abstract class _ListNewMovieDTO extends ListNewMovieDTO {
 
   @override
   @JsonKey(name: 'results')
-  List<MovieCardDTO>? get movies;
+  List<NewMovieDTO>? get movies;
   @override
   @JsonKey(ignore: true)
   _$$ListNewMovieDTOImplCopyWith<_$ListNewMovieDTOImpl> get copyWith =>

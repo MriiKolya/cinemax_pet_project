@@ -9,6 +9,7 @@ import 'package:ui_kit/component_style/icon_style/icon_style.dart';
 import 'package:ui_kit/component_style/input_field_style/input_field_style.dart';
 import 'package:ui_kit/component_style/logo_style/cinemax_logo_style.dart';
 import 'package:ui_kit/component_style/nav_bar_style/nav_bar_style.dart';
+import 'package:ui_kit/component_style/new_movie_card_style/new_movie_card_style.dart';
 import 'package:ui_kit/component_style/pinput_style/pinput_style.dart';
 import 'package:ui_kit/component_style/switch_style/switch_style.dart';
 import 'package:ui_kit/component_style/text_style/text_style.dart';
@@ -31,4 +32,6 @@ extension ThemeContextExtention on BuildContext {
   NavBarStyle get navBarStyle => Theme.of(this).extension<NavBarStyle>()!;
   PinputStyle get pinputStyle => Theme.of(this).extension<PinputStyle>()!;
   AvatarStyle get avatarStyle => Theme.of(this).extension<AvatarStyle>()!;
+  NewMovieCardStyle get newMovieCardStyle =>
+      Theme.of(this).extension<NewMovieCardStyle>()!;
 }

@@ -1,11 +1,37 @@
-import 'package:client/features/new_movie_list/data/entity/new_movie_card.dart';
 import 'package:equatable/equatable.dart';
 
-class ListNewMovieEntity extends Equatable {
-  final List<NewMovieCardEntity>? movies;
+class NewMovieEntity extends Equatable {
+  final int id;
+  final String title;
+  final String? originalTitle;
+  final String? description;
+  final double? popularity;
+  final String? picture;
+  final DateTime? releaseDate;
+  final double? voteAverage;
 
-  const ListNewMovieEntity({required this.movies});
+  const NewMovieEntity({
+    required this.id,
+    required this.title,
+    required this.originalTitle,
+    required this.description,
+    required this.popularity,
+    required this.picture,
+    required this.releaseDate,
+    required this.voteAverage,
+  });
 
   @override
-  List<Object?> get props => [movies];
+  List<Object?> get props {
+    return [
+      id,
+      title,
+      originalTitle,
+      description,
+      popularity,
+      picture,
+      releaseDate,
+      voteAverage,
+    ];
+  }
 }

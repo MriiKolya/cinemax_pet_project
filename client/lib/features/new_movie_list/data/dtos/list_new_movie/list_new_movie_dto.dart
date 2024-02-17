@@ -1,4 +1,4 @@
-import 'package:client/features/new_movie_list/data/dtos/movie_card/new_movie_card_dto.dart';
+import 'package:client/features/new_movie_list/data/dtos/new_movie/new_movie_dto.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'list_new_movie_dto.g.dart';
@@ -9,7 +9,7 @@ class ListNewMovieDTO with _$ListNewMovieDTO {
   ListNewMovieDTO._();
 
   const factory ListNewMovieDTO({
-    @JsonKey(name: 'results') required List<MovieCardDTO>? movies,
+    @JsonKey(name: 'results') required List<NewMovieDTO>? movies,
   }) = _ListNewMovieDTO;
 
   factory ListNewMovieDTO.fromJson(Map<String, dynamic> json) =>

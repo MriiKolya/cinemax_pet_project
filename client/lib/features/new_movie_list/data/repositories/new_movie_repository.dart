@@ -1,7 +1,7 @@
 import 'package:client/core/api_config.dart';
 import 'package:client/core/error/failure.dart';
-import 'package:client/features/new_movie_list/data/dtos/movie_card/new_movie_card_dto.dart';
-import 'package:client/features/new_movie_list/data/entity/new_movie.dart';
+import 'package:client/features/new_movie_list/data/dtos/new_movie/new_movie_dto.dart';
+import 'package:client/features/new_movie_list/data/entity/list_new_movie.dart';
 import 'package:client/features/new_movie_list/data/mappers/new_movie_mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -18,7 +18,7 @@ class NewMovieRepository implements INewMovieRepository {
   @override
   Future<Either<Failure, ListNewMovieEntity>> getNewMovieList() async {
     try {
-      final dtos = <MovieCardDTO>[];
+      final dtos = <NewMovieDTO>[];
       const url = '${MovieQuery.baseUrl}${MovieQuery.queryNowPlaying}';
       final response =
           // ignore: inference_failure_on_function_invocation
@@ -30,7 +30,7 @@ class NewMovieRepository implements INewMovieRepository {
         final results = responseData['results'] as List<dynamic>;
 
         for (final data in results) {
-          dtos.add(MovieCardDTO.fromJson(data as Map<String, dynamic>));
+          dtos.add(NewMovieDTO.fromJson(data as Map<String, dynamic>));
         }
       } else {
         throw Exception('Unexpected data format: $responseData');

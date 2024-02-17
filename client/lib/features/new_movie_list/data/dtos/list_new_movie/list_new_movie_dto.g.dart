@@ -10,7 +10,7 @@ _$ListNewMovieDTOImpl _$$ListNewMovieDTOImplFromJson(
         Map<String, dynamic> json) =>
     _$ListNewMovieDTOImpl(
       movies: (json['results'] as List<dynamic>?)
-          ?.map((e) => MovieCardDTO.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => NewMovieDTO.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

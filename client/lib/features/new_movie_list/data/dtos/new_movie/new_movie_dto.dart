@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'new_movie_card_dto.g.dart';
-part 'new_movie_card_dto.freezed.dart';
+part 'new_movie_dto.g.dart';
+part 'new_movie_dto.freezed.dart';
 
 @freezed
-class MovieCardDTO with _$MovieCardDTO {
-  MovieCardDTO._();
+class NewMovieDTO with _$NewMovieDTO {
+  NewMovieDTO._();
 
-  factory MovieCardDTO({
+  factory NewMovieDTO({
     @JsonKey(name: 'backdrop_path') required String backdropPath,
     @JsonKey(name: 'id', defaultValue: 0) required int id,
     @JsonKey(name: 'title', defaultValue: '') required String title,
@@ -18,6 +18,6 @@ class MovieCardDTO with _$MovieCardDTO {
     @JsonKey(name: 'vote_average') required double voteAverage,
   }) = _MovieCardDTO;
 
-  factory MovieCardDTO.fromJson(Map<String, dynamic> json) =>
-      _$MovieCardDTOFromJson(json);
+  factory NewMovieDTO.fromJson(Map<String, dynamic> json) =>
+      _$NewMovieDTOFromJson(json);
 }

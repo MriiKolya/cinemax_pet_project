@@ -1,5 +1,5 @@
 import 'package:client/core/error/failure.dart';
-import 'package:client/features/new_movie_list/data/entity/new_movie.dart';
+import 'package:client/features/new_movie_list/data/entity/list_new_movie.dart';
 import 'package:client/features/new_movie_list/data/repositories/new_movie_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
