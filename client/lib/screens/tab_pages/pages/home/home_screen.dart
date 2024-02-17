@@ -1,5 +1,6 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/features/auth/bloc/auth_bloc.dart';
+import 'package:client/features/genre_list/presentation/genre_list.dart';
 import 'package:client/features/new_movie_list/presentation/new_movie_list.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
@@ -25,6 +26,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             SizedBox(height: 35),
             NewMovieList(),
+            SizedBox(height: 35),
+            GenreList()
           ],
         ),
       ),

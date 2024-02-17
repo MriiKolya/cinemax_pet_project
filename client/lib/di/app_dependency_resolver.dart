@@ -1,5 +1,6 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/features/auth/di/dependency_resolver.dart';
+import 'package:client/features/genre_list/di/dependency_resolver.dart';
 import 'package:client/features/login/di/dependency_resolver.dart';
 import 'package:client/features/new_movie_list/di/dependency_resolver.dart';
 import 'package:client/features/reset_password/di/dependency_resolver.dart';
@@ -18,5 +19,6 @@ class AppDependencyResolver {
     ResetPasswordDependencyResolver.register();
     VerificationDependencyResolver.register();
     NewMovieDependencyResolver.register();
+    GenreDependencyResolver.register();
   }
 }

@@ -27,9 +27,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   void _onUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {
-    event.user.isNotEmpty
-        ? debugPrint('authenticated')
-        : debugPrint('unauthenticated');
     emit(event.user.isNotEmpty
         ? AuthState.authenticated(event.user)
         : const AuthState.unauthenticated());
