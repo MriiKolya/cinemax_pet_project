@@ -21,8 +21,8 @@ class NewMovieCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: style.borderRadius,
           image: DecorationImage(
-            image: CachedNetworkImageProvider(cardMovie.poster),
-          ),
+              fit: BoxFit.cover,
+              image: CachedNetworkImageProvider(cardMovie.poster)),
         ),
         child: Padding(
           padding: style.contentPadding,
@@ -31,11 +31,9 @@ class NewMovieCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DecoratedBox(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.black45,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
+                  borderRadius: style.borderRadius,
                 ),
                 child: IntrinsicWidth(
                   child: ListTile(

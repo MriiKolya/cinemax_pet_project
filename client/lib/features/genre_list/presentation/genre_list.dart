@@ -1,20 +1,14 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/features/genre_list/cubit/genre_list_cubit.dart';
+import 'package:client/features/movie/popular_movie_genre/cubit/popular_movies_genre_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
-class GenreList extends StatefulWidget {
+class GenreList extends StatelessWidget {
   const GenreList({super.key});
-
-  @override
-  State<GenreList> createState() => _GenreListState();
-}
-
-class _GenreListState extends State<GenreList> {
-  int currentGenre = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,16 +29,19 @@ class _GenreListState extends State<GenreList> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        setState(() {
-                          currentGenre = index;
-                        });
+                        context.read<GenreListCubit>().changeCurrentGenre(
+                              genre: state.listGenre[index],
+                            );
+                        context
+                            .read<PopularMoviesGenreCubit>()
+                            .loadPopularMovieGenre(genre: state.currentGenre);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
                           decoration: BoxDecoration(
-                            color: currentGenre == index
+                            color: state.currentGenre == state.listGenre[index]
                                 ? PrimaryColor.soft.withOpacity(0.7)
                                 : Colors.transparent,
                             borderRadius: const BorderRadius.all(
@@ -63,7 +60,8 @@ class _GenreListState extends State<GenreList> {
                                   state.listGenre[index].name,
                                   textAlign: TextAlign.center,
                                   style: context.textStyle.h5.copyWith(
-                                    color: currentGenre == index
+                                    color: state.currentGenre ==
+                                            state.listGenre[index]
                                         ? PrimaryColor.blueAccent
                                         : TextColor.white,
                                     fontWeight:

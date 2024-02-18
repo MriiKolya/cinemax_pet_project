@@ -35,4 +35,10 @@ class GenreListCubit extends Cubit<GenreListState> {
       ),
     );
   }
+
+  Future<void> changeCurrentGenre({required GenreEntity genre}) async {
+    if (state.currentGenre != genre) {
+      emit(state.copyWith(currentGenre: genre));
+    }
+  }
 }

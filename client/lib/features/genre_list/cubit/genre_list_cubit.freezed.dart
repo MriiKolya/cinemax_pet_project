@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$GenreListState {
   List<GenreEntity> get listGenre => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
+  GenreEntity get currentGenre => throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +32,11 @@ abstract class $GenreListStateCopyWith<$Res> {
           GenreListState value, $Res Function(GenreListState) then) =
       _$GenreListStateCopyWithImpl<$Res, GenreListState>;
   @useResult
-  $Res call({List<GenreEntity> listGenre, bool loading, Failure? failure});
+  $Res call(
+      {List<GenreEntity> listGenre,
+      bool loading,
+      GenreEntity currentGenre,
+      Failure? failure});
 
   $FailureCopyWith<$Res>? get failure;
 }
@@ -51,6 +56,7 @@ class _$GenreListStateCopyWithImpl<$Res, $Val extends GenreListState>
   $Res call({
     Object? listGenre = null,
     Object? loading = null,
+    Object? currentGenre = null,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -62,6 +68,10 @@ class _$GenreListStateCopyWithImpl<$Res, $Val extends GenreListState>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentGenre: null == currentGenre
+          ? _value.currentGenre
+          : currentGenre // ignore: cast_nullable_to_non_nullable
+              as GenreEntity,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -90,7 +100,11 @@ abstract class _$$GenreListStateImplCopyWith<$Res>
       __$$GenreListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<GenreEntity> listGenre, bool loading, Failure? failure});
+  $Res call(
+      {List<GenreEntity> listGenre,
+      bool loading,
+      GenreEntity currentGenre,
+      Failure? failure});
 
   @override
   $FailureCopyWith<$Res>? get failure;
@@ -109,6 +123,7 @@ class __$$GenreListStateImplCopyWithImpl<$Res>
   $Res call({
     Object? listGenre = null,
     Object? loading = null,
+    Object? currentGenre = null,
     Object? failure = freezed,
   }) {
     return _then(_$GenreListStateImpl(
@@ -120,6 +135,10 @@ class __$$GenreListStateImplCopyWithImpl<$Res>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentGenre: null == currentGenre
+          ? _value.currentGenre
+          : currentGenre // ignore: cast_nullable_to_non_nullable
+              as GenreEntity,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -134,6 +153,7 @@ class _$GenreListStateImpl implements _GenreListState {
   const _$GenreListStateImpl(
       {required final List<GenreEntity> listGenre,
       this.loading = false,
+      this.currentGenre = const GenreEntity(id: 28, name: 'Action'),
       this.failure})
       : _listGenre = listGenre;
 
@@ -149,11 +169,14 @@ class _$GenreListStateImpl implements _GenreListState {
   @JsonKey()
   final bool loading;
   @override
+  @JsonKey()
+  final GenreEntity currentGenre;
+  @override
   final Failure? failure;
 
   @override
   String toString() {
-    return 'GenreListState(listGenre: $listGenre, loading: $loading, failure: $failure)';
+    return 'GenreListState(listGenre: $listGenre, loading: $loading, currentGenre: $currentGenre, failure: $failure)';
   }
 
   @override
@@ -164,12 +187,18 @@ class _$GenreListStateImpl implements _GenreListState {
             const DeepCollectionEquality()
                 .equals(other._listGenre, _listGenre) &&
             (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.currentGenre, currentGenre) ||
+                other.currentGenre == currentGenre) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_listGenre), loading, failure);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listGenre),
+      loading,
+      currentGenre,
+      failure);
 
   @JsonKey(ignore: true)
   @override
@@ -183,12 +212,15 @@ abstract class _GenreListState implements GenreListState {
   const factory _GenreListState(
       {required final List<GenreEntity> listGenre,
       final bool loading,
+      final GenreEntity currentGenre,
       final Failure? failure}) = _$GenreListStateImpl;
 
   @override
   List<GenreEntity> get listGenre;
   @override
   bool get loading;
+  @override
+  GenreEntity get currentGenre;
   @override
   Failure? get failure;
   @override
