@@ -19,6 +19,7 @@ mixin _$PopularMoviesGenreState {
   ListMovieEntity get listPopularGenreMovie =>
       throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
+  GenreEntity get currentGenre => throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -33,7 +34,10 @@ abstract class $PopularMoviesGenreStateCopyWith<$Res> {
       _$PopularMoviesGenreStateCopyWithImpl<$Res, PopularMoviesGenreState>;
   @useResult
   $Res call(
-      {ListMovieEntity listPopularGenreMovie, bool loading, Failure? failure});
+      {ListMovieEntity listPopularGenreMovie,
+      bool loading,
+      GenreEntity currentGenre,
+      Failure? failure});
 
   $FailureCopyWith<$Res>? get failure;
 }
@@ -54,6 +58,7 @@ class _$PopularMoviesGenreStateCopyWithImpl<$Res,
   $Res call({
     Object? listPopularGenreMovie = null,
     Object? loading = null,
+    Object? currentGenre = null,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -65,6 +70,10 @@ class _$PopularMoviesGenreStateCopyWithImpl<$Res,
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentGenre: null == currentGenre
+          ? _value.currentGenre
+          : currentGenre // ignore: cast_nullable_to_non_nullable
+              as GenreEntity,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -95,7 +104,10 @@ abstract class _$$PopularMoviesGenreStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ListMovieEntity listPopularGenreMovie, bool loading, Failure? failure});
+      {ListMovieEntity listPopularGenreMovie,
+      bool loading,
+      GenreEntity currentGenre,
+      Failure? failure});
 
   @override
   $FailureCopyWith<$Res>? get failure;
@@ -116,6 +128,7 @@ class __$$PopularMoviesGenreStateImplCopyWithImpl<$Res>
   $Res call({
     Object? listPopularGenreMovie = null,
     Object? loading = null,
+    Object? currentGenre = null,
     Object? failure = freezed,
   }) {
     return _then(_$PopularMoviesGenreStateImpl(
@@ -127,6 +140,10 @@ class __$$PopularMoviesGenreStateImplCopyWithImpl<$Res>
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentGenre: null == currentGenre
+          ? _value.currentGenre
+          : currentGenre // ignore: cast_nullable_to_non_nullable
+              as GenreEntity,
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -141,6 +158,7 @@ class _$PopularMoviesGenreStateImpl implements _PopularMoviesGenreState {
   const _$PopularMoviesGenreStateImpl(
       {required this.listPopularGenreMovie,
       this.loading = false,
+      this.currentGenre = const GenreEntity(id: 0, name: 'All'),
       this.failure});
 
   @override
@@ -149,11 +167,14 @@ class _$PopularMoviesGenreStateImpl implements _PopularMoviesGenreState {
   @JsonKey()
   final bool loading;
   @override
+  @JsonKey()
+  final GenreEntity currentGenre;
+  @override
   final Failure? failure;
 
   @override
   String toString() {
-    return 'PopularMoviesGenreState(listPopularGenreMovie: $listPopularGenreMovie, loading: $loading, failure: $failure)';
+    return 'PopularMoviesGenreState(listPopularGenreMovie: $listPopularGenreMovie, loading: $loading, currentGenre: $currentGenre, failure: $failure)';
   }
 
   @override
@@ -164,12 +185,14 @@ class _$PopularMoviesGenreStateImpl implements _PopularMoviesGenreState {
             (identical(other.listPopularGenreMovie, listPopularGenreMovie) ||
                 other.listPopularGenreMovie == listPopularGenreMovie) &&
             (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.currentGenre, currentGenre) ||
+                other.currentGenre == currentGenre) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, listPopularGenreMovie, loading, failure);
+  int get hashCode => Object.hash(
+      runtimeType, listPopularGenreMovie, loading, currentGenre, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -183,12 +206,15 @@ abstract class _PopularMoviesGenreState implements PopularMoviesGenreState {
   const factory _PopularMoviesGenreState(
       {required final ListMovieEntity listPopularGenreMovie,
       final bool loading,
+      final GenreEntity currentGenre,
       final Failure? failure}) = _$PopularMoviesGenreStateImpl;
 
   @override
   ListMovieEntity get listPopularGenreMovie;
   @override
   bool get loading;
+  @override
+  GenreEntity get currentGenre;
   @override
   Failure? get failure;
   @override

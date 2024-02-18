@@ -34,7 +34,9 @@ class GenreList extends StatelessWidget {
                             );
                         context
                             .read<PopularMoviesGenreCubit>()
-                            .loadPopularMovieGenre(genre: state.currentGenre);
+                            .chagneCurrentGenre(
+                              genre: state.listGenre[index],
+                            );
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

@@ -41,7 +41,11 @@ class PopularMovieGenreRepository implements IPopularMovieGenreRepository {
         for (final data in results) {
           final movieDto = MovieDTO.fromJson(data as Map<String, dynamic>);
 
-          if (movieDto.genres.contains(genre.id)) {
+          if (genre.id != 0) {
+            if (movieDto.genres.contains(genre.id)) {
+              dtos.add(movieDto);
+            }
+          } else {
             dtos.add(movieDto);
           }
         }

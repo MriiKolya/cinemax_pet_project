@@ -11,8 +11,9 @@ class GenreListCubit extends Cubit<GenreListState> {
   final GenreRepository _repository;
   GenreListCubit({required GenreRepository repository})
       : _repository = repository,
-        super(const GenreListState(listGenre: []));
-
+        super(
+          const GenreListState(),
+        );
   Future<void> loadGenreList() async {
     if (state.loading != true) {
       emit(state.copyWith(loading: true));
@@ -26,13 +27,15 @@ class GenreListCubit extends Cubit<GenreListState> {
           failure: failure,
         ),
       ),
-      (succes) => emit(
-        state.copyWith(
-          loading: false,
-          listGenre: listGenre.getOrElse(() => []),
-          failure: null,
-        ),
-      ),
+      (success) {
+        emit(
+          state.copyWith(
+            loading: false,
+            listGenre: success.toList()..insert(0, GenreEntity.allGenre()),
+            failure: null,
+          ),
+        );
+      },
     );
   }
 

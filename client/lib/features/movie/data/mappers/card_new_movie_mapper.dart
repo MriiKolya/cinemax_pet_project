@@ -1,10 +1,10 @@
 import 'package:client/core/api_config.dart';
 import 'package:client/features/movie/data/entity/movie.dart';
 import 'package:intl/intl.dart';
-import 'package:ui_kit/component/new_movie_card/new_movie_card_model.dart';
+import 'package:ui_kit/component/poster_movie/poster_movie_model.dart';
 
-extension NewMovieCardMapper on MovieEntity {
-  NewMovieCardModel toCard() => NewMovieCardModel(
+extension PosterMovieMapper on MovieEntity {
+  PosterMovieModel toCard() => PosterMovieModel(
         title: title,
         poster: '${MovieQuery.image}$picture',
         release: releaseDate != null

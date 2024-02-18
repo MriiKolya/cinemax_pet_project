@@ -151,14 +151,15 @@ class __$$GenreListStateImplCopyWithImpl<$Res>
 
 class _$GenreListStateImpl implements _GenreListState {
   const _$GenreListStateImpl(
-      {required final List<GenreEntity> listGenre,
+      {final List<GenreEntity> listGenre = const [],
       this.loading = false,
-      this.currentGenre = const GenreEntity(id: 28, name: 'Action'),
+      this.currentGenre = const GenreEntity(id: 0, name: 'All'),
       this.failure})
       : _listGenre = listGenre;
 
   final List<GenreEntity> _listGenre;
   @override
+  @JsonKey()
   List<GenreEntity> get listGenre {
     if (_listGenre is EqualUnmodifiableListView) return _listGenre;
     // ignore: implicit_dynamic_type
@@ -210,7 +211,7 @@ class _$GenreListStateImpl implements _GenreListState {
 
 abstract class _GenreListState implements GenreListState {
   const factory _GenreListState(
-      {required final List<GenreEntity> listGenre,
+      {final List<GenreEntity> listGenre,
       final bool loading,
       final GenreEntity currentGenre,
       final Failure? failure}) = _$GenreListStateImpl;

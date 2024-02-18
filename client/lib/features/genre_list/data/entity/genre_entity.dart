@@ -9,6 +9,8 @@ class GenreEntity extends Equatable {
     required this.name,
   });
 
+  factory GenreEntity.allGenre() => const GenreEntity(id: 0, name: 'All');
+
   @override
   List<Object> get props => [id, name];
 }
