@@ -1,19 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_kit/component/new_movie_card/new_movie_card_model.dart';
+import 'package:ui_kit/component/poster_movie/poster_movie_model.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
-class NewMovieCard extends StatelessWidget {
-  const NewMovieCard({
+class PosterMovie extends StatelessWidget {
+  const PosterMovie({
     super.key,
-    required this.cardMovie,
+    required this.posterMovie,
   });
 
-  final NewMovieCardModel cardMovie;
+  final PosterMovieModel posterMovie;
 
   @override
   Widget build(BuildContext context) {
-    final style = context.newMovieCardStyle;
+    final style = context.posterMovieStyle;
     return SizedBox(
       width: style.width,
       height: style.height,
@@ -22,7 +22,7 @@ class NewMovieCard extends StatelessWidget {
           borderRadius: style.borderRadius,
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: CachedNetworkImageProvider(cardMovie.poster)),
+              image: CachedNetworkImageProvider(posterMovie.poster)),
         ),
         child: Padding(
           padding: style.contentPadding,
@@ -37,10 +37,10 @@ class NewMovieCard extends StatelessWidget {
                 ),
                 child: IntrinsicWidth(
                   child: ListTile(
-                    title: Text(cardMovie.title, style: style.titleStyle),
+                    title: Text(posterMovie.title, style: style.titleStyle),
                     subtitle: Text(
-                        cardMovie.release != null
-                            ? 'On ${cardMovie.release}'
+                        posterMovie.release != null
+                            ? 'On ${posterMovie.release}'
                             : 'No release date available',
                         style: style.releaseStyle),
                   ),

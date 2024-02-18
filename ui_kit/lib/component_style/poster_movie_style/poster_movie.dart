@@ -7,7 +7,7 @@ abstract class _Constants {
   static const double amountBorderRadius = 20;
 }
 
-class NewMovieCardStyle extends ThemeExtension<NewMovieCardStyle> {
+class PosterMovieStyle extends ThemeExtension<PosterMovieStyle> {
   final double width;
   final double height;
   final TextStyle titleStyle;
@@ -15,7 +15,7 @@ class NewMovieCardStyle extends ThemeExtension<NewMovieCardStyle> {
   final EdgeInsets contentPadding;
   final BorderRadius borderRadius;
 
-  NewMovieCardStyle({
+  PosterMovieStyle({
     required this.borderRadius,
     this.width = 300,
     this.height = 150,
@@ -24,7 +24,7 @@ class NewMovieCardStyle extends ThemeExtension<NewMovieCardStyle> {
     required this.contentPadding,
   });
 
-  factory NewMovieCardStyle.dark() => NewMovieCardStyle(
+  factory PosterMovieStyle.dark() => PosterMovieStyle(
         borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
         titleStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w600, color: TextColor.white),
@@ -33,7 +33,7 @@ class NewMovieCardStyle extends ThemeExtension<NewMovieCardStyle> {
         contentPadding: const EdgeInsets.all(_Constants.amountPadding),
       );
 
-  factory NewMovieCardStyle.light() => NewMovieCardStyle(
+  factory PosterMovieStyle.light() => PosterMovieStyle(
         borderRadius: BorderRadius.circular(_Constants.amountBorderRadius),
         titleStyle: CinemaxTypography.h4()
             .copyWith(fontWeight: FontWeight.w600, color: TextColor.black),
@@ -43,15 +43,15 @@ class NewMovieCardStyle extends ThemeExtension<NewMovieCardStyle> {
       );
 
   @override
-  NewMovieCardStyle lerp(
-    covariant NewMovieCardStyle? other,
+  PosterMovieStyle lerp(
+    covariant PosterMovieStyle? other,
     double t,
   ) {
     return this;
   }
 
   @override
-  NewMovieCardStyle copyWith({
+  PosterMovieStyle copyWith({
     double? width,
     double? height,
     TextStyle? titleStyle,
@@ -59,7 +59,7 @@ class NewMovieCardStyle extends ThemeExtension<NewMovieCardStyle> {
     EdgeInsets? contentPadding,
     BorderRadius? borderRadius,
   }) {
-    return NewMovieCardStyle(
+    return PosterMovieStyle(
       width: width ?? this.width,
       height: height ?? this.height,
       titleStyle: titleStyle ?? this.titleStyle,
