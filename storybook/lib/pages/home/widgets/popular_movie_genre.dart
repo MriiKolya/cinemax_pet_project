@@ -8,32 +8,32 @@ class PopularMovieGenre extends StatelessWidget {
   final list = [
     MovieCardModel(
         posterPicture:
-            'https://kinogo.inc/uploads/posts/2017-03/1490882002-409471279-legenda.jpg',
+            'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         averageRating: 9.8,
         title: 'Legend'),
     MovieCardModel(
         posterPicture:
-            'https://kinogo.inc/uploads/posts/2017-03/1490882002-409471279-legenda.jpg',
+            'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         averageRating: 9.8,
         title: 'Legend'),
     MovieCardModel(
         posterPicture:
-            'https://kinogo.inc/uploads/posts/2017-03/1490882002-409471279-legenda.jpg',
+            'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         averageRating: 9.8,
         title: 'Legend'),
     MovieCardModel(
         posterPicture:
-            'https://kinogo.inc/uploads/posts/2017-03/1490882002-409471279-legenda.jpg',
+            'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         averageRating: 9.8,
         title: 'Legend'),
     MovieCardModel(
         posterPicture:
-            'https://kinogo.inc/uploads/posts/2017-03/1490882002-409471279-legenda.jpg',
+            'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         averageRating: 9.8,
         title: 'Legend'),
     MovieCardModel(
         posterPicture:
-            'https://kinogo.inc/uploads/posts/2017-03/1490882002-409471279-legenda.jpg',
+            'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         averageRating: 9.8,
         title: 'Legend'),
   ];

@@ -10,7 +10,7 @@ class GenreList extends StatefulWidget {
 }
 
 class _GenreListState extends State<GenreList> {
-  final currentGenre = 0;
+  var currentGenre = 0;
   final listGenre = [
     'Action',
     'Adventure'
@@ -30,7 +30,7 @@ class _GenreListState extends State<GenreList> {
             return GestureDetector(
               onTap: () {
                 setState(() {
-                  currentGenre == index;
+                  currentGenre = index;
                 });
               },
               child: Padding(

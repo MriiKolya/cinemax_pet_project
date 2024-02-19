@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storybook/cinemax_storybook.dart';
 import 'package:storybook/pages/component_page.dart';
+import 'package:storybook/pages/home/home_page.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 class StoryBookApp extends StatelessWidget {
@@ -22,7 +23,7 @@ class StoryBookApp extends StatelessWidget {
                 ),
                 Story(
                   name: 'Screens/home',
-                  builder: (context) => const ComponentPage(),
+                  builder: (context) => const HomePage(),
                 ),
               ],
             ),
