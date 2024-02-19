@@ -7,46 +7,51 @@ class PosterMovie extends StatelessWidget {
   const PosterMovie({
     super.key,
     required this.posterMovie,
+    this.onTap,
   });
 
   final PosterMovieModel posterMovie;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final style = context.posterMovieStyle;
-    return SizedBox(
-      width: style.width,
-      height: style.height,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: style.borderRadius,
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: CachedNetworkImageProvider(posterMovie.poster)),
-        ),
-        child: Padding(
-          padding: style.contentPadding,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.black45,
-                  borderRadius: style.borderRadius,
-                ),
-                child: IntrinsicWidth(
-                  child: ListTile(
-                    title: Text(posterMovie.title, style: style.titleStyle),
-                    subtitle: Text(
-                        posterMovie.release != null
-                            ? 'On ${posterMovie.release}'
-                            : 'No release date available',
-                        style: style.releaseStyle),
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: style.width,
+        height: style.height,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: style.borderRadius,
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: CachedNetworkImageProvider(posterMovie.poster)),
+          ),
+          child: Padding(
+            padding: style.contentPadding,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.black45,
+                    borderRadius: style.borderRadius,
+                  ),
+                  child: IntrinsicWidth(
+                    child: ListTile(
+                      title: Text(posterMovie.title, style: style.titleStyle),
+                      subtitle: Text(
+                          posterMovie.release != null
+                              ? 'On ${posterMovie.release}'
+                              : 'No release date available',
+                          style: style.releaseStyle),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -9,61 +9,66 @@ class MovieCard extends StatelessWidget {
   const MovieCard({
     super.key,
     required this.cardModel,
+    this.onTap,
   });
 
   final MovieCardModel cardModel;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Container(
-        height: 20,
-        decoration: BoxDecoration(
-          color: PrimaryColor.soft,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Container(
+          height: 20,
+          decoration: BoxDecoration(
+            color: PrimaryColor.soft,
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
           ),
-        ),
-        child: IntrinsicWidth(
-          child: SizedBox(
-            width: 150,
-            child: Column(
-              children: [
-                Container(
-                    height: 180,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: CachedNetworkImageProvider(
-                          cardModel.posterPicture,
+          child: IntrinsicWidth(
+            child: SizedBox(
+              width: 150,
+              child: Column(
+                children: [
+                  Container(
+                      height: 180,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: CachedNetworkImageProvider(
+                            cardModel.posterPicture,
+                          ),
                         ),
                       ),
-                    ),
-                    child: MovieRating(
-                      averageRating: cardModel.averageRating,
-                    )),
-                ListTile(
-                    title: Text(
-                      cardModel.title,
-                      style: context.textStyle.h5.copyWith(
-                        fontWeight: FontWeight.w600,
+                      child: MovieRating(
+                        averageRating: cardModel.averageRating,
+                      )),
+                  ListTile(
+                      title: Text(
+                        cardModel.title,
+                        style: context.textStyle.h5.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    subtitle: cardModel.genre != null
-                        ? Text(
-                            cardModel.genre.toString(),
-                            style: context.textStyle.h5.copyWith(
-                                color: TextColor.grey,
-                                overflow: TextOverflow.ellipsis),
-                          )
-                        : null),
-              ],
+                      subtitle: cardModel.genre != null
+                          ? Text(
+                              cardModel.genre.toString(),
+                              style: context.textStyle.h5.copyWith(
+                                  color: TextColor.grey,
+                                  overflow: TextOverflow.ellipsis),
+                            )
+                          : null),
+                ],
+              ),
             ),
           ),
         ),

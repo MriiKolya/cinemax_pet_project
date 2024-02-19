@@ -6,10 +6,12 @@ class CinemaxIcon extends StatelessWidget {
     super.key,
     required this.icon,
     this.onTap,
+    this.iconColor,
   });
 
   final IconData icon;
   final VoidCallback? onTap;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class CinemaxIcon extends StatelessWidget {
         onTap: onTap,
         child: Icon(
           icon,
-          color: style.iconColor,
+          color: iconColor ?? style.iconColor,
           size: 24,
         ),
       ),

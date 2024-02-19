@@ -14,6 +14,7 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.action,
     this.title,
     this.centerTitle = true,
+    this.backgroundColor,
   }) : super(key: key);
 
   final CinemaxIcon? actionIcon;
@@ -24,6 +25,7 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? action;
   final Widget? title;
   final bool? centerTitle;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: AppBar(
         centerTitle: centerTitle,
-        backgroundColor: style.backgroundColor,
+        backgroundColor: backgroundColor ?? style.backgroundColor,
         title: TitleAppBar(
           title: title,
           titleText: titleText,
