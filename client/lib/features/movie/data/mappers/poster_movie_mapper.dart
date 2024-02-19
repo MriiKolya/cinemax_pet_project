@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:ui_kit/component/poster_movie/poster_movie_model.dart';
 
 extension PosterMovieMapper on MovieEntity {
-  PosterMovieModel toCard() => PosterMovieModel(
+  PosterMovieModel toPoster() => PosterMovieModel(
         title: title,
         poster: '${MovieQuery.image}$picture',
         release: releaseDate != null

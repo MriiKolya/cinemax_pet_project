@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:client/core/di/dependency_provider.dart';
-import 'package:client/features/movie/data/mappers/card_new_movie_mapper.dart';
+import 'package:client/features/movie/data/mappers/poster_movie_mapper.dart';
 import 'package:client/features/movie/new_movie_list/cubit/new_movie_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +36,7 @@ class NewMovieList extends StatelessWidget {
                     itemCount: state.listNewMovie.movies?.length,
                     itemBuilder: (context, index, realIndex) {
                       return PosterMovie(
-                        posterMovie: state.listNewMovie.movies![index].toCard(),
+                        posterMovie: state.listNewMovie.movies![index].toPoster(),
                       );
                     }),
               ],
