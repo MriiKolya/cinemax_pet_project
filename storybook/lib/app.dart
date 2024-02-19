@@ -1,14 +1,7 @@
-import 'package:client/screens/auth/log_in/log_in_screen.dart';
-import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
-import 'package:client/screens/auth/verification_email/verification_email_screen.dart';
-import 'package:client/screens/splash/splash_screen.dart';
-import 'package:client/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storybook/cinemax_storybook.dart';
 import 'package:storybook/pages/component_page.dart';
-import 'package:storybook/pages/nab_bar_page.dart';
-
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 class StoryBookApp extends StatelessWidget {
@@ -24,33 +17,11 @@ class StoryBookApp extends StatelessWidget {
             child: CinemaxStorybook(
               stories: <Story>[
                 Story(
-                  name: 'Splash',
-                  builder: (context) => const SplashScreen(),
-                ),
-                Story(
-                  name: 'Welcome',
-                  builder: (context) => const WelcomeScreen(),
-                ),
-                Story(
-                  name: 'SignUp',
-                  builder: (context) => const SignUpScreen(),
-                ),
-                Story(
-                  name: 'Login',
-                  builder: (context) => const LoginScreen(),
-                ),
-                Story(
-                  name: 'NabBar',
-                  builder: (context) => const NavBar(),
-                ),
-                Story(
-                  name: 'PinPut',
-                  builder: (context) => const VerificationEmailScreen(
-                    emailAddress: 'kolyamriy16@gmail.com',
-                  ),
-                ),
-                Story(
                   name: 'Component/InputText',
+                  builder: (context) => const ComponentPage(),
+                ),
+                Story(
+                  name: 'Screens/home',
                   builder: (context) => const ComponentPage(),
                 ),
               ],
