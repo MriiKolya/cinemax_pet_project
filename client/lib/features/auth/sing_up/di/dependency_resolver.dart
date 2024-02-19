@@ -1,11 +1,11 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/features/auth/repository/auth_repository.dart';
-import 'package:client/features/login/cubit/login_form_cubit.dart';
+import 'package:client/features/auth/sing_up/cubit/sign_up_form_cubit.dart';
 
-class LoginDependencyResolver {
+class SignUpDependencyResolver {
   static void register() {
-    DependencyProvider.registerFactory<LoginFormCubit>(
-      () => LoginFormCubit(
+    DependencyProvider.registerFactory<SignUpFormCubit>(
+      () => SignUpFormCubit(
         repository: DependencyProvider.get<AuthRepository>(),
       ),
     );

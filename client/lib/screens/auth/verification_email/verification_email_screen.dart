@@ -1,4 +1,4 @@
-import 'package:client/features/verification_email/verification_email.dart';
+import 'package:client/features/auth/verification_email/verification_email.dart';
 import 'package:client/screens/auth/verification_email/widget/verification_title.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -29,10 +29,7 @@ class VerificationEmailScreen extends StatelessWidget {
           child: Column(
             children: [
               VerificationTitle(emailAddress: emailAddress),
-              Expanded(
-                  child: VerificationEmailForm(
-                email: emailAddress,
-              )),
+              Expanded(child: VerificationEmailForm(email: emailAddress)),
               const Spacer(),
             ],
           ),

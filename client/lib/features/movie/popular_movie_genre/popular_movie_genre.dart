@@ -1,7 +1,9 @@
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/movie/data/mappers/movie_card_mapper.dart';
 import 'package:client/features/movie/popular_movie_genre/cubit/popular_movies_genre_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/movie_card/movie_card.dart';
 
 class PopularMovieGenre extends StatelessWidget {
@@ -26,7 +28,11 @@ class PopularMovieGenre extends StatelessWidget {
                   final card = state.listPopularGenreMovie.movies![index]
                       .toCard()
                     ..genre = state.currentGenre.name;
-                  return MovieCard(cardModel: card);
+                  return MovieCard(
+                    cardModel: card,
+                    onTap: () => context.goNamed(AppRouterName.detailMovieName,
+                        extra: state.listPopularGenreMovie.movies?[index].id),
+                  );
                 }),
           );
         }

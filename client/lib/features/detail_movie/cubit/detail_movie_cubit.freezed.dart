@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'genre_list_cubit.dart';
+part of 'detail_movie_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,31 +15,31 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$GenreListState {
-  List<GenreEntity> get listGenre => throw _privateConstructorUsedError;
+mixin _$DetailMovieState {
+  MovieDetailEntity get movieDetail => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GenreListStateCopyWith<GenreListState> get copyWith =>
+  $DetailMovieStateCopyWith<DetailMovieState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GenreListStateCopyWith<$Res> {
-  factory $GenreListStateCopyWith(
-          GenreListState value, $Res Function(GenreListState) then) =
-      _$GenreListStateCopyWithImpl<$Res, GenreListState>;
+abstract class $DetailMovieStateCopyWith<$Res> {
+  factory $DetailMovieStateCopyWith(
+          DetailMovieState value, $Res Function(DetailMovieState) then) =
+      _$DetailMovieStateCopyWithImpl<$Res, DetailMovieState>;
   @useResult
-  $Res call({List<GenreEntity> listGenre, bool loading, Failure? failure});
+  $Res call({MovieDetailEntity movieDetail, bool loading, Failure? failure});
 
   $FailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
-class _$GenreListStateCopyWithImpl<$Res, $Val extends GenreListState>
-    implements $GenreListStateCopyWith<$Res> {
-  _$GenreListStateCopyWithImpl(this._value, this._then);
+class _$DetailMovieStateCopyWithImpl<$Res, $Val extends DetailMovieState>
+    implements $DetailMovieStateCopyWith<$Res> {
+  _$DetailMovieStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -49,15 +49,15 @@ class _$GenreListStateCopyWithImpl<$Res, $Val extends GenreListState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listGenre = null,
+    Object? movieDetail = null,
     Object? loading = null,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
-      listGenre: null == listGenre
-          ? _value.listGenre
-          : listGenre // ignore: cast_nullable_to_non_nullable
-              as List<GenreEntity>,
+      movieDetail: null == movieDetail
+          ? _value.movieDetail
+          : movieDetail // ignore: cast_nullable_to_non_nullable
+              as MovieDetailEntity,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -83,39 +83,39 @@ class _$GenreListStateCopyWithImpl<$Res, $Val extends GenreListState>
 }
 
 /// @nodoc
-abstract class _$$GenreListStateImplCopyWith<$Res>
-    implements $GenreListStateCopyWith<$Res> {
-  factory _$$GenreListStateImplCopyWith(_$GenreListStateImpl value,
-          $Res Function(_$GenreListStateImpl) then) =
-      __$$GenreListStateImplCopyWithImpl<$Res>;
+abstract class _$$DetailMovieStateImplCopyWith<$Res>
+    implements $DetailMovieStateCopyWith<$Res> {
+  factory _$$DetailMovieStateImplCopyWith(_$DetailMovieStateImpl value,
+          $Res Function(_$DetailMovieStateImpl) then) =
+      __$$DetailMovieStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<GenreEntity> listGenre, bool loading, Failure? failure});
+  $Res call({MovieDetailEntity movieDetail, bool loading, Failure? failure});
 
   @override
   $FailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
-class __$$GenreListStateImplCopyWithImpl<$Res>
-    extends _$GenreListStateCopyWithImpl<$Res, _$GenreListStateImpl>
-    implements _$$GenreListStateImplCopyWith<$Res> {
-  __$$GenreListStateImplCopyWithImpl(
-      _$GenreListStateImpl _value, $Res Function(_$GenreListStateImpl) _then)
+class __$$DetailMovieStateImplCopyWithImpl<$Res>
+    extends _$DetailMovieStateCopyWithImpl<$Res, _$DetailMovieStateImpl>
+    implements _$$DetailMovieStateImplCopyWith<$Res> {
+  __$$DetailMovieStateImplCopyWithImpl(_$DetailMovieStateImpl _value,
+      $Res Function(_$DetailMovieStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listGenre = null,
+    Object? movieDetail = null,
     Object? loading = null,
     Object? failure = freezed,
   }) {
-    return _then(_$GenreListStateImpl(
-      listGenre: null == listGenre
-          ? _value._listGenre
-          : listGenre // ignore: cast_nullable_to_non_nullable
-              as List<GenreEntity>,
+    return _then(_$DetailMovieStateImpl(
+      movieDetail: null == movieDetail
+          ? _value.movieDetail
+          : movieDetail // ignore: cast_nullable_to_non_nullable
+              as MovieDetailEntity,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -130,22 +130,12 @@ class __$$GenreListStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GenreListStateImpl implements _GenreListState {
-  const _$GenreListStateImpl(
-      {final List<GenreEntity> listGenre = const [],
-      this.loading = false,
-      this.failure})
-      : _listGenre = listGenre;
+class _$DetailMovieStateImpl implements _DetailMovieState {
+  _$DetailMovieStateImpl(
+      {required this.movieDetail, this.loading = false, this.failure});
 
-  final List<GenreEntity> _listGenre;
   @override
-  @JsonKey()
-  List<GenreEntity> get listGenre {
-    if (_listGenre is EqualUnmodifiableListView) return _listGenre;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_listGenre);
-  }
-
+  final MovieDetailEntity movieDetail;
   @override
   @JsonKey()
   final bool loading;
@@ -154,46 +144,45 @@ class _$GenreListStateImpl implements _GenreListState {
 
   @override
   String toString() {
-    return 'GenreListState(listGenre: $listGenre, loading: $loading, failure: $failure)';
+    return 'DetailMovieState(movieDetail: $movieDetail, loading: $loading, failure: $failure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GenreListStateImpl &&
-            const DeepCollectionEquality()
-                .equals(other._listGenre, _listGenre) &&
+            other is _$DetailMovieStateImpl &&
+            (identical(other.movieDetail, movieDetail) ||
+                other.movieDetail == movieDetail) &&
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_listGenre), loading, failure);
+  int get hashCode => Object.hash(runtimeType, movieDetail, loading, failure);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GenreListStateImplCopyWith<_$GenreListStateImpl> get copyWith =>
-      __$$GenreListStateImplCopyWithImpl<_$GenreListStateImpl>(
+  _$$DetailMovieStateImplCopyWith<_$DetailMovieStateImpl> get copyWith =>
+      __$$DetailMovieStateImplCopyWithImpl<_$DetailMovieStateImpl>(
           this, _$identity);
 }
 
-abstract class _GenreListState implements GenreListState {
-  const factory _GenreListState(
-      {final List<GenreEntity> listGenre,
+abstract class _DetailMovieState implements DetailMovieState {
+  factory _DetailMovieState(
+      {required final MovieDetailEntity movieDetail,
       final bool loading,
-      final Failure? failure}) = _$GenreListStateImpl;
+      final Failure? failure}) = _$DetailMovieStateImpl;
 
   @override
-  List<GenreEntity> get listGenre;
+  MovieDetailEntity get movieDetail;
   @override
   bool get loading;
   @override
   Failure? get failure;
   @override
   @JsonKey(ignore: true)
-  _$$GenreListStateImplCopyWith<_$GenreListStateImpl> get copyWith =>
+  _$$DetailMovieStateImplCopyWith<_$DetailMovieStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

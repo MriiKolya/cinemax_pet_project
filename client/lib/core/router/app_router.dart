@@ -1,6 +1,7 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/auth/bloc/auth_bloc.dart';
+import 'package:client/features/detail_movie/detail_movie.dart';
 import 'package:client/screens/auth/log_in/log_in_screen.dart';
 import 'package:client/screens/auth/reset_password/reset_password_screen.dart';
 import 'package:client/screens/auth/sign_up/sing_up_screen.dart';
@@ -29,12 +30,13 @@ class AppRoutes {
   static const String _resetPasswordPath = 'resetPassword';
   static const String _verificationEmailPath = 'verificationEmail';
   static const String _singUpPath = 'singUp';
+  static const String _detailMoviePath = 'detailMovie';
   static const String _homePath = '/home';
   static const String _searchPath = '/search';
   static const String _favoritePath = '/favorite';
   static const String _profilePath = '/profile';
 
-  final GoRouter router = GoRouter(
+  static final GoRouter router = GoRouter(
     navigatorKey: rootNavigationKey,
     initialLocation: AppRoutes._splashPath,
     routes: [
@@ -53,10 +55,21 @@ class AppRoutes {
           StatefulShellBranch(
             routes: <RouteBase>[
               GoRoute(
-                name: AppRouterName.homeName,
-                path: AppRoutes._homePath,
-                builder: (_, state) => const HomeScreen(),
-              ),
+                  name: AppRouterName.homeName,
+                  path: AppRoutes._homePath,
+                  builder: (_, state) => const HomeScreen(),
+                  routes: [
+                    GoRoute(
+                      path: _detailMoviePath,
+                      name: AppRouterName.detailMovieName,
+                      pageBuilder: (_, state) {
+                        final id = state.extra! as int;
+                        return CupertinoPage(
+                          child: DetailMovieScreen(id: id),
+                        );
+                      },
+                    ),
+                  ]),
             ],
           ),
           StatefulShellBranch(

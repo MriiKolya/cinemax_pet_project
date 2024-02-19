@@ -1,5 +1,5 @@
 import 'package:client/core/validator/auth_failure/auth_failure.dart';
-import 'package:client/features/login/model/user_model.dart';
+import 'package:client/features/auth/login/model/user_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_auth/firebase_auth.dart';

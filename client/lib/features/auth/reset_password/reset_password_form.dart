@@ -1,6 +1,6 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/router/app_router_name.dart';
-import 'package:client/features/reset_password/cubit/reset_password_cubit.dart';
+import 'package:client/features/auth/reset_password/cubit/reset_password_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

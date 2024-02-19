@@ -7,4 +7,5 @@ abstract class AppRouterName {
   static const String profilelName = 'profile';
   static const String resetPasswordName = 'resetPassword';
   static const String verificationEmailName = 'verificationEmai';
+  static const String detailMovieName = 'detailMovie';
 }

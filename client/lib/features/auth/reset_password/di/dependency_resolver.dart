@@ -1,11 +1,11 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/features/auth/repository/auth_repository.dart';
-import 'package:client/features/verification_email/cubit/verification_email_cubit.dart';
+import 'package:client/features/auth/reset_password/cubit/reset_password_cubit.dart';
 
-class VerificationDependencyResolver {
+class ResetPasswordDependencyResolver {
   static void register() {
-    DependencyProvider.registerFactory<VerificationEmailCubit>(
-      () => VerificationEmailCubit(
+    DependencyProvider.registerFactory<ResetPasswordCubit>(
+      () => ResetPasswordCubit(
         repository: DependencyProvider.get<AuthRepository>(),
       ),
     );

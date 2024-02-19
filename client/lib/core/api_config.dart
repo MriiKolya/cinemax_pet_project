@@ -3,6 +3,7 @@ abstract class MovieQuery {
   static const String image = 'https://image.tmdb.org/t/p/w500/';
   static const String queryNowPlaying = 'now_playing';
   static const String querypopular = 'popular';
+  
 
   static const String genreUrl =
       'https://api.themoviedb.org/3/genre/movie/list?';

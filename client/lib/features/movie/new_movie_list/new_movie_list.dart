@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:client/core/di/dependency_provider.dart';
+import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/movie/data/mappers/poster_movie_mapper.dart';
 import 'package:client/features/movie/new_movie_list/cubit/new_movie_list_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/poster_movie/poster_movie.dart';
 
 class NewMovieList extends StatelessWidget {
@@ -36,7 +38,11 @@ class NewMovieList extends StatelessWidget {
                     itemCount: state.listNewMovie.movies?.length,
                     itemBuilder: (context, index, realIndex) {
                       return PosterMovie(
-                        posterMovie: state.listNewMovie.movies![index].toPoster(),
+                        onTap: () => context.goNamed(
+                            AppRouterName.detailMovieName,
+                            extra: state.listNewMovie.movies![index].id),
+                        posterMovie:
+                            state.listNewMovie.movies![index].toPoster(),
                       );
                     }),
               ],

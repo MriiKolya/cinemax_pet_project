@@ -32,8 +32,7 @@ class NewMovieListCubit extends Cubit<NewMovieListState> {
       (succes) => emit(
         state.copyWith(
           loading: false,
-          listNewMovie:
-              listNewMovie.getOrElse(() => const ListMovieEntity(movies: [])),
+          listNewMovie: succes,
           failure: null,
         ),
       ),

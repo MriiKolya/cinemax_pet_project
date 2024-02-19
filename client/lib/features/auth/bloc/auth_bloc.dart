@@ -1,9 +1,8 @@
 import 'dart:async';
 
+import 'package:client/features/auth/login/model/user_model.dart';
 import 'package:client/features/auth/repository/auth_repository.dart';
-import 'package:client/features/login/model/user_model.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'auth_event.dart';

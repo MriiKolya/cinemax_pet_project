@@ -1,5 +1,4 @@
-
-import 'package:client/features/login/login_form.dart';
+import 'package:client/features/auth/login/login_form.dart';
 import 'package:client/screens/auth/widgets/title_sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
