@@ -31,7 +31,7 @@ class ComponentPage extends StatelessWidget {
                 prefixIcon: CinemaxIcons.eyeOff,
                 suffixIcon: CinemaxIcons.search,
               ),
-              CinemaxFilledButton(
+              const CinemaxFilledButton(
                 label: 'Tab Bar',
               ),
               CinemaxTextButton(

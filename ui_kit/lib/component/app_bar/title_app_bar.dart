@@ -17,24 +17,30 @@ class TitleAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     if (titleText != null) {
       return RichText(
-          text: TextSpan(children: [
-        TextSpan(
-          text: titleText,
-          style: context.appBarStyle.titleTextStyle,
-        ),
-        if (subTitle != null)
-          TextSpan(
-            children: [
-              const TextSpan(text: '\n'),
+        text: TextSpan(
+          style: context.appBarStyle.titleTextStyle.copyWith(
+            overflow: TextOverflow.ellipsis,
+          ),
+          children: [
+            TextSpan(
+              text: titleText,
+              style: context.appBarStyle.titleTextStyle,
+            ),
+            if (subTitle != null)
               TextSpan(
-                text: subTitle,
-                style: context.appBarStyle.subTitleTextStyle,
+                children: [
+                  const TextSpan(text: '\n'),
+                  TextSpan(
+                    text: subTitle,
+                    style: context.appBarStyle.subTitleTextStyle,
+                  )
+                ],
               )
-            ],
-          )
-        else
-          const TextSpan()
-      ]));
+            else
+              const TextSpan()
+          ],
+        ),
+      );
     } else {
       return title ?? const SizedBox.shrink();
     }
