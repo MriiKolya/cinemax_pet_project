@@ -21,6 +21,10 @@ class StoryBookApp extends StatelessWidget {
                   name: 'Component/InputText',
                   builder: (context) => const ComponentPage(),
                 ),
+                // Story(
+                //   name: 'Youtube',
+                //   builder: (context) => MyHomePage(),
+                // ),
                 Story(
                   name: 'Screens/home',
                   builder: (context) => const HomePage(),
