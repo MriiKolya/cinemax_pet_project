@@ -48,7 +48,6 @@ class MovieTraillerState extends State<MovieTrailler> {
         ..loadMovieTrailer(movieId: widget.movieId),
       child: BlocBuilder<MovieTrailerCubit, MovieTrailerState>(
         builder: (context, state) {
-          debugPrint(state.movieTrailer.youtubeKey);
           if (state.loading) {
             return const Center(child: CircularProgressIndicator());
           }

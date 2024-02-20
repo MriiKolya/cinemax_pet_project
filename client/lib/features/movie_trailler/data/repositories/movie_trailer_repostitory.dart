@@ -2,7 +2,6 @@
 
 import 'package:client/core/api_config.dart';
 import 'package:client/core/error/failure.dart';
-
 import 'package:client/features/movie_trailler/data/dtos/movie_trailer_dto.dart';
 import 'package:client/features/movie_trailler/data/entity/movie_trailer_entity.dart';
 import 'package:client/features/movie_trailler/data/mappers/movie_trailer_maper.dart';
@@ -26,28 +25,40 @@ class MovieTrailerRepository implements IMovieTrailerRepository {
   }) async {
     try {
       final url = '${MovieQuery.baseUrl}$id/${MovieQuery.queryTrailer}';
-      final response =
-          await _dio.get(url, queryParameters: MovieQuery.queryParametersBase);
+      final response = await _dio.get(
+        url,
+        queryParameters: MovieQuery.queryParametersBase,
+      );
       final responseData = response.data;
-      MovieTrailerDTO? movieTrailerDTO;
+
       if (responseData is Map<String, dynamic> &&
           responseData.containsKey('results')) {
         final results = responseData['results'] as List<dynamic>;
+        MovieTrailerDTO? movieTrailerDTO;
 
         for (final data in results) {
           final movieDto =
               MovieTrailerDTO.fromJson(data as Map<String, dynamic>);
-
           if (movieDto.name == 'Official Trailer') {
             movieTrailerDTO = movieDto;
+            break; // Найден официальный трейлер, выходим из цикла
           }
         }
-      } else {
-        throw Exception('Unexpected data format: $responseData');
-      }
-      if (movieTrailerDTO != null) {
-        final movieTrailerEntity = movieTrailerDTO.toDomain();
-        return right(movieTrailerEntity);
+
+        if (movieTrailerDTO != null) {
+          final movieTrailerEntity = movieTrailerDTO.toDomain();
+          return right(movieTrailerEntity);
+        } else {
+          // Если официальный трейлер не найден, возвращаем первый трейлер
+          if (results.isNotEmpty) {
+            final movieDto =
+                MovieTrailerDTO.fromJson(results.first as Map<String, dynamic>);
+            final movieTrailerEntity = movieDto.toDomain();
+            return right(movieTrailerEntity);
+          } else {
+            return left(const Failure.serverError());
+          }
+        }
       } else {
         return left(const Failure.serverError());
       }
