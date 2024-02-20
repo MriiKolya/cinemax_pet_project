@@ -3,6 +3,7 @@ import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/features/detail_movie/cubit/detail_movie_cubit.dart';
 import 'package:client/features/detail_movie/widgets/add_info_movie.dart';
+import 'package:client/features/movie/movie_recommendations/movie_recommendations.dart';
 import 'package:client/features/movie_trailler/movie_trailler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -149,10 +150,31 @@ class DetailMovieScreen extends StatelessWidget {
                         const SizedBox(height: 30),
                         SizedBox(
                           width: double.infinity,
-                          height: 450,
+                          height: 300,
                           child: MovieTrailler(
                             movieId: state.movieDetail.id,
                           ),
+                        ),
+                        const SizedBox(height: 30),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                            horizontal: 10,
+                          ),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Recommendations',
+                              style: context.textStyle.h3.copyWith(
+                                fontWeight: FontWeightStyle.medium.fontWeight,
+                                color: TextColor.whiteGrey,
+                              ),
+                            ),
+                          ),
+                        ),
+                        MovieRecommendations(
+                          idMovie: id,
+                          genre: state.movieDetail.genres,
                         )
                       ],
                     ),

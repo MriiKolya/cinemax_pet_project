@@ -18,6 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MovieTrailerState {
   MovieTrailerEntity get movieTrailer => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
+  @Deprecated('Not Working')
+  bool get startPlayer => throw _privateConstructorUsedError;
+  @Deprecated('Not Working')
+  bool get mute => throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +35,12 @@ abstract class $MovieTrailerStateCopyWith<$Res> {
           MovieTrailerState value, $Res Function(MovieTrailerState) then) =
       _$MovieTrailerStateCopyWithImpl<$Res, MovieTrailerState>;
   @useResult
-  $Res call({MovieTrailerEntity movieTrailer, bool loading, Failure? failure});
+  $Res call(
+      {MovieTrailerEntity movieTrailer,
+      bool loading,
+      @Deprecated('Not Working') bool startPlayer,
+      @Deprecated('Not Working') bool mute,
+      Failure? failure});
 
   $FailureCopyWith<$Res>? get failure;
 }
@@ -51,6 +60,8 @@ class _$MovieTrailerStateCopyWithImpl<$Res, $Val extends MovieTrailerState>
   $Res call({
     Object? movieTrailer = null,
     Object? loading = null,
+    Object? startPlayer = null,
+    Object? mute = null,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -61,6 +72,14 @@ class _$MovieTrailerStateCopyWithImpl<$Res, $Val extends MovieTrailerState>
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      startPlayer: null == startPlayer
+          ? _value.startPlayer
+          : startPlayer // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mute: null == mute
+          ? _value.mute
+          : mute // ignore: cast_nullable_to_non_nullable
               as bool,
       failure: freezed == failure
           ? _value.failure
@@ -90,7 +109,12 @@ abstract class _$$MovieTrailerStateImplCopyWith<$Res>
       __$$MovieTrailerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({MovieTrailerEntity movieTrailer, bool loading, Failure? failure});
+  $Res call(
+      {MovieTrailerEntity movieTrailer,
+      bool loading,
+      @Deprecated('Not Working') bool startPlayer,
+      @Deprecated('Not Working') bool mute,
+      Failure? failure});
 
   @override
   $FailureCopyWith<$Res>? get failure;
@@ -109,6 +133,8 @@ class __$$MovieTrailerStateImplCopyWithImpl<$Res>
   $Res call({
     Object? movieTrailer = null,
     Object? loading = null,
+    Object? startPlayer = null,
+    Object? mute = null,
     Object? failure = freezed,
   }) {
     return _then(_$MovieTrailerStateImpl(
@@ -119,6 +145,14 @@ class __$$MovieTrailerStateImplCopyWithImpl<$Res>
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      startPlayer: null == startPlayer
+          ? _value.startPlayer
+          : startPlayer // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mute: null == mute
+          ? _value.mute
+          : mute // ignore: cast_nullable_to_non_nullable
               as bool,
       failure: freezed == failure
           ? _value.failure
@@ -132,7 +166,11 @@ class __$$MovieTrailerStateImplCopyWithImpl<$Res>
 
 class _$MovieTrailerStateImpl extends _MovieTrailerState {
   _$MovieTrailerStateImpl(
-      {required this.movieTrailer, this.loading = false, this.failure})
+      {required this.movieTrailer,
+      this.loading = false,
+      @Deprecated('Not Working') this.startPlayer = false,
+      @Deprecated('Not Working') this.mute = false,
+      this.failure})
       : super._();
 
   @override
@@ -141,11 +179,19 @@ class _$MovieTrailerStateImpl extends _MovieTrailerState {
   @JsonKey()
   final bool loading;
   @override
+  @JsonKey()
+  @Deprecated('Not Working')
+  final bool startPlayer;
+  @override
+  @JsonKey()
+  @Deprecated('Not Working')
+  final bool mute;
+  @override
   final Failure? failure;
 
   @override
   String toString() {
-    return 'MovieTrailerState(movieTrailer: $movieTrailer, loading: $loading, failure: $failure)';
+    return 'MovieTrailerState(movieTrailer: $movieTrailer, loading: $loading, startPlayer: $startPlayer, mute: $mute, failure: $failure)';
   }
 
   @override
@@ -156,11 +202,15 @@ class _$MovieTrailerStateImpl extends _MovieTrailerState {
             (identical(other.movieTrailer, movieTrailer) ||
                 other.movieTrailer == movieTrailer) &&
             (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.startPlayer, startPlayer) ||
+                other.startPlayer == startPlayer) &&
+            (identical(other.mute, mute) || other.mute == mute) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, movieTrailer, loading, failure);
+  int get hashCode => Object.hash(
+      runtimeType, movieTrailer, loading, startPlayer, mute, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -174,6 +224,8 @@ abstract class _MovieTrailerState extends MovieTrailerState {
   factory _MovieTrailerState(
       {required final MovieTrailerEntity movieTrailer,
       final bool loading,
+      @Deprecated('Not Working') final bool startPlayer,
+      @Deprecated('Not Working') final bool mute,
       final Failure? failure}) = _$MovieTrailerStateImpl;
   _MovieTrailerState._() : super._();
 
@@ -181,6 +233,12 @@ abstract class _MovieTrailerState extends MovieTrailerState {
   MovieTrailerEntity get movieTrailer;
   @override
   bool get loading;
+  @override
+  @Deprecated('Not Working')
+  bool get startPlayer;
+  @override
+  @Deprecated('Not Working')
+  bool get mute;
   @override
   Failure? get failure;
   @override

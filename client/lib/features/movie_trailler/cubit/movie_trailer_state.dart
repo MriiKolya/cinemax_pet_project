@@ -7,6 +7,10 @@ class MovieTrailerState with _$MovieTrailerState {
   factory MovieTrailerState({
     required MovieTrailerEntity movieTrailer,
     @Default(false) bool loading,
+    @Deprecated('Not Working')
+    @Default(false) bool startPlayer,
+    @Deprecated('Not Working')
+    @Default(false) bool mute,
     Failure? failure,
   }) = _MovieTrailerState;
 }

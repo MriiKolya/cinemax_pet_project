@@ -1,7 +1,8 @@
 import 'package:client/features/detail_movie/data/entity/production_company/production_company_entity.dart';
 import 'package:client/features/genre_list/data/entity/genre_entity.dart';
+import 'package:equatable/equatable.dart';
 
-class MovieDetailEntity {
+class MovieDetailEntity extends Equatable {
   final int id;
   final List<GenreEntity> genres;
   final String title;
@@ -20,7 +21,7 @@ class MovieDetailEntity {
   final double voteCount;
   final String backdropPicture;
 
-  MovieDetailEntity({
+  const MovieDetailEntity({
     required this.id,
     required this.genres,
     required this.title,
@@ -42,14 +43,14 @@ class MovieDetailEntity {
 
   factory MovieDetailEntity.empty() => MovieDetailEntity(
         id: 0,
-        genres: [],
+        genres: const [],
         title: '',
         originalLanguage: '',
         originalTitle: '',
         description: '',
         popularity: 0.0,
         posterPicture: '',
-        productionCompanies: [],
+        productionCompanies: const [],
         releaseDate: DateTime.now(),
         revenue: 0.0,
         runtime: 0,
@@ -63,5 +64,28 @@ class MovieDetailEntity {
   @override
   String toString() {
     return 'MovieDetailEntity(id: $id, genres: $genres, title: $title, originalLanguage: $originalLanguage, originalTitle: $originalTitle, description: $description, popularity: $popularity, posterPicture: $posterPicture, productionCompanies: $productionCompanies, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, status: $status, tagline: $tagline, voteAverage: $voteAverage, voteCount: $voteCount, backdropPicture: $backdropPicture)';
+  }
+
+  @override
+  List<Object> get props {
+    return [
+      id,
+      genres,
+      title,
+      originalLanguage,
+      originalTitle,
+      description,
+      popularity,
+      posterPicture,
+      productionCompanies,
+      releaseDate,
+      revenue,
+      runtime,
+      status,
+      tagline,
+      voteAverage,
+      voteCount,
+      backdropPicture,
+    ];
   }
 }

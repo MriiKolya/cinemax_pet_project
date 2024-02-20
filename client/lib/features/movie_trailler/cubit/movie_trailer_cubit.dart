@@ -35,4 +35,14 @@ class MovieTrailerCubit extends Cubit<MovieTrailerState> {
       ),
     );
   }
+
+  @Deprecated('Not Working')
+  void playOrStop() {
+    emit(state.copyWith(startPlayer: !state.startPlayer));
+  }
+
+  @Deprecated('Not Working')
+  void muteOrUnMute() {
+    emit(state.copyWith(mute: !state.mute));
+  }
 }
