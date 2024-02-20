@@ -12,8 +12,8 @@ class NewMovieListCubit extends Cubit<NewMovieListState> {
   final NewMovieRepository _repository;
   NewMovieListCubit({required NewMovieRepository repository})
       : _repository = repository,
-        super(const NewMovieListState(
-          listNewMovie: ListMovieEntity(movies: []),
+        super(NewMovieListState(
+          listNewMovie: ListMovieEntity.empty(),
         ));
 
   Future<void> loadNewMovieList() async {
@@ -25,7 +25,6 @@ class NewMovieListCubit extends Cubit<NewMovieListState> {
       (failure) => emit(
         state.copyWith(
           loading: false,
-          listNewMovie: const ListMovieEntity(movies: []),
           failure: failure,
         ),
       ),

@@ -3,9 +3,9 @@
 import 'package:client/core/api_config.dart';
 import 'package:client/core/error/failure.dart';
 import 'package:client/features/genre_list/data/entity/genre_entity.dart';
-import 'package:client/features/movie/data/dtos/movie/movie_dto.dart';
+import 'package:client/features/movie/data/dtos/list_movie/list_new_movie_dto.dart';
 import 'package:client/features/movie/data/entity/list_movie.dart';
-import 'package:client/features/movie/data/mappers/movie_mapper.dart';
+import 'package:client/features/movie/data/mappers/list_movie_mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -28,34 +28,32 @@ class PopularMovieGenreRepository implements IPopularMovieGenreRepository {
     required GenreEntity genre,
   }) async {
     try {
-      final dtos = <MovieDTO>[];
       const url = '${MovieQuery.baseUrl}${MovieQuery.querypopular}';
       final response =
           await _dio.get(url, queryParameters: MovieQuery.queryParametersBase);
       final responseData = response.data;
 
-      if (responseData is Map<String, dynamic> &&
-          responseData.containsKey('results')) {
-        final results = responseData['results'] as List<dynamic>;
+      if (responseData is Map<String, dynamic>) {
+        try {
+          final popularMoviesGenre = ListMovieDTO.fromJson(responseData);
+          final listEntity = popularMoviesGenre.toDomain();
 
-        for (final data in results) {
-          final movieDto = MovieDTO.fromJson(data as Map<String, dynamic>);
-
+          //index 0 is AllGenre
           if (genre.id != 0) {
-            if (movieDto.genres.contains(genre.id)) {
-              dtos.add(movieDto);
-            }
-          } else {
-            dtos.add(movieDto);
+            listEntity.movies?.removeWhere(
+              (movie) =>
+                  movie.genres?.every((movieGenre) => movieGenre != genre.id) ??
+                  false,
+            );
           }
+          return right(listEntity);
+        } catch (e) {
+          // Обработка ошибок, если не удалось преобразовать данные
+          return left(const Failure.parseError());
         }
       } else {
-        throw Exception('Unexpected data format: $responseData');
+        return left(const Failure.parseError());
       }
-
-      final movieEntity = dtos.map((dto) => dto.toDomain()).toList();
-      final listMovie = ListMovieEntity(movies: movieEntity);
-      return right(listMovie);
     } catch (e) {
       debugPrint(e.toString());
       return left(const Failure.serverError());

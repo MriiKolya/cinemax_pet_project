@@ -13,10 +13,8 @@ class PopularMoviesGenreCubit extends Cubit<PopularMoviesGenreState> {
   PopularMoviesGenreCubit({required PopularMovieGenreRepository repository})
       : _repository = repository,
         super(
-          const PopularMoviesGenreState(
-            listPopularGenreMovie: ListMovieEntity(
-              movies: [],
-            ),
+          PopularMoviesGenreState(
+            listPopularGenreMovie: ListMovieEntity.empty(),
           ),
         );
 
@@ -34,7 +32,6 @@ class PopularMoviesGenreCubit extends Cubit<PopularMoviesGenreState> {
       (failure) => emit(
         state.copyWith(
           loading: false,
-          listPopularGenreMovie: const ListMovieEntity(movies: []),
           failure: failure,
         ),
       ),
@@ -56,7 +53,6 @@ class PopularMoviesGenreCubit extends Cubit<PopularMoviesGenreState> {
       (failure) => emit(
         state.copyWith(
           loading: false,
-          listPopularGenreMovie: const ListMovieEntity(movies: []),
           failure: failure,
         ),
       ),

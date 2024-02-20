@@ -5,13 +5,14 @@ part 'list_new_movie_dto.g.dart';
 part 'list_new_movie_dto.freezed.dart';
 
 @freezed
-class ListNewMovieDTO with _$ListNewMovieDTO {
-  ListNewMovieDTO._();
+class ListMovieDTO with _$ListMovieDTO {
+  ListMovieDTO._();
 
-  const factory ListNewMovieDTO({
-    @JsonKey(name: 'results') required List<MovieDTO>? movies,
+  factory ListMovieDTO({
+    @JsonKey(name: 'results', defaultValue: []) required List<MovieDTO>? movies,
+    @JsonKey(name: 'page', defaultValue: 1) required int page,
   }) = _ListNewMovieDTO;
 
-  factory ListNewMovieDTO.fromJson(Map<String, dynamic> json) =>
-      _$ListNewMovieDTOFromJson(json);
+  factory ListMovieDTO.fromJson(Map<String, dynamic> json) =>
+      _$ListMovieDTOFromJson(json);
 }

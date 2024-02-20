@@ -14,34 +14,38 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ListNewMovieDTO _$ListNewMovieDTOFromJson(Map<String, dynamic> json) {
+ListMovieDTO _$ListMovieDTOFromJson(Map<String, dynamic> json) {
   return _ListNewMovieDTO.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ListNewMovieDTO {
-  @JsonKey(name: 'results')
+mixin _$ListMovieDTO {
+  @JsonKey(name: 'results', defaultValue: [])
   List<MovieDTO>? get movies => throw _privateConstructorUsedError;
+  @JsonKey(name: 'page', defaultValue: 1)
+  int get page => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ListNewMovieDTOCopyWith<ListNewMovieDTO> get copyWith =>
+  $ListMovieDTOCopyWith<ListMovieDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListNewMovieDTOCopyWith<$Res> {
-  factory $ListNewMovieDTOCopyWith(
-          ListNewMovieDTO value, $Res Function(ListNewMovieDTO) then) =
-      _$ListNewMovieDTOCopyWithImpl<$Res, ListNewMovieDTO>;
+abstract class $ListMovieDTOCopyWith<$Res> {
+  factory $ListMovieDTOCopyWith(
+          ListMovieDTO value, $Res Function(ListMovieDTO) then) =
+      _$ListMovieDTOCopyWithImpl<$Res, ListMovieDTO>;
   @useResult
-  $Res call({@JsonKey(name: 'results') List<MovieDTO>? movies});
+  $Res call(
+      {@JsonKey(name: 'results', defaultValue: []) List<MovieDTO>? movies,
+      @JsonKey(name: 'page', defaultValue: 1) int page});
 }
 
 /// @nodoc
-class _$ListNewMovieDTOCopyWithImpl<$Res, $Val extends ListNewMovieDTO>
-    implements $ListNewMovieDTOCopyWith<$Res> {
-  _$ListNewMovieDTOCopyWithImpl(this._value, this._then);
+class _$ListMovieDTOCopyWithImpl<$Res, $Val extends ListMovieDTO>
+    implements $ListMovieDTOCopyWith<$Res> {
+  _$ListMovieDTOCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -52,30 +56,37 @@ class _$ListNewMovieDTOCopyWithImpl<$Res, $Val extends ListNewMovieDTO>
   @override
   $Res call({
     Object? movies = freezed,
+    Object? page = null,
   }) {
     return _then(_value.copyWith(
       movies: freezed == movies
           ? _value.movies
           : movies // ignore: cast_nullable_to_non_nullable
               as List<MovieDTO>?,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$ListNewMovieDTOImplCopyWith<$Res>
-    implements $ListNewMovieDTOCopyWith<$Res> {
+    implements $ListMovieDTOCopyWith<$Res> {
   factory _$$ListNewMovieDTOImplCopyWith(_$ListNewMovieDTOImpl value,
           $Res Function(_$ListNewMovieDTOImpl) then) =
       __$$ListNewMovieDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'results') List<MovieDTO>? movies});
+  $Res call(
+      {@JsonKey(name: 'results', defaultValue: []) List<MovieDTO>? movies,
+      @JsonKey(name: 'page', defaultValue: 1) int page});
 }
 
 /// @nodoc
 class __$$ListNewMovieDTOImplCopyWithImpl<$Res>
-    extends _$ListNewMovieDTOCopyWithImpl<$Res, _$ListNewMovieDTOImpl>
+    extends _$ListMovieDTOCopyWithImpl<$Res, _$ListNewMovieDTOImpl>
     implements _$$ListNewMovieDTOImplCopyWith<$Res> {
   __$$ListNewMovieDTOImplCopyWithImpl(
       _$ListNewMovieDTOImpl _value, $Res Function(_$ListNewMovieDTOImpl) _then)
@@ -85,12 +96,17 @@ class __$$ListNewMovieDTOImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? movies = freezed,
+    Object? page = null,
   }) {
     return _then(_$ListNewMovieDTOImpl(
       movies: freezed == movies
           ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
               as List<MovieDTO>?,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -98,8 +114,10 @@ class __$$ListNewMovieDTOImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
-  const _$ListNewMovieDTOImpl(
-      {@JsonKey(name: 'results') required final List<MovieDTO>? movies})
+  _$ListNewMovieDTOImpl(
+      {@JsonKey(name: 'results', defaultValue: [])
+      required final List<MovieDTO>? movies,
+      @JsonKey(name: 'page', defaultValue: 1) required this.page})
       : _movies = movies,
         super._();
 
@@ -108,7 +126,7 @@ class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
 
   final List<MovieDTO>? _movies;
   @override
-  @JsonKey(name: 'results')
+  @JsonKey(name: 'results', defaultValue: [])
   List<MovieDTO>? get movies {
     final value = _movies;
     if (value == null) return null;
@@ -118,8 +136,12 @@ class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
   }
 
   @override
+  @JsonKey(name: 'page', defaultValue: 1)
+  final int page;
+
+  @override
   String toString() {
-    return 'ListNewMovieDTO(movies: $movies)';
+    return 'ListMovieDTO(movies: $movies, page: $page)';
   }
 
   @override
@@ -127,13 +149,14 @@ class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ListNewMovieDTOImpl &&
-            const DeepCollectionEquality().equals(other._movies, _movies));
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
+            (identical(other.page, page) || other.page == page));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_movies));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_movies), page);
 
   @JsonKey(ignore: true)
   @override
@@ -150,18 +173,23 @@ class _$ListNewMovieDTOImpl extends _ListNewMovieDTO {
   }
 }
 
-abstract class _ListNewMovieDTO extends ListNewMovieDTO {
-  const factory _ListNewMovieDTO(
-          {@JsonKey(name: 'results') required final List<MovieDTO>? movies}) =
+abstract class _ListNewMovieDTO extends ListMovieDTO {
+  factory _ListNewMovieDTO(
+          {@JsonKey(name: 'results', defaultValue: [])
+          required final List<MovieDTO>? movies,
+          @JsonKey(name: 'page', defaultValue: 1) required final int page}) =
       _$ListNewMovieDTOImpl;
-  const _ListNewMovieDTO._() : super._();
+  _ListNewMovieDTO._() : super._();
 
   factory _ListNewMovieDTO.fromJson(Map<String, dynamic> json) =
       _$ListNewMovieDTOImpl.fromJson;
 
   @override
-  @JsonKey(name: 'results')
+  @JsonKey(name: 'results', defaultValue: [])
   List<MovieDTO>? get movies;
+  @override
+  @JsonKey(name: 'page', defaultValue: 1)
+  int get page;
   @override
   @JsonKey(ignore: true)
   _$$ListNewMovieDTOImplCopyWith<_$ListNewMovieDTOImpl> get copyWith =>

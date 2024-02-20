@@ -19,32 +19,38 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function() parseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverError,
+    TResult? Function()? parseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function()? parseError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ServerError value) serverError,
+    required TResult Function(_ParseError value) parseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_ParseError value)? parseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ServerError value)? serverError,
+    TResult Function(_ParseError value)? parseError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$ServerErrorImpl implements _ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() serverError,
+    required TResult Function() parseError,
   }) {
     return serverError();
   }
@@ -114,6 +121,7 @@ class _$ServerErrorImpl implements _ServerError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverError,
+    TResult? Function()? parseError,
   }) {
     return serverError?.call();
   }
@@ -122,6 +130,7 @@ class _$ServerErrorImpl implements _ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverError,
+    TResult Function()? parseError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -134,6 +143,7 @@ class _$ServerErrorImpl implements _ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ServerError value) serverError,
+    required TResult Function(_ParseError value) parseError,
   }) {
     return serverError(this);
   }
@@ -142,6 +152,7 @@ class _$ServerErrorImpl implements _ServerError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_ParseError value)? parseError,
   }) {
     return serverError?.call(this);
   }
@@ -150,6 +161,7 @@ class _$ServerErrorImpl implements _ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ServerError value)? serverError,
+    TResult Function(_ParseError value)? parseError,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -161,4 +173,106 @@ class _$ServerErrorImpl implements _ServerError {
 
 abstract class _ServerError implements Failure {
   const factory _ServerError() = _$ServerErrorImpl;
+}
+
+/// @nodoc
+abstract class _$$ParseErrorImplCopyWith<$Res> {
+  factory _$$ParseErrorImplCopyWith(
+          _$ParseErrorImpl value, $Res Function(_$ParseErrorImpl) then) =
+      __$$ParseErrorImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ParseErrorImplCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$ParseErrorImpl>
+    implements _$$ParseErrorImplCopyWith<$Res> {
+  __$$ParseErrorImplCopyWithImpl(
+      _$ParseErrorImpl _value, $Res Function(_$ParseErrorImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ParseErrorImpl implements _ParseError {
+  const _$ParseErrorImpl();
+
+  @override
+  String toString() {
+    return 'Failure.parseError()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ParseErrorImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverError,
+    required TResult Function() parseError,
+  }) {
+    return parseError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverError,
+    TResult? Function()? parseError,
+  }) {
+    return parseError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverError,
+    TResult Function()? parseError,
+    required TResult orElse(),
+  }) {
+    if (parseError != null) {
+      return parseError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_ParseError value) parseError,
+  }) {
+    return parseError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_ParseError value)? parseError,
+  }) {
+    return parseError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_ParseError value)? parseError,
+    required TResult orElse(),
+  }) {
+    if (parseError != null) {
+      return parseError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ParseError implements Failure {
+  const factory _ParseError() = _$ParseErrorImpl;
 }

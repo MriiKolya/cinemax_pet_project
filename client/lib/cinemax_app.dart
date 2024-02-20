@@ -34,6 +34,7 @@ class _CinemaxAppState extends State<CinemaxApp> {
         )
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         theme: darkTheme,
         darkTheme: darkTheme,
         routerConfig: AppRoutes.router,

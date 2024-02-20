@@ -10,12 +10,15 @@ _$ListNewMovieDTOImpl _$$ListNewMovieDTOImplFromJson(
         Map<String, dynamic> json) =>
     _$ListNewMovieDTOImpl(
       movies: (json['results'] as List<dynamic>?)
-          ?.map((e) => MovieDTO.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) => MovieDTO.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      page: json['page'] as int? ?? 1,
     );
 
 Map<String, dynamic> _$$ListNewMovieDTOImplToJson(
         _$ListNewMovieDTOImpl instance) =>
     <String, dynamic>{
       'results': instance.movies,
+      'page': instance.page,
     };

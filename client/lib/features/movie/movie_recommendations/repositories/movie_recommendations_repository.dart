@@ -2,9 +2,9 @@
 
 import 'package:client/core/api_config.dart';
 import 'package:client/core/error/failure.dart';
-import 'package:client/features/movie/data/dtos/movie/movie_dto.dart';
+import 'package:client/features/movie/data/dtos/list_movie/list_new_movie_dto.dart';
 import 'package:client/features/movie/data/entity/list_movie.dart';
-import 'package:client/features/movie/data/mappers/movie_mapper.dart';
+import 'package:client/features/movie/data/mappers/list_movie_mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -27,27 +27,26 @@ class MovieRecommendationRepository implements IMovieRecommendationRepository {
     required int idMovie,
   }) async {
     try {
-      final dtos = <MovieDTO>[];
       final url =
           '${MovieQuery.baseUrl}$idMovie/${MovieQuery.queryRecommendations}';
       final response =
           await _dio.get(url, queryParameters: MovieQuery.queryParametersBase);
       final responseData = response.data;
 
-      if (responseData is Map<String, dynamic> &&
-          responseData.containsKey('results')) {
-        final results = responseData['results'] as List<dynamic>;
+      if (responseData is Map<String, dynamic>) {
+        try {
+          final movieRecommendationDTO = ListMovieDTO.fromJson(responseData);
 
-        for (final data in results) {
-          final movieDto = MovieDTO.fromJson(data as Map<String, dynamic>);
-          dtos.add(movieDto);
+          // // Создание объекта ListMovieEntity из списка сущностей
+          final listMovieEntity = movieRecommendationDTO.toDomain();
+
+          return right(listMovieEntity);
+        } catch (e) {
+          return left(const Failure.parseError());
         }
       } else {
         return left(const Failure.serverError());
       }
-      final movieEntity = dtos.map((dto) => dto.toDomain()).toList();
-      final listMovie = ListMovieEntity(movies: movieEntity);
-      return right(listMovie);
     } catch (e) {
       debugPrint(e.toString());
       return left(const Failure.serverError());

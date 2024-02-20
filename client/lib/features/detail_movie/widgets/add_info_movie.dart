@@ -17,13 +17,14 @@ class AddInfoMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 5,
       children: [
-        Row(
+        Wrap(
+          spacing: 5,
           children: [
             Icon(Icons.calendar_month, color: TextColor.grey),
-            const SizedBox(width: 5),
             Text(
               releaseDate,
               style: context.textStyle.h4.copyWith(
@@ -40,10 +41,10 @@ class AddInfoMovie extends StatelessWidget {
             fontWeight: FontWeightStyle.medium.fontWeight,
           ),
         ),
-        Row(
+        Wrap(
+          spacing: 5,
           children: [
             Icon(CinemaxIcons.clock, color: TextColor.grey),
-            const SizedBox(width: 5),
             Text(
               '$runtime Minutes',
               style: context.textStyle.h4.copyWith(
@@ -60,10 +61,10 @@ class AddInfoMovie extends StatelessWidget {
             fontWeight: FontWeightStyle.medium.fontWeight,
           ),
         ),
-        Row(
+        Wrap(
+          spacing: 5,
           children: [
             Icon(CinemaxIcons.film, color: TextColor.grey),
-            const SizedBox(width: 5),
             Text(
               genre,
               style: context.textStyle.h4.copyWith(
