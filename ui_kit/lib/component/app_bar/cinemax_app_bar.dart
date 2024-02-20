@@ -35,6 +35,8 @@ class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         centerTitle: centerTitle,
         backgroundColor: backgroundColor ?? style.backgroundColor,
+        elevation: 0,
+        scrolledUnderElevation: 0,
         title: TitleAppBar(
           title: title,
           titleText: titleText,

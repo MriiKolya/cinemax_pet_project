@@ -7,11 +7,13 @@ class CinemaxFilledButton extends StatefulWidget {
     required this.label,
     this.onPressed,
     this.icon,
+    this.color,
   });
 
   final String label;
   final VoidCallback? onPressed;
   final IconData? icon;
+  final Color? color;
 
   @override
   State<CinemaxFilledButton> createState() => _CinemaxFilledButtonState();
@@ -116,7 +118,9 @@ class _CinemaxFilledButtonState extends State<CinemaxFilledButton>
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: style.radius,
-            color: enabled ? style.buttonColor : style.disabledButtonColor,
+            color: enabled
+                ? widget.color ?? style.buttonColor
+                : style.disabledButtonColor,
           ),
           child: SizedBox(
             width: double.infinity,

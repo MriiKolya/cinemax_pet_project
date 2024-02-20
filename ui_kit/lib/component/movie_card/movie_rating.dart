@@ -4,26 +4,33 @@ import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
 class MovieRating extends StatelessWidget {
-  const MovieRating({super.key, required this.averageRating});
+  const MovieRating({
+    super.key,
+    required this.averageRating,
+    this.backgroundColor,
+    this.alignment,
+  });
 
   final double averageRating;
+  final Color? backgroundColor;
+  final AlignmentGeometry? alignment;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: Align(
-        alignment: Alignment.bottomRight,
+        alignment: alignment ?? Alignment.bottomRight,
         child: IntrinsicWidth(
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.5),
+              color: backgroundColor ?? Colors.black.withOpacity(0.5),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 10,
-                horizontal: 10,
+                horizontal: 15,
               ),
               child: Row(
                 children: [
