@@ -22,7 +22,7 @@ class NavBarStyle extends ThemeExtension<NavBarStyle> {
             color: PrimaryColor.blueAccent, fontWeight: FontWeight.w500),
         iconActiveColor: PrimaryColor.blueAccent,
         iconColor: TextColor.grey,
-        tabMargin: const EdgeInsets.only(bottom: 20),
+        tabMargin: const EdgeInsets.only(bottom: 20, top: 20),
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       );
 
@@ -31,7 +31,7 @@ class NavBarStyle extends ThemeExtension<NavBarStyle> {
             color: PrimaryColor.blueAccent, fontWeight: FontWeight.w500),
         iconActiveColor: PrimaryColor.blueAccent,
         iconColor: TextColor.grey,
-        tabMargin: const EdgeInsets.only(bottom: 20),
+        tabMargin: const EdgeInsets.only(bottom: 20, top: 20),
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       );
 
