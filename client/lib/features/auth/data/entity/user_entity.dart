@@ -1,19 +1,19 @@
 import 'package:equatable/equatable.dart';
 
-class UserModel extends Equatable {
+class UserEntity extends Equatable {
   final String id;
   final String? name;
   final String? email;
   final String? photoUrl;
 
-  static const empty = UserModel(
+  static const empty = UserEntity(
     id: 'id',
   );
 
-  bool get isEmpty => this == UserModel.empty;
-  bool get isNotEmpty => this != UserModel.empty;
+  bool get isEmpty => this == UserEntity.empty;
+  bool get isNotEmpty => this != UserEntity.empty;
 
-  const UserModel({
+  const UserEntity({
     required this.id,
     this.name,
     this.email,

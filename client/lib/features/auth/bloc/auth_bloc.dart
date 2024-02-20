@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:client/features/auth/login/model/user_model.dart';
-import 'package:client/features/auth/repository/auth_repository.dart';
+import 'package:client/features/auth/data/entity/user_entity.dart';
+import 'package:client/features/auth/data/repositories/auth_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,7 +10,7 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _repository;
-  StreamSubscription<UserModel?>? _userSubcription;
+  StreamSubscription<UserEntity?>? _userSubcription;
   AuthBloc({required AuthRepository repository})
       : _repository = repository,
         super(

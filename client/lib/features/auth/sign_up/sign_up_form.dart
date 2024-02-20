@@ -1,7 +1,7 @@
 import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/core/router/app_router_name.dart';
-import 'package:client/features/auth/sing_up/cubit/sign_up_form_cubit.dart';
+import 'package:client/features/auth/sign_up/cubit/sign_up_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -9,8 +9,8 @@ import 'package:ui_kit/component/conponent.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:ui_kit/theme/theme_context_extention.dart';
 
-class SingUpForm extends StatelessWidget {
-  const SingUpForm({super.key});
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({super.key});
 
   @override
   Widget build(BuildContext context) {

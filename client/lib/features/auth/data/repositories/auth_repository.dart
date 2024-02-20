@@ -1,5 +1,5 @@
 import 'package:client/core/validator/auth_failure/auth_failure.dart';
-import 'package:client/features/auth/login/model/user_model.dart';
+import 'package:client/features/auth/data/entity/user_entity.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,47 +11,34 @@ class AuthRepository {
   AuthRepository({firebase_auth.FirebaseAuth? firebaseAuth})
       : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
-  UserModel currentUser = UserModel.empty;
+  UserEntity currentUser = UserEntity.empty;
 
-  Stream<UserModel> get user {
+  Stream<UserEntity> get user {
     return _firebaseAuth.authStateChanges().map((firebaseUser) {
-      final user = firebaseUser == null ? UserModel.empty : firebaseUser.toUser;
+      final user =
+          firebaseUser == null ? UserEntity.empty : firebaseUser.toUser;
       currentUser = user;
       return user;
     });
   }
 
-  Future<Either<AuthFailure, Unit?>> signUp({
+  Future<void> signUp({
     required String email,
     required String password,
     required String name,
   }) async {
-    try {
-      await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      return right(unit);
-    } on FirebaseAuthException catch (_) {
-      return left(const AuthFailure.invalidValue());
-    } catch (e) {
-      return left(const AuthFailure.serverError());
-    }
+    await _firebaseAuth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
   }
 
-  Future<Either<AuthFailure, Unit?>> loginWithEmailAndPassword({
+  Future<void> loginWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
-    try {
-      await _firebaseAuth.signInWithEmailAndPassword(
-          email: email, password: password);
-      return right(unit);
-    } on FirebaseAuthException catch (_) {
-      return left(const AuthFailure.invalidValue());
-    } catch (e) {
-      return left(const AuthFailure.serverError());
-    }
+    await _firebaseAuth.signInWithEmailAndPassword(
+        email: email, password: password);
   }
 
   Future<void> logOut() async {
@@ -62,16 +49,8 @@ class AuthRepository {
     }
   }
 
-  Future<Either<AuthFailure, Unit?>> resetPassword(
-      {required String email}) async {
-    try {
-      await _firebaseAuth.sendPasswordResetEmail(email: email);
-      return right(unit);
-    } on FirebaseAuthException catch (_) {
-      return left(const AuthFailure.invalidValue());
-    } catch (e) {
-      return left(const AuthFailure.serverError());
-    }
+  Future<void> resetPassword({required String email}) async {
+    await _firebaseAuth.sendPasswordResetEmail(email: email);
   }
 
   @Deprecated('If Otp code')
@@ -89,8 +68,8 @@ class AuthRepository {
 }
 
 extension on firebase_auth.User {
-  UserModel get toUser {
-    return UserModel(
+  UserEntity get toUser {
+    return UserEntity(
         id: uid,
         name: displayName ?? 'N/A',
         email: email,

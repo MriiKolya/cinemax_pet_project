@@ -11,7 +11,7 @@ class AuthLogoutRequested extends AuthEvent {
 }
 
 class AuthUserChanged extends AuthEvent {
-  final UserModel user;
+  final UserEntity user;
 
   AuthUserChanged({required this.user});
   @override
