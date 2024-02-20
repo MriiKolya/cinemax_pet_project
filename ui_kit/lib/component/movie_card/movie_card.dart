@@ -24,10 +24,11 @@ class MovieCard extends StatelessWidget {
         child: Container(
           height: 20,
           decoration: BoxDecoration(
-            color: PrimaryColor.soft,
+            color: PrimaryColor.soft.withOpacity(0.5),
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
             ),
           ),
           child: IntrinsicWidth(
