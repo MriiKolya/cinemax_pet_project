@@ -5,8 +5,8 @@ import 'package:client/features/auth/reset_password/di/dependency_resolver.dart'
 import 'package:client/features/auth/sing_up/di/dependency_resolver.dart';
 import 'package:client/features/auth/verification_email/di/dependency_resolver.dart';
 import 'package:client/features/detail_movie/di/dependency_resolver.dart';
+import 'package:client/features/detail_movie/movie_trailler/di/dependency_resolver.dart';
 import 'package:client/features/genre_list/di/dependency_resolver.dart';
-
 import 'package:client/features/movie/new_movie_list/di/dependency_resolver.dart';
 import 'package:client/features/movie/popular_movie_genre/di/dependency_resolver.dart';
 
@@ -26,5 +26,6 @@ class AppDependencyResolver {
     GenreDependencyResolver.register();
     PopularMovieGenreDependencyResolver.register();
     MovieDetailDependencyResolver.register();
+    MovieTrailerDependencyResolver.register();
   }
 }

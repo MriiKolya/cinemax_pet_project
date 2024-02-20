@@ -33,7 +33,7 @@ mixin _$MovieDetailDTO {
   String get originalLanguage => throw _privateConstructorUsedError;
   @JsonKey(name: 'original_title', defaultValue: '')
   String get originalTitle => throw _privateConstructorUsedError;
-  @JsonKey(name: 'overvies', defaultValue: '')
+  @JsonKey(name: 'overview', defaultValue: '')
   String get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'popularity', defaultValue: 0.0)
   double get popularity => throw _privateConstructorUsedError;
@@ -77,7 +77,7 @@ abstract class $MovieDetailDTOCopyWith<$Res> {
       @JsonKey(name: 'original_language', defaultValue: '')
       String originalLanguage,
       @JsonKey(name: 'original_title', defaultValue: '') String originalTitle,
-      @JsonKey(name: 'overvies', defaultValue: '') String description,
+      @JsonKey(name: 'overview', defaultValue: '') String description,
       @JsonKey(name: 'popularity', defaultValue: 0.0) double popularity,
       @JsonKey(name: 'poster_path', defaultValue: '') String posterPicture,
       @JsonKey(name: 'backdrop_path', defaultValue: '') String backdropPicture,
@@ -211,7 +211,7 @@ abstract class _$$MovieDetailDTOImplCopyWith<$Res>
       @JsonKey(name: 'original_language', defaultValue: '')
       String originalLanguage,
       @JsonKey(name: 'original_title', defaultValue: '') String originalTitle,
-      @JsonKey(name: 'overvies', defaultValue: '') String description,
+      @JsonKey(name: 'overview', defaultValue: '') String description,
       @JsonKey(name: 'popularity', defaultValue: 0.0) double popularity,
       @JsonKey(name: 'poster_path', defaultValue: '') String posterPicture,
       @JsonKey(name: 'backdrop_path', defaultValue: '') String backdropPicture,
@@ -340,7 +340,7 @@ class _$MovieDetailDTOImpl extends _MovieDetailDTO {
       required this.originalLanguage,
       @JsonKey(name: 'original_title', defaultValue: '')
       required this.originalTitle,
-      @JsonKey(name: 'overvies', defaultValue: '') required this.description,
+      @JsonKey(name: 'overview', defaultValue: '') required this.description,
       @JsonKey(name: 'popularity', defaultValue: 0.0) required this.popularity,
       @JsonKey(name: 'poster_path', defaultValue: '')
       required this.posterPicture,
@@ -394,7 +394,7 @@ class _$MovieDetailDTOImpl extends _MovieDetailDTO {
   @JsonKey(name: 'original_title', defaultValue: '')
   final String originalTitle;
   @override
-  @JsonKey(name: 'overvies', defaultValue: '')
+  @JsonKey(name: 'overview', defaultValue: '')
   final String description;
   @override
   @JsonKey(name: 'popularity', defaultValue: 0.0)
@@ -515,7 +515,7 @@ abstract class _MovieDetailDTO extends MovieDetailDTO {
       required final String originalLanguage,
       @JsonKey(name: 'original_title', defaultValue: '')
       required final String originalTitle,
-      @JsonKey(name: 'overvies', defaultValue: '')
+      @JsonKey(name: 'overview', defaultValue: '')
       required final String description,
       @JsonKey(name: 'popularity', defaultValue: 0.0)
       required final double popularity,
@@ -558,7 +558,7 @@ abstract class _MovieDetailDTO extends MovieDetailDTO {
   @JsonKey(name: 'original_title', defaultValue: '')
   String get originalTitle;
   @override
-  @JsonKey(name: 'overvies', defaultValue: '')
+  @JsonKey(name: 'overview', defaultValue: '')
   String get description;
   @override
   @JsonKey(name: 'popularity', defaultValue: 0.0)

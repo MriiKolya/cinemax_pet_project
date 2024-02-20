@@ -20,7 +20,7 @@ extension MovieDetailMapper on MovieDetailDTO {
             productionCompanies.map((pC) => pC.toDomain()).toList(),
         releaseDate: DateTime.parse(releaseDate),
         revenue: revenue,
-        runtime: DateTime(0).add(Duration(minutes: runtime)),
+        runtime: runtime,
         tagline: tagline,
         voteAverage: voteAverage,
         voteCount: voteCount,

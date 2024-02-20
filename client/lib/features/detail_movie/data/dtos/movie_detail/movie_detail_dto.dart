@@ -19,7 +19,7 @@ class MovieDetailDTO with _$MovieDetailDTO {
     required String originalLanguage,
     @JsonKey(name: 'original_title', defaultValue: '')
     required String originalTitle,
-    @JsonKey(name: 'overvies', defaultValue: '') required String description,
+    @JsonKey(name: 'overview', defaultValue: '') required String description,
     @JsonKey(name: 'popularity', defaultValue: 0.0) required double popularity,
     @JsonKey(name: 'poster_path', defaultValue: '')
     required String posterPicture,

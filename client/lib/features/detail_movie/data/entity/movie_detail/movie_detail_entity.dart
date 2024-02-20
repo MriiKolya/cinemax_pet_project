@@ -13,7 +13,7 @@ class MovieDetailEntity {
   final List<ProductionCompanyEntity> productionCompanies;
   final DateTime releaseDate;
   final double revenue;
-  final DateTime runtime;
+  final int runtime;
   final String status;
   final String tagline;
   final double voteAverage;
@@ -52,7 +52,7 @@ class MovieDetailEntity {
         productionCompanies: [],
         releaseDate: DateTime.now(),
         revenue: 0.0,
-        runtime: DateTime(0),
+        runtime: 0,
         status: '',
         tagline: '',
         voteAverage: 0.0,
