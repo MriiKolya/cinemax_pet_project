@@ -12,7 +12,7 @@ class MovieRecommendationCubit extends Cubit<MovieRecommendationState> {
       : _repository = repository,
         super(
           MovieRecommendationState(
-              movieReccomendations: ListMovieEntity.empty()),
+              movieRecommendations: ListMovieEntity.empty()),
         );
 
   Future<void> loadMovieRecommendation({required int idMovie}) async {
@@ -29,10 +29,10 @@ class MovieRecommendationCubit extends Cubit<MovieRecommendationState> {
           failure: failure,
         ),
       ),
-      (succes) => emit(
+      (success) => emit(
         state.copyWith(
           loading: false,
-          movieReccomendations: succes,
+          movieRecommendations: success,
           failure: null,
         ),
       ),

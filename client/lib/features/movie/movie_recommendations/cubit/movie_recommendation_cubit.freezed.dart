@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MovieRecommendationState {
-  ListMovieEntity get movieReccomendations =>
+  ListMovieEntity get movieRecommendations =>
       throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   Failure? get failure => throw _privateConstructorUsedError;
@@ -33,7 +33,7 @@ abstract class $MovieRecommendationStateCopyWith<$Res> {
       _$MovieRecommendationStateCopyWithImpl<$Res, MovieRecommendationState>;
   @useResult
   $Res call(
-      {ListMovieEntity movieReccomendations, bool loading, Failure? failure});
+      {ListMovieEntity movieRecommendations, bool loading, Failure? failure});
 
   $FailureCopyWith<$Res>? get failure;
 }
@@ -52,14 +52,14 @@ class _$MovieRecommendationStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? movieReccomendations = null,
+    Object? movieRecommendations = null,
     Object? loading = null,
     Object? failure = freezed,
   }) {
     return _then(_value.copyWith(
-      movieReccomendations: null == movieReccomendations
-          ? _value.movieReccomendations
-          : movieReccomendations // ignore: cast_nullable_to_non_nullable
+      movieRecommendations: null == movieRecommendations
+          ? _value.movieRecommendations
+          : movieRecommendations // ignore: cast_nullable_to_non_nullable
               as ListMovieEntity,
       loading: null == loading
           ? _value.loading
@@ -95,7 +95,7 @@ abstract class _$$MovieRecommendationStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ListMovieEntity movieReccomendations, bool loading, Failure? failure});
+      {ListMovieEntity movieRecommendations, bool loading, Failure? failure});
 
   @override
   $FailureCopyWith<$Res>? get failure;
@@ -114,14 +114,14 @@ class __$$MovieRecommendationStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? movieReccomendations = null,
+    Object? movieRecommendations = null,
     Object? loading = null,
     Object? failure = freezed,
   }) {
     return _then(_$MovieRecommendationStateImpl(
-      movieReccomendations: null == movieReccomendations
-          ? _value.movieReccomendations
-          : movieReccomendations // ignore: cast_nullable_to_non_nullable
+      movieRecommendations: null == movieRecommendations
+          ? _value.movieRecommendations
+          : movieRecommendations // ignore: cast_nullable_to_non_nullable
               as ListMovieEntity,
       loading: null == loading
           ? _value.loading
@@ -139,11 +139,11 @@ class __$$MovieRecommendationStateImplCopyWithImpl<$Res>
 
 class _$MovieRecommendationStateImpl extends _MovieRecommendationState {
   _$MovieRecommendationStateImpl(
-      {required this.movieReccomendations, this.loading = false, this.failure})
+      {required this.movieRecommendations, this.loading = false, this.failure})
       : super._();
 
   @override
-  final ListMovieEntity movieReccomendations;
+  final ListMovieEntity movieRecommendations;
   @override
   @JsonKey()
   final bool loading;
@@ -152,7 +152,7 @@ class _$MovieRecommendationStateImpl extends _MovieRecommendationState {
 
   @override
   String toString() {
-    return 'MovieRecommendationState(movieReccomendations: $movieReccomendations, loading: $loading, failure: $failure)';
+    return 'MovieRecommendationState(movieRecommendations: $movieRecommendations, loading: $loading, failure: $failure)';
   }
 
   @override
@@ -160,15 +160,15 @@ class _$MovieRecommendationStateImpl extends _MovieRecommendationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieRecommendationStateImpl &&
-            (identical(other.movieReccomendations, movieReccomendations) ||
-                other.movieReccomendations == movieReccomendations) &&
+            (identical(other.movieRecommendations, movieRecommendations) ||
+                other.movieRecommendations == movieRecommendations) &&
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, movieReccomendations, loading, failure);
+      Object.hash(runtimeType, movieRecommendations, loading, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -180,13 +180,13 @@ class _$MovieRecommendationStateImpl extends _MovieRecommendationState {
 
 abstract class _MovieRecommendationState extends MovieRecommendationState {
   factory _MovieRecommendationState(
-      {required final ListMovieEntity movieReccomendations,
+      {required final ListMovieEntity movieRecommendations,
       final bool loading,
       final Failure? failure}) = _$MovieRecommendationStateImpl;
   _MovieRecommendationState._() : super._();
 
   @override
-  ListMovieEntity get movieReccomendations;
+  ListMovieEntity get movieRecommendations;
   @override
   bool get loading;
   @override

@@ -25,13 +25,17 @@ class DetailMovieCubit extends Cubit<DetailMovieState> {
           failure: failure,
         ),
       ),
-      (succes) => emit(
+      (success) => emit(
         state.copyWith(
           loading: false,
-          movieDetail: succes,
+          movieDetail: success,
           failure: null,
         ),
       ),
     );
+  }
+
+  void showTrailer() {
+    emit(state.copyWith(showTrailer: true));
   }
 }

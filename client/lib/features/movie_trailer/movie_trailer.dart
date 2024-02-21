@@ -20,14 +20,8 @@ class MovieTrailerScreen extends StatefulWidget {
 class MovieTrailerScreenState extends State<MovieTrailerScreen> {
   late YoutubePlayerController _controller;
 
-  bool _isPlayerReady = false;
+  bool _isPlayerReady = true;
   bool _muted = false;
-
-  @override
-  void deactivate() {
-    _controller.pause();
-    super.deactivate();
-  }
 
   @override
   void dispose() {
@@ -63,15 +57,19 @@ class MovieTrailerScreenState extends State<MovieTrailerScreen> {
                   bufferedColor: Colors.white,
                 ),
               ),
-              IconButton(
-                icon: Icon(
-                  _muted ? Icons.volume_off : Icons.volume_up,
-                  color: PrimaryColor.blueAccent,
-                ),
-                onPressed: () {
-                  _muted = !_muted;
-                  _muted ? _controller.unMute() : _controller.mute();
-                },
+              Column(
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      _muted ? Icons.volume_off : Icons.volume_up,
+                      color: PrimaryColor.blueAccent,
+                    ),
+                    onPressed: () {
+                      _muted = !_muted;
+                      _muted ? _controller.unMute() : _controller.mute();
+                    },
+                  ),
+                ],
               ),
             ],
             onReady: () {

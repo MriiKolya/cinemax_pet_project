@@ -147,30 +147,44 @@ class DetailMovieScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 30),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20,
+                            left: 10,
+                          ),
+                          child: Text(
+                            'Trailer ${state.movieDetail.title}',
+                            style: context.textStyle.h3.copyWith(
+                              fontWeight: FontWeightStyle.semiBold.fontWeight,
+                              color: TextColor.whiteGrey,
+                            ),
+                          ),
+                        ),
                         SizedBox(
                           width: double.infinity,
                           height: 300,
-                          child: MovieTrailerScreen(
-                            movieId: state.movieDetail.id,
-                          ),
-                        ),
-                        const SizedBox(height: 30),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 20,
-                            horizontal: 10,
-                          ),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'Recommendations',
-                              style: context.textStyle.h3.copyWith(
-                                fontWeight: FontWeightStyle.medium.fontWeight,
-                                color: TextColor.whiteGrey,
-                              ),
-                            ),
-                          ),
+                          child: state.showTrailer
+                              ? MovieTrailerScreen(
+                                  movieId: state.movieDetail.id,
+                                )
+                              : DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: CachedNetworkImageProvider(
+                                        state.movieDetail.backdropPicture,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: CinemaxIcon(
+                                      icon: Icons.play_arrow,
+                                      iconColor: PrimaryColor.blueAccent,
+                                      onTap: () => context
+                                          .read<DetailMovieCubit>()
+                                          .showTrailer(),
+                                    ),
+                                  ),
+                                ),
                         ),
                         MovieRecommendations(
                           idMovie: id,
