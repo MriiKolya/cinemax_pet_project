@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
-class CinemaxSwith extends StatelessWidget {
-  const CinemaxSwith({
+class CinemaxSwitch extends StatelessWidget {
+  const CinemaxSwitch({
     super.key,
     required this.value,
     this.onChanged,

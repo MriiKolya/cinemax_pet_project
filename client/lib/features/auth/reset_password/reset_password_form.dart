@@ -4,7 +4,7 @@ import 'package:client/features/auth/reset_password/cubit/reset_password_cubit.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/conponent.dart';
+import 'package:ui_kit/component/component.dart';
 
 class ResetPasswordForm extends StatelessWidget {
   const ResetPasswordForm({super.key});
@@ -33,8 +33,8 @@ class ResetPasswordForm extends StatelessWidget {
                 ),
                 (_) => null,
               ),
-              onChanged: (emal) =>
-                  context.read<ResetPasswordCubit>().emailChanged(emal),
+              onChanged: (email) =>
+                  context.read<ResetPasswordCubit>().emailChanged(email),
             ),
             CinemaxFilledButton(
               label: 'Next',

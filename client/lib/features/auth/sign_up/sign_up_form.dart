@@ -5,9 +5,9 @@ import 'package:client/features/auth/sign_up/cubit/sign_up_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/conponent.dart';
+import 'package:ui_kit/component/component.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -53,8 +53,8 @@ class SignUpForm extends StatelessWidget {
                 ),
                 (_) => null,
               ),
-              onChanged: (emal) =>
-                  context.read<SignUpFormCubit>().emailChanged(emal),
+              onChanged: (email) =>
+                  context.read<SignUpFormCubit>().emailChanged(email),
             ),
             const SizedBox(height: 40),
             InputField(

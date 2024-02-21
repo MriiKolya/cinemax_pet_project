@@ -4,7 +4,7 @@ import 'package:storybook/pages/home/widgets/movie_list.dart';
 import 'package:storybook/pages/home/widgets/popular_movie_genre.dart';
 import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
 import 'package:ui_kit/component/avatar/avatar.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

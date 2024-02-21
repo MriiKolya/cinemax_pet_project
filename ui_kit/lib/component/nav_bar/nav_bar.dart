@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:ui_kit/component/nav_bar/bar_item_model.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({

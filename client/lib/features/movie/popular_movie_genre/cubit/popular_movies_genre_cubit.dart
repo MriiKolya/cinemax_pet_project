@@ -18,7 +18,7 @@ class PopularMoviesGenreCubit extends Cubit<PopularMoviesGenreState> {
           ),
         );
 
-  void chagneCurrentGenre({required GenreEntity genre}) {
+  void changeCurrentGenre({required GenreEntity genre}) {
     if (state.currentGenre == genre) return;
     emit(state.copyWith(currentGenre: genre));
     _loadPopularMovieGenre();

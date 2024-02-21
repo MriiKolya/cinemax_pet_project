@@ -4,7 +4,7 @@ import 'package:client/features/auth/login/cubit/login_form_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/conponent.dart';
+import 'package:ui_kit/component/component.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -34,8 +34,8 @@ class LoginForm extends StatelessWidget {
                   ),
                   (_) => null,
                 ),
-                onChanged: (emal) =>
-                    context.read<LoginFormCubit>().emailChanged(emal),
+                onChanged: (email) =>
+                    context.read<LoginFormCubit>().emailChanged(email),
               ),
               const SizedBox(height: 50),
               InputField(

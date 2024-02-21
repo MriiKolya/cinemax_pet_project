@@ -2,7 +2,7 @@ import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class AddInfoMovie extends StatelessWidget {
   const AddInfoMovie(

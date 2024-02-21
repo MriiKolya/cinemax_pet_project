@@ -4,16 +4,16 @@ import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/features/detail_movie/cubit/detail_movie_cubit.dart';
 import 'package:client/features/detail_movie/widgets/add_info_movie.dart';
 import 'package:client/features/movie/movie_recommendations/movie_recommendations.dart';
-import 'package:client/features/movie_trailler/movie_trailler.dart';
+import 'package:client/features/movie_trailer/movie_trailer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
-import 'package:ui_kit/component/conponent.dart';
+import 'package:ui_kit/component/component.dart';
 import 'package:ui_kit/component/image/cinemax_image.dart';
 import 'package:ui_kit/component/movie_card/movie_rating.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class DetailMovieScreen extends StatelessWidget {
   const DetailMovieScreen({super.key, required this.id});
@@ -151,7 +151,7 @@ class DetailMovieScreen extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           height: 300,
-                          child: MovieTrailler(
+                          child: MovieTrailerScreen(
                             movieId: state.movieDetail.id,
                           ),
                         ),

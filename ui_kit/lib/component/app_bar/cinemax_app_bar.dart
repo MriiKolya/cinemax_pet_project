@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/component/app_bar/title_app_bar.dart';
 import 'package:ui_kit/component/icon/cinemax_icon.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class CinemaxAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CinemaxAppBar({

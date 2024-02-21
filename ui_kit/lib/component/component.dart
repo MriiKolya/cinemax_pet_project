@@ -6,4 +6,4 @@ export 'package:ui_kit/component/check_box/check_box.dart';
 export 'package:ui_kit/component/icon/cinemax_icon.dart';
 export 'package:ui_kit/component/input_field/input_field.dart';
 export 'package:ui_kit/component/pinput/pinput.dart';
-export 'package:ui_kit/component/switch/cinemax_swith.dart';
+export 'package:ui_kit/component/switch/cinemax_switch.dart';

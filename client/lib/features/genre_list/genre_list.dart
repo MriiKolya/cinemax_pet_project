@@ -5,7 +5,7 @@ import 'package:client/features/movie/popular_movie_genre/cubit/popular_movies_g
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class GenreList extends StatefulWidget {
   const GenreList({super.key});
@@ -38,7 +38,7 @@ class _GenreListState extends State<GenreList> {
                       onTap: () {
                         context
                             .read<PopularMoviesGenreCubit>()
-                            .chagneCurrentGenre(
+                            .changeCurrentGenre(
                               genre: state.listGenre[index],
                             );
                         setState(() {

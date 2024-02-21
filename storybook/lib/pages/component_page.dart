@@ -4,10 +4,10 @@ import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
 import 'package:ui_kit/component/buttons/cinemax_filled_button.dart';
 import 'package:ui_kit/component/buttons/cinemax_text_button.dart';
 import 'package:ui_kit/component/buttons/cinemax_outlined_button.dart';
-import 'package:ui_kit/component/switch/cinemax_swith.dart';
 import 'package:ui_kit/component/check_box/check_box.dart';
 import 'package:ui_kit/component/icon/cinemax_icon.dart';
 import 'package:ui_kit/component/input_field/input_field.dart';
+import 'package:ui_kit/component/switch/cinemax_switch.dart';
 
 class ComponentPage extends StatelessWidget {
   const ComponentPage({super.key});
@@ -55,12 +55,12 @@ class ComponentPage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  CinemaxSwith(
+                  CinemaxSwitch(
                     value: false,
                     onChanged: (p0) {},
                   ),
                   const SizedBox(width: 30),
-                  CinemaxSwith(
+                  CinemaxSwitch(
                     value: true,
                     onChanged: (p0) {},
                   ),

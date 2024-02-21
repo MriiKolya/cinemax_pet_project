@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
 
-class SwithStyle extends ThemeExtension<SwithStyle> {
+class SwitchStyle extends ThemeExtension<SwitchStyle> {
   final Color thumbColor;
   final Color activeColor;
   final Color trackColor;
 
-  SwithStyle({
+  SwitchStyle({
     required this.thumbColor,
     required this.activeColor,
     required this.trackColor,
   });
 
-  factory SwithStyle.dark() => SwithStyle(
+  factory SwitchStyle.dark() => SwitchStyle(
         thumbColor: PrimaryColor.light,
         activeColor: PrimaryColor.blueAccent,
         trackColor: TextColor.grey,
       );
 
-  factory SwithStyle.light() => SwithStyle(
+  factory SwitchStyle.light() => SwitchStyle(
         thumbColor: PrimaryColor.light,
         activeColor: PrimaryColor.blueAccent,
         trackColor: TextColor.grey,
       );
 
   @override
-  SwithStyle lerp(ThemeExtension<SwithStyle>? other, double t) {
-    if (other is! SwithStyle) {
+  SwitchStyle lerp(ThemeExtension<SwitchStyle>? other, double t) {
+    if (other is! SwitchStyle) {
       return this;
     }
 
-    return SwithStyle(
+    return SwitchStyle(
       activeColor: Color.lerp(activeColor, other.activeColor, t)!,
       thumbColor: Color.lerp(thumbColor, other.thumbColor, t)!,
       trackColor: Color.lerp(trackColor, other.trackColor, t)!,
@@ -38,12 +38,12 @@ class SwithStyle extends ThemeExtension<SwithStyle> {
   }
 
   @override
-  SwithStyle copyWith({
+  SwitchStyle copyWith({
     Color? thumbColor,
     Color? activeColor,
     Color? trackColor,
   }) {
-    return SwithStyle(
+    return SwitchStyle(
       thumbColor: thumbColor ?? this.thumbColor,
       activeColor: activeColor ?? this.activeColor,
       trackColor: trackColor ?? this.trackColor,

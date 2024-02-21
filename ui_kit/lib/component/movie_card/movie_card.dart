@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/component/movie_card/movie_card_model.dart';
 import 'package:ui_kit/component/movie_card/movie_rating.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class MovieCard extends StatelessWidget {
   const MovieCard({

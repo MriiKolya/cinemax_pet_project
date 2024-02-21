@@ -3,7 +3,7 @@ import 'package:client/screens/auth/widgets/title_sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
-import 'package:ui_kit/component/conponent.dart';
+import 'package:ui_kit/component/component.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

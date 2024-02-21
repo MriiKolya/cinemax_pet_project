@@ -4,9 +4,10 @@ import 'package:client/features/auth/verification_email/cubit/verification_email
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/conponent.dart';
+import 'package:ui_kit/component/component.dart';
+
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class VerificationEmailForm extends StatelessWidget {
   const VerificationEmailForm({super.key, required this.email});
@@ -25,7 +26,7 @@ class VerificationEmailForm extends StatelessWidget {
             children: [
               const Spacer(),
               CinemaxOutlinedButton(
-                label: 'Confrim',
+                label: 'Confirm',
                 onPressed: () {
                   context.pushNamed(AppRouterName.welcomeName);
                 },

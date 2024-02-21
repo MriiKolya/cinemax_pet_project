@@ -1,14 +1,12 @@
 import 'package:client/core/di/dependency_provider.dart';
-import 'package:client/features/movie_trailler/cubit/movie_trailer_cubit.dart';
+import 'package:client/features/movie_trailer/cubit/movie_trailer_cubit.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:ui_kit/theme/color_scheme.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class MovieTrailler extends StatefulWidget {
-  const MovieTrailler({
+class MovieTrailerScreen extends StatefulWidget {
+  const MovieTrailerScreen({
     super.key,
     required this.movieId,
   });
@@ -16,10 +14,10 @@ class MovieTrailler extends StatefulWidget {
   final int movieId;
 
   @override
-  MovieTraillerState createState() => MovieTraillerState();
+  MovieTrailerScreenState createState() => MovieTrailerScreenState();
 }
 
-class MovieTraillerState extends State<MovieTrailler> {
+class MovieTrailerScreenState extends State<MovieTrailerScreen> {
   late YoutubePlayerController _controller;
 
   bool _isPlayerReady = false;

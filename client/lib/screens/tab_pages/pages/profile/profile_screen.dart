@@ -3,8 +3,8 @@ import 'package:client/core/router/app_router_name.dart';
 import 'package:client/features/auth/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ui_kit/component/conponent.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/component/component.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -26,11 +26,12 @@ class ProfileScreen extends StatelessWidget {
               style: style.h1,
             ),
             CinemaxFilledButton(
-                label: 'logout',
-                onPressed: () {
-                  DependencyProvider.get<AuthBloc>().add(AuthLogoutRequested());
-                  context.goNamed(AppRouterName.welcomeName);
-                })
+              label: 'logout',
+              onPressed: () {
+                DependencyProvider.get<AuthBloc>().add(AuthLogoutRequested());
+                context.goNamed(AppRouterName.welcomeName);
+              },
+            )
           ],
         ),
       ),

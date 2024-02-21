@@ -1,10 +1,10 @@
 // ignore_for_file: inference_failure_on_function_invocation
-
 import 'package:client/core/api_config.dart';
 import 'package:client/core/error/failure.dart';
-import 'package:client/features/movie_trailler/data/dtos/movie_trailer_dto.dart';
-import 'package:client/features/movie_trailler/data/entity/movie_trailer_entity.dart';
-import 'package:client/features/movie_trailler/data/mappers/movie_trailer_maper.dart';
+import 'package:client/features/movie_trailer/data/dtos/movie_trailer_dto.dart';
+import 'package:client/features/movie_trailer/data/entity/movie_trailer_entity.dart';
+import 'package:client/features/movie_trailer/data/mappers/movie_trailer_mapper.dart';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';

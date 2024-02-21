@@ -7,7 +7,7 @@ import 'package:client/features/movie/popular_movie_genre/popular_movie_genre.da
 import 'package:flutter/material.dart';
 import 'package:ui_kit/component/app_bar/cinemax_app_bar.dart';
 import 'package:ui_kit/component/avatar/avatar.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

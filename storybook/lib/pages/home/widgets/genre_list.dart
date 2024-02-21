@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
-import 'package:ui_kit/theme/theme_context_extention.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class GenreList extends StatefulWidget {
   const GenreList({super.key});

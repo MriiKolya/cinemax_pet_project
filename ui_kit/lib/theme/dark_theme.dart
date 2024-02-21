@@ -28,7 +28,7 @@ final ThemeData darkTheme = ThemeData(
     TextButtonStyle.dark(),
     OutlinedButtonStyle.dark(),
     CheckboxStyle.dark(),
-    SwithStyle.dark(),
+    SwitchStyle.dark(),
     LogoStyle.dark(),
     IconStyle.dark(),
     AppBarStyle.dark(),

@@ -14,7 +14,7 @@ import 'package:ui_kit/component_style/poster_movie_style/poster_movie.dart';
 import 'package:ui_kit/component_style/switch_style/switch_style.dart';
 import 'package:ui_kit/component_style/text_style/text_style.dart';
 
-extension ThemeContextExtention on BuildContext {
+extension ThemeContextExtension on BuildContext {
   FilledButtonStyle get filledButtonStyle =>
       Theme.of(this).extension<FilledButtonStyle>()!;
   TextButtonStyle get textButtonStyle =>
@@ -22,7 +22,7 @@ extension ThemeContextExtention on BuildContext {
   OutlinedButtonStyle get outlinedButtonStyle =>
       Theme.of(this).extension<OutlinedButtonStyle>()!;
   CheckboxStyle get checkBoxStyle => Theme.of(this).extension<CheckboxStyle>()!;
-  SwithStyle get switchStyle => Theme.of(this).extension<SwithStyle>()!;
+  SwitchStyle get switchStyle => Theme.of(this).extension<SwitchStyle>()!;
   LogoStyle get logoStyle => Theme.of(this).extension<LogoStyle>()!;
   IconStyle get iconStyle => Theme.of(this).extension<IconStyle>()!;
   AppBarStyle get appBarStyle => Theme.of(this).extension<AppBarStyle>()!;

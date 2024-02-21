@@ -28,7 +28,7 @@ final ThemeData lightTheme = ThemeData(
     TextButtonStyle.light(),
     OutlinedButtonStyle.light(),
     CheckboxStyle.light(),
-    SwithStyle.light(),
+    SwitchStyle.light(),
     LogoStyle.light(),
     IconStyle.light(),
     AppBarStyle.light(),
