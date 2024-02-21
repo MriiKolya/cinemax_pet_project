@@ -24,7 +24,9 @@ class TitleAppBar extends StatelessWidget {
           children: [
             TextSpan(
               text: titleText,
-              style: context.appBarStyle.titleTextStyle,
+              style: context.appBarStyle.titleTextStyle.copyWith(
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             if (subTitle != null)
               TextSpan(
