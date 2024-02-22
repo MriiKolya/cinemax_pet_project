@@ -2,10 +2,9 @@ abstract class MovieQuery {
   static const String baseUrl = 'https://api.themoviedb.org/3/movie/';
   static const String image = 'https://image.tmdb.org/t/p/w500/';
   static const String queryNowPlaying = 'now_playing';
-  static const String querypopular = 'popular';
+  static const String queryPopular = 'popular';
   static const String queryTrailer = 'videos';
   static const String queryRecommendations = 'recommendations';
-  
 
   static const String genreUrl =
       'https://api.themoviedb.org/3/genre/movie/list?';
@@ -13,5 +12,4 @@ abstract class MovieQuery {
   static Map<String, dynamic> queryParametersBase = <String, dynamic>{
     'api_key': MovieQuery._apikey
   };
-  // /now_playing?language=en-US&page=1
 }

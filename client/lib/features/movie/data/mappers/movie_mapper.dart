@@ -10,7 +10,6 @@ extension MovieMapper on MovieDTO {
         description: description,
         popularity: popularity,
         picture: '${MovieQuery.image}$backdropPath',
-        releaseDate: DateTime.parse(releaseDate),
         voteAverage: voteAverage,
         genres: genres,
       );

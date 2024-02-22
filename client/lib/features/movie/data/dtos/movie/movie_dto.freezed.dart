@@ -20,23 +20,23 @@ MovieDTO _$MovieDTOFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieDTO {
-  @JsonKey(name: 'backdrop_path')
+  @JsonKey(name: 'backdrop_path', defaultValue: '')
   String get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'id', defaultValue: 0)
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'title', defaultValue: '')
   String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'original_title')
+  @JsonKey(name: 'original_title', defaultValue: '')
   String get originalTitle => throw _privateConstructorUsedError;
-  @JsonKey(name: 'overview')
+  @JsonKey(name: 'overview', defaultValue: '')
   String get description => throw _privateConstructorUsedError;
-  @JsonKey(name: 'popularity')
+  @JsonKey(name: 'popularity', defaultValue: 0)
   double get popularity => throw _privateConstructorUsedError;
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', defaultValue: '')
   String get releaseDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'vote_average')
+  @JsonKey(name: 'vote_average', defaultValue: 0)
   double get voteAverage => throw _privateConstructorUsedError;
-  @JsonKey(name: 'genre_ids')
+  @JsonKey(name: 'genre_ids', defaultValue: [])
   List<int> get genres => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,15 +51,15 @@ abstract class $MovieDTOCopyWith<$Res> {
       _$MovieDTOCopyWithImpl<$Res, MovieDTO>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'backdrop_path') String backdropPath,
+      {@JsonKey(name: 'backdrop_path', defaultValue: '') String backdropPath,
       @JsonKey(name: 'id', defaultValue: 0) int id,
       @JsonKey(name: 'title', defaultValue: '') String title,
-      @JsonKey(name: 'original_title') String originalTitle,
-      @JsonKey(name: 'overview') String description,
-      @JsonKey(name: 'popularity') double popularity,
-      @JsonKey(name: 'release_date') String releaseDate,
-      @JsonKey(name: 'vote_average') double voteAverage,
-      @JsonKey(name: 'genre_ids') List<int> genres});
+      @JsonKey(name: 'original_title', defaultValue: '') String originalTitle,
+      @JsonKey(name: 'overview', defaultValue: '') String description,
+      @JsonKey(name: 'popularity', defaultValue: 0) double popularity,
+      @JsonKey(name: 'release_date', defaultValue: '') String releaseDate,
+      @JsonKey(name: 'vote_average', defaultValue: 0) double voteAverage,
+      @JsonKey(name: 'genre_ids', defaultValue: []) List<int> genres});
 }
 
 /// @nodoc
@@ -135,15 +135,15 @@ abstract class _$$MovieCardDTOImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'backdrop_path') String backdropPath,
+      {@JsonKey(name: 'backdrop_path', defaultValue: '') String backdropPath,
       @JsonKey(name: 'id', defaultValue: 0) int id,
       @JsonKey(name: 'title', defaultValue: '') String title,
-      @JsonKey(name: 'original_title') String originalTitle,
-      @JsonKey(name: 'overview') String description,
-      @JsonKey(name: 'popularity') double popularity,
-      @JsonKey(name: 'release_date') String releaseDate,
-      @JsonKey(name: 'vote_average') double voteAverage,
-      @JsonKey(name: 'genre_ids') List<int> genres});
+      @JsonKey(name: 'original_title', defaultValue: '') String originalTitle,
+      @JsonKey(name: 'overview', defaultValue: '') String description,
+      @JsonKey(name: 'popularity', defaultValue: 0) double popularity,
+      @JsonKey(name: 'release_date', defaultValue: '') String releaseDate,
+      @JsonKey(name: 'vote_average', defaultValue: 0) double voteAverage,
+      @JsonKey(name: 'genre_ids', defaultValue: []) List<int> genres});
 }
 
 /// @nodoc
@@ -212,15 +212,19 @@ class __$$MovieCardDTOImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieCardDTOImpl extends _MovieCardDTO {
   _$MovieCardDTOImpl(
-      {@JsonKey(name: 'backdrop_path') required this.backdropPath,
+      {@JsonKey(name: 'backdrop_path', defaultValue: '')
+      required this.backdropPath,
       @JsonKey(name: 'id', defaultValue: 0) required this.id,
       @JsonKey(name: 'title', defaultValue: '') required this.title,
-      @JsonKey(name: 'original_title') required this.originalTitle,
-      @JsonKey(name: 'overview') required this.description,
-      @JsonKey(name: 'popularity') required this.popularity,
-      @JsonKey(name: 'release_date') required this.releaseDate,
-      @JsonKey(name: 'vote_average') required this.voteAverage,
-      @JsonKey(name: 'genre_ids') required final List<int> genres})
+      @JsonKey(name: 'original_title', defaultValue: '')
+      required this.originalTitle,
+      @JsonKey(name: 'overview', defaultValue: '') required this.description,
+      @JsonKey(name: 'popularity', defaultValue: 0) required this.popularity,
+      @JsonKey(name: 'release_date', defaultValue: '')
+      required this.releaseDate,
+      @JsonKey(name: 'vote_average', defaultValue: 0) required this.voteAverage,
+      @JsonKey(name: 'genre_ids', defaultValue: [])
+      required final List<int> genres})
       : _genres = genres,
         super._();
 
@@ -228,7 +232,7 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
       _$$MovieCardDTOImplFromJson(json);
 
   @override
-  @JsonKey(name: 'backdrop_path')
+  @JsonKey(name: 'backdrop_path', defaultValue: '')
   final String backdropPath;
   @override
   @JsonKey(name: 'id', defaultValue: 0)
@@ -237,23 +241,23 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
   @JsonKey(name: 'title', defaultValue: '')
   final String title;
   @override
-  @JsonKey(name: 'original_title')
+  @JsonKey(name: 'original_title', defaultValue: '')
   final String originalTitle;
   @override
-  @JsonKey(name: 'overview')
+  @JsonKey(name: 'overview', defaultValue: '')
   final String description;
   @override
-  @JsonKey(name: 'popularity')
+  @JsonKey(name: 'popularity', defaultValue: 0)
   final double popularity;
   @override
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', defaultValue: '')
   final String releaseDate;
   @override
-  @JsonKey(name: 'vote_average')
+  @JsonKey(name: 'vote_average', defaultValue: 0)
   final double voteAverage;
   final List<int> _genres;
   @override
-  @JsonKey(name: 'genre_ids')
+  @JsonKey(name: 'genre_ids', defaultValue: [])
   List<int> get genres {
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
@@ -317,23 +321,29 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
 
 abstract class _MovieCardDTO extends MovieDTO {
   factory _MovieCardDTO(
-          {@JsonKey(name: 'backdrop_path') required final String backdropPath,
-          @JsonKey(name: 'id', defaultValue: 0) required final int id,
-          @JsonKey(name: 'title', defaultValue: '') required final String title,
-          @JsonKey(name: 'original_title') required final String originalTitle,
-          @JsonKey(name: 'overview') required final String description,
-          @JsonKey(name: 'popularity') required final double popularity,
-          @JsonKey(name: 'release_date') required final String releaseDate,
-          @JsonKey(name: 'vote_average') required final double voteAverage,
-          @JsonKey(name: 'genre_ids') required final List<int> genres}) =
-      _$MovieCardDTOImpl;
+      {@JsonKey(name: 'backdrop_path', defaultValue: '')
+      required final String backdropPath,
+      @JsonKey(name: 'id', defaultValue: 0) required final int id,
+      @JsonKey(name: 'title', defaultValue: '') required final String title,
+      @JsonKey(name: 'original_title', defaultValue: '')
+      required final String originalTitle,
+      @JsonKey(name: 'overview', defaultValue: '')
+      required final String description,
+      @JsonKey(name: 'popularity', defaultValue: 0)
+      required final double popularity,
+      @JsonKey(name: 'release_date', defaultValue: '')
+      required final String releaseDate,
+      @JsonKey(name: 'vote_average', defaultValue: 0)
+      required final double voteAverage,
+      @JsonKey(name: 'genre_ids', defaultValue: [])
+      required final List<int> genres}) = _$MovieCardDTOImpl;
   _MovieCardDTO._() : super._();
 
   factory _MovieCardDTO.fromJson(Map<String, dynamic> json) =
       _$MovieCardDTOImpl.fromJson;
 
   @override
-  @JsonKey(name: 'backdrop_path')
+  @JsonKey(name: 'backdrop_path', defaultValue: '')
   String get backdropPath;
   @override
   @JsonKey(name: 'id', defaultValue: 0)
@@ -342,22 +352,22 @@ abstract class _MovieCardDTO extends MovieDTO {
   @JsonKey(name: 'title', defaultValue: '')
   String get title;
   @override
-  @JsonKey(name: 'original_title')
+  @JsonKey(name: 'original_title', defaultValue: '')
   String get originalTitle;
   @override
-  @JsonKey(name: 'overview')
+  @JsonKey(name: 'overview', defaultValue: '')
   String get description;
   @override
-  @JsonKey(name: 'popularity')
+  @JsonKey(name: 'popularity', defaultValue: 0)
   double get popularity;
   @override
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', defaultValue: '')
   String get releaseDate;
   @override
-  @JsonKey(name: 'vote_average')
+  @JsonKey(name: 'vote_average', defaultValue: 0)
   double get voteAverage;
   @override
-  @JsonKey(name: 'genre_ids')
+  @JsonKey(name: 'genre_ids', defaultValue: [])
   List<int> get genres;
   @override
   @JsonKey(ignore: true)

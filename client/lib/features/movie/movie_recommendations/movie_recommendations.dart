@@ -27,7 +27,7 @@ class MovieRecommendations extends StatelessWidget {
           if (state.loading) {
             return const Center(child: CircularProgressIndicator());
           }
-          if (state.movieRecommendations.movies!.isNotEmpty) {
+          if (state.movieRecommendations.movies.isNotEmpty) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -47,10 +47,10 @@ class MovieRecommendations extends StatelessWidget {
                 SizedBox(
                   height: 280,
                   child: ListView.builder(
-                      itemCount: state.movieRecommendations.movies!.length,
+                      itemCount: state.movieRecommendations.movies.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        final card = state.movieRecommendations.movies![index]
+                        final card = state.movieRecommendations.movies[index]
                             .toCard()
                           ..genre = genre?[0].name;
                         return MovieCard(
@@ -58,7 +58,7 @@ class MovieRecommendations extends StatelessWidget {
                             context.pushNamed(
                               AppRouterName.detailMovieName,
                               extra:
-                                  state.movieRecommendations.movies?[index].id,
+                                  state.movieRecommendations.movies[index].id,
                             );
                           },
                           cardModel: card,

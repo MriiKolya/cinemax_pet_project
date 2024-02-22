@@ -18,20 +18,20 @@ class PopularMovieGenre extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         }
-        if (state.listPopularGenreMovie.movies!.isNotEmpty) {
+        if (state.listPopularGenreMovie.movies.isNotEmpty) {
           return SizedBox(
             height: 280,
             child: ListView.builder(
-                itemCount: state.listPopularGenreMovie.movies?.length,
+                itemCount: state.listPopularGenreMovie.movies.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  final card = state.listPopularGenreMovie.movies![index]
+                  final card = state.listPopularGenreMovie.movies[index]
                       .toCard()
                     ..genre = state.currentGenre.name;
                   return MovieCard(
                     cardModel: card,
                     onTap: () => context.goNamed(AppRouterName.detailMovieName,
-                        extra: state.listPopularGenreMovie.movies?[index].id),
+                        extra: state.listPopularGenreMovie.movies[index].id),
                   );
                 }),
           );

@@ -23,7 +23,7 @@ class NewMovieList extends StatelessWidget {
           if (state.loading) {
             return const Center(child: CircularProgressIndicator());
           }
-          if (state.listNewMovie.movies!.isNotEmpty) {
+          if (state.listNewMovie.movies.isNotEmpty) {
             return Column(
               children: [
                 CarouselSlider.builder(
@@ -35,14 +35,14 @@ class NewMovieList extends StatelessWidget {
                       enlargeStrategy: CenterPageEnlargeStrategy.height,
                       autoPlayInterval: const Duration(seconds: 10),
                     ),
-                    itemCount: state.listNewMovie.movies?.length,
+                    itemCount: state.listNewMovie.movies.length,
                     itemBuilder: (context, index, realIndex) {
                       return PosterMovie(
                         onTap: () => context.goNamed(
                             AppRouterName.detailMovieName,
-                            extra: state.listNewMovie.movies![index].id),
+                            extra: state.listNewMovie.movies[index].id),
                         posterMovie:
-                            state.listNewMovie.movies![index].toPoster(),
+                            state.listNewMovie.movies[index].toPoster(),
                       );
                     }),
               ],

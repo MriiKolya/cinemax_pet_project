@@ -8,16 +8,18 @@ part of 'movie_dto.dart';
 
 _$MovieCardDTOImpl _$$MovieCardDTOImplFromJson(Map<String, dynamic> json) =>
     _$MovieCardDTOImpl(
-      backdropPath: json['backdrop_path'] as String,
+      backdropPath: json['backdrop_path'] as String? ?? '',
       id: json['id'] as int? ?? 0,
       title: json['title'] as String? ?? '',
-      originalTitle: json['original_title'] as String,
-      description: json['overview'] as String,
-      popularity: (json['popularity'] as num).toDouble(),
-      releaseDate: json['release_date'] as String,
-      voteAverage: (json['vote_average'] as num).toDouble(),
-      genres:
-          (json['genre_ids'] as List<dynamic>).map((e) => e as int).toList(),
+      originalTitle: json['original_title'] as String? ?? '',
+      description: json['overview'] as String? ?? '',
+      popularity: (json['popularity'] as num?)?.toDouble() ?? 0,
+      releaseDate: json['release_date'] as String? ?? '',
+      voteAverage: (json['vote_average'] as num?)?.toDouble() ?? 0,
+      genres: (json['genre_ids'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList() ??
+          [],
     );
 
 Map<String, dynamic> _$$MovieCardDTOImplToJson(_$MovieCardDTOImpl instance) =>
