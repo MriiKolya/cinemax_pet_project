@@ -35,10 +35,10 @@ class PopularMoviesGenreCubit extends Cubit<PopularMoviesGenreState> {
           failure: failure,
         ),
       ),
-      (succes) => emit(
+      (success) => emit(
         state.copyWith(
           loading: false,
-          listPopularGenreMovie: succes,
+          listPopularGenreMovie: success,
           failure: null,
         ),
       ),
@@ -56,10 +56,10 @@ class PopularMoviesGenreCubit extends Cubit<PopularMoviesGenreState> {
           failure: failure,
         ),
       ),
-      (succes) => emit(
+      (success) => emit(
         state.copyWith(
           loading: false,
-          listPopularGenreMovie: succes,
+          listPopularGenreMovie: success,
           failure: null,
         ),
       ),

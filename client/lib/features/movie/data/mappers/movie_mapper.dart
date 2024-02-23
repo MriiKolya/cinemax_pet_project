@@ -1,4 +1,4 @@
-import 'package:client/core/api_config.dart';
+import 'package:client/core/api/api_config.dart';
 import 'package:client/features/movie/data/dtos/movie/movie_dto.dart';
 import 'package:client/features/movie/data/entity/movie.dart';
 

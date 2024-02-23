@@ -20,7 +20,7 @@ class VerificationTitle extends StatelessWidget {
             fontWeight: FontWeightStyle.medium.fontWeight,
           ),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: context.spacerStyle.height),
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(

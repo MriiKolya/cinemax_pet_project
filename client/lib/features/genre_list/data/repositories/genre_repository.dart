@@ -1,4 +1,4 @@
-import 'package:client/core/api_config.dart';
+import 'package:client/core/api/api_config.dart';
 import 'package:client/core/error/failure.dart';
 import 'package:client/features/genre_list/data/dtos/genre_dto.dart';
 import 'package:client/features/genre_list/data/entity/genre_entity.dart';

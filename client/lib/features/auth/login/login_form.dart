@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/component/component.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -37,7 +38,7 @@ class LoginForm extends StatelessWidget {
                 onChanged: (email) =>
                     context.read<LoginFormCubit>().emailChanged(email),
               ),
-              const SizedBox(height: 50),
+              SizedBox(height: context.spacerStyle.height),
               InputField(
                 keyboardType: TextInputType.visiblePassword,
                 validator: (_) => state.password.value.fold<String?>(

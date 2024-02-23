@@ -1,8 +1,7 @@
 // ignore_for_file: inference_failure_on_function_invocation
 
 import 'dart:math';
-
-import 'package:client/core/api_config.dart';
+import 'package:client/core/api/api_config.dart';
 import 'package:client/core/error/failure.dart';
 import 'package:client/features/genre_list/data/entity/genre_entity.dart';
 import 'package:client/features/movie/data/dtos/list_movie/list_new_movie_dto.dart';
@@ -17,6 +16,10 @@ abstract class IPopularMovieGenreRepository {
   Future<Either<Failure, ListMovieEntity>> getPopularMovieGenre({
     required GenreEntity genre,
   });
+}
+
+abstract class _Constant {
+  static const int sizeList = 10;
 }
 
 class PopularMovieGenreRepository implements IPopularMovieGenreRepository {
@@ -34,7 +37,7 @@ class PopularMovieGenreRepository implements IPopularMovieGenreRepository {
       final listMoviesEntity = ListMovieEntity.empty();
       var page = 0;
 
-      while (listMoviesEntity.movies.length < 10) {
+      while (listMoviesEntity.movies.length < _Constant.sizeList) {
         page++;
         final url =
             '${MovieQuery.baseUrl}${MovieQuery.queryPopular}?page=$page';
@@ -58,8 +61,13 @@ class PopularMovieGenreRepository implements IPopularMovieGenreRepository {
                 .toList();
           }
 
-          final uniqueMovies = filteredMovies.toSet().toList().sublist(0,
-              min(20 - listMoviesEntity.movies.length, filteredMovies.length));
+          final uniqueMovies = filteredMovies.toSet().toList().sublist(
+                0,
+                min(
+                  _Constant.sizeList - listMoviesEntity.movies.length,
+                  filteredMovies.length,
+                ),
+              );
 
           listMoviesEntity.movies.addAll(uniqueMovies);
         } else {
@@ -67,7 +75,7 @@ class PopularMovieGenreRepository implements IPopularMovieGenreRepository {
         }
       }
 
-      if (listMoviesEntity.movies.length < 20) {
+      if (listMoviesEntity.movies.length < _Constant.sizeList) {
         return left(const Failure.parseError());
       }
 

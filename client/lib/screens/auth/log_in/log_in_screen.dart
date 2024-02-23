@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_kit/assets/icons/cinemax_icons.dart';
 import 'package:ui_kit/component/component.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -24,14 +25,14 @@ class LoginScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: constraints.maxWidth / 15,
           ),
-          child: const Column(
+          child: Column(
             children: [
-              SizedBox(height: 30),
-              TitleForScreen(
+              SizedBox(height: context.spacerStyle.height),
+              const TitleForScreen(
                 titleText: 'Greetings from Cinemax',
                 subTitleText: 'Welcome back! Please enter your details',
               ),
-              LoginForm(),
+              const LoginForm(),
             ],
           ),
         ),

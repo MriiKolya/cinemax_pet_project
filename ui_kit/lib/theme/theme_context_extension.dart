@@ -11,6 +11,7 @@ import 'package:ui_kit/component_style/logo_style/cinemax_logo_style.dart';
 import 'package:ui_kit/component_style/nav_bar_style/nav_bar_style.dart';
 import 'package:ui_kit/component_style/pinput_style/pinput_style.dart';
 import 'package:ui_kit/component_style/poster_movie_style/poster_movie.dart';
+import 'package:ui_kit/component_style/spacer_style/spacer_style.dart';
 import 'package:ui_kit/component_style/switch_style/switch_style.dart';
 import 'package:ui_kit/component_style/text_style/text_style.dart';
 
@@ -34,4 +35,5 @@ extension ThemeContextExtension on BuildContext {
   AvatarStyle get avatarStyle => Theme.of(this).extension<AvatarStyle>()!;
   PosterMovieStyle get posterMovieStyle =>
       Theme.of(this).extension<PosterMovieStyle>()!;
+  SpacerStyle get spacerStyle => Theme.of(this).extension<SpacerStyle>()!;
 }

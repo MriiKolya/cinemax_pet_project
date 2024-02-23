@@ -1,4 +1,4 @@
-import 'package:client/core/api_config.dart';
+import 'package:client/core/api/api_config.dart';
 import 'package:client/features/movie/data/entity/movie.dart';
 import 'package:ui_kit/component/movie_card/movie_card_model.dart';
 

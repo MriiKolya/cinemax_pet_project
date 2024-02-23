@@ -38,7 +38,7 @@ class SignUpForm extends StatelessWidget {
               onChanged: (name) =>
                   context.read<SignUpFormCubit>().nameChanged(name),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: context.spacerStyle.height),
             InputField(
               keyboardType: TextInputType.emailAddress,
               autovalidateMode: state.showErrorMessage == true
@@ -56,7 +56,7 @@ class SignUpForm extends StatelessWidget {
               onChanged: (email) =>
                   context.read<SignUpFormCubit>().emailChanged(email),
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: context.spacerStyle.height),
             InputField(
               keyboardType: TextInputType.visiblePassword,
               validator: (_) => state.password.value.fold<String?>(
@@ -76,7 +76,7 @@ class SignUpForm extends StatelessWidget {
               onChanged: (password) =>
                   context.read<SignUpFormCubit>().passwordChanged(password),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: context.spacerStyle.height),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -86,7 +86,7 @@ class SignUpForm extends StatelessWidget {
                     onChanged: () {
                       context.read<SignUpFormCubit>().agreeTermsToggled();
                     }),
-                const SizedBox(width: 5),
+                SizedBox(width: context.spacerStyle.widthOnText),
                 Flexible(
                   child: Text(
                     'I agree to the Terms and Services and Privacy Policy',

@@ -1,4 +1,3 @@
-import 'package:client/core/di/dependency_provider.dart';
 import 'package:client/core/extension/font_weight_extension.dart';
 import 'package:client/features/auth/bloc/auth_bloc.dart';
 import 'package:client/features/genre_list/genre_list.dart';
@@ -17,57 +16,60 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
-        return Scaffold(
-          appBar: CinemaxAppBar(
-            leading: Avatar(
-              photoUrl: state.user.photoUrl,
+        if (state.user.isNotEmpty) {
+          return Scaffold(
+            appBar: CinemaxAppBar(
+              leading: Avatar(
+                photoUrl: state.user.photoUrl,
+              ),
+              centerTitle: false,
+              titleText: 'Hello, ${state.user.email}',
+              subTitle: 'Let’s stream your favorite movie',
             ),
-            centerTitle: false,
-            titleText: 'Hello, ${state.user.email}',
-            subTitle: 'Let’s stream your favorite movie',
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                const SizedBox(height: 35),
-                const NewMovieList(),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 20,
-                        ),
-                        child: Text(
-                          'Genre Movie',
-                          style: context.textStyle.h4.copyWith(
-                            fontWeight: FontWeightStyle.semiBold.fontWeight,
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: context.spacerStyle.height),
+                  const NewMovieList(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                          ),
+                          child: Text(
+                            'Genre Movie',
+                            style: context.textStyle.h4.copyWith(
+                              fontWeight: FontWeightStyle.semiBold.fontWeight,
+                            ),
                           ),
                         ),
-                      ),
-                      const GenreList(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 20,
-                        ),
-                        child: Text(
-                          'Most Popular in Genre',
-                          style: context.textStyle.h4.copyWith(
-                            fontWeight: FontWeightStyle.semiBold.fontWeight,
+                        const GenreList(),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 20,
+                          ),
+                          child: Text(
+                            'Most Popular in Genre',
+                            style: context.textStyle.h4.copyWith(
+                              fontWeight: FontWeightStyle.semiBold.fontWeight,
+                            ),
                           ),
                         ),
-                      ),
-                      const PopularMovieGenre()
-                    ],
-                  ),
-                )
-              ],
+                        const PopularMovieGenre()
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        );
+          );
+        }
+        return const SizedBox();
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_kit/assets/images/images_assets.dart';
 import 'package:ui_kit/component/movie_card/movie_card_model.dart';
 import 'package:ui_kit/component/movie_card/movie_rating.dart';
 import 'package:ui_kit/theme/color_scheme.dart';
@@ -44,6 +45,10 @@ class MovieCard extends StatelessWidget {
                           topRight: Radius.circular(20),
                         ),
                         image: DecorationImage(
+                          onError: (exception, stackTrace) => Image.asset(
+                            ImageAssets.cinemaxLogo,
+                            package: 'ui_kit',
+                          ),
                           fit: BoxFit.cover,
                           image: CachedNetworkImageProvider(
                             cardModel.posterPicture,

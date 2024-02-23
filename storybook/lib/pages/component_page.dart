@@ -8,6 +8,7 @@ import 'package:ui_kit/component/check_box/check_box.dart';
 import 'package:ui_kit/component/icon/cinemax_icon.dart';
 import 'package:ui_kit/component/input_field/input_field.dart';
 import 'package:ui_kit/component/switch/cinemax_switch.dart';
+import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class ComponentPage extends StatelessWidget {
   const ComponentPage({super.key});
@@ -42,11 +43,11 @@ class ComponentPage extends StatelessWidget {
                 label: 'Outline Button',
                 onPressed: () {},
               ),
-              const Row(
+              Row(
                 children: [
-                  CinemaxCheckBox(value: false, onChanged: null),
-                  SizedBox(width: 30),
-                  CinemaxCheckBox(
+                  const CinemaxCheckBox(value: false, onChanged: null),
+                  SizedBox(height: context.spacerStyle.height),
+                  const CinemaxCheckBox(
                     boxShape: BoxShape.rectangle,
                     value: false,
                     onChanged: null,
@@ -59,7 +60,7 @@ class ComponentPage extends StatelessWidget {
                     value: false,
                     onChanged: (p0) {},
                   ),
-                  const SizedBox(width: 30),
+                  SizedBox(height: context.spacerStyle.height),
                   CinemaxSwitch(
                     value: true,
                     onChanged: (p0) {},
