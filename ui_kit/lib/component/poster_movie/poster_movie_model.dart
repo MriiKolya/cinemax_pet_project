@@ -1,11 +1,11 @@
 class PosterMovieModel {
   final String title;
   final String? release;
-  final String poster;
+  final String backdropPath;
 
   PosterMovieModel({
     required this.title,
     this.release,
-    required this.poster,
+    required this.backdropPath,
   });
 }

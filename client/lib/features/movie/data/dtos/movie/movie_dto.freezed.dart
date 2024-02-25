@@ -22,12 +22,16 @@ MovieDTO _$MovieDTOFromJson(Map<String, dynamic> json) {
 mixin _$MovieDTO {
   @JsonKey(name: 'backdrop_path', defaultValue: '')
   String get backdropPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'poster_path', defaultValue: '')
+  String get posterPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'id', defaultValue: 0)
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'title', defaultValue: '')
   String get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'original_title', defaultValue: '')
   String get originalTitle => throw _privateConstructorUsedError;
+  @JsonKey(name: 'original_language', defaultValue: '')
+  String get originalLanguage => throw _privateConstructorUsedError;
   @JsonKey(name: 'overview', defaultValue: '')
   String get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'popularity', defaultValue: 0)
@@ -52,9 +56,12 @@ abstract class $MovieDTOCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'backdrop_path', defaultValue: '') String backdropPath,
+      @JsonKey(name: 'poster_path', defaultValue: '') String posterPath,
       @JsonKey(name: 'id', defaultValue: 0) int id,
       @JsonKey(name: 'title', defaultValue: '') String title,
       @JsonKey(name: 'original_title', defaultValue: '') String originalTitle,
+      @JsonKey(name: 'original_language', defaultValue: '')
+      String originalLanguage,
       @JsonKey(name: 'overview', defaultValue: '') String description,
       @JsonKey(name: 'popularity', defaultValue: 0) double popularity,
       @JsonKey(name: 'release_date', defaultValue: '') String releaseDate,
@@ -76,9 +83,11 @@ class _$MovieDTOCopyWithImpl<$Res, $Val extends MovieDTO>
   @override
   $Res call({
     Object? backdropPath = null,
+    Object? posterPath = null,
     Object? id = null,
     Object? title = null,
     Object? originalTitle = null,
+    Object? originalLanguage = null,
     Object? description = null,
     Object? popularity = null,
     Object? releaseDate = null,
@@ -89,6 +98,10 @@ class _$MovieDTOCopyWithImpl<$Res, $Val extends MovieDTO>
       backdropPath: null == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      posterPath: null == posterPath
+          ? _value.posterPath
+          : posterPath // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
           ? _value.id
@@ -101,6 +114,10 @@ class _$MovieDTOCopyWithImpl<$Res, $Val extends MovieDTO>
       originalTitle: null == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      originalLanguage: null == originalLanguage
+          ? _value.originalLanguage
+          : originalLanguage // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -136,9 +153,12 @@ abstract class _$$MovieCardDTOImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'backdrop_path', defaultValue: '') String backdropPath,
+      @JsonKey(name: 'poster_path', defaultValue: '') String posterPath,
       @JsonKey(name: 'id', defaultValue: 0) int id,
       @JsonKey(name: 'title', defaultValue: '') String title,
       @JsonKey(name: 'original_title', defaultValue: '') String originalTitle,
+      @JsonKey(name: 'original_language', defaultValue: '')
+      String originalLanguage,
       @JsonKey(name: 'overview', defaultValue: '') String description,
       @JsonKey(name: 'popularity', defaultValue: 0) double popularity,
       @JsonKey(name: 'release_date', defaultValue: '') String releaseDate,
@@ -158,9 +178,11 @@ class __$$MovieCardDTOImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? backdropPath = null,
+    Object? posterPath = null,
     Object? id = null,
     Object? title = null,
     Object? originalTitle = null,
+    Object? originalLanguage = null,
     Object? description = null,
     Object? popularity = null,
     Object? releaseDate = null,
@@ -171,6 +193,10 @@ class __$$MovieCardDTOImplCopyWithImpl<$Res>
       backdropPath: null == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String,
+      posterPath: null == posterPath
+          ? _value.posterPath
+          : posterPath // ignore: cast_nullable_to_non_nullable
               as String,
       id: null == id
           ? _value.id
@@ -183,6 +209,10 @@ class __$$MovieCardDTOImplCopyWithImpl<$Res>
       originalTitle: null == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      originalLanguage: null == originalLanguage
+          ? _value.originalLanguage
+          : originalLanguage // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -214,10 +244,13 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
   _$MovieCardDTOImpl(
       {@JsonKey(name: 'backdrop_path', defaultValue: '')
       required this.backdropPath,
+      @JsonKey(name: 'poster_path', defaultValue: '') required this.posterPath,
       @JsonKey(name: 'id', defaultValue: 0) required this.id,
       @JsonKey(name: 'title', defaultValue: '') required this.title,
       @JsonKey(name: 'original_title', defaultValue: '')
       required this.originalTitle,
+      @JsonKey(name: 'original_language', defaultValue: '')
+      required this.originalLanguage,
       @JsonKey(name: 'overview', defaultValue: '') required this.description,
       @JsonKey(name: 'popularity', defaultValue: 0) required this.popularity,
       @JsonKey(name: 'release_date', defaultValue: '')
@@ -235,6 +268,9 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
   @JsonKey(name: 'backdrop_path', defaultValue: '')
   final String backdropPath;
   @override
+  @JsonKey(name: 'poster_path', defaultValue: '')
+  final String posterPath;
+  @override
   @JsonKey(name: 'id', defaultValue: 0)
   final int id;
   @override
@@ -243,6 +279,9 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
   @override
   @JsonKey(name: 'original_title', defaultValue: '')
   final String originalTitle;
+  @override
+  @JsonKey(name: 'original_language', defaultValue: '')
+  final String originalLanguage;
   @override
   @JsonKey(name: 'overview', defaultValue: '')
   final String description;
@@ -266,7 +305,7 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
 
   @override
   String toString() {
-    return 'MovieDTO(backdropPath: $backdropPath, id: $id, title: $title, originalTitle: $originalTitle, description: $description, popularity: $popularity, releaseDate: $releaseDate, voteAverage: $voteAverage, genres: $genres)';
+    return 'MovieDTO(backdropPath: $backdropPath, posterPath: $posterPath, id: $id, title: $title, originalTitle: $originalTitle, originalLanguage: $originalLanguage, description: $description, popularity: $popularity, releaseDate: $releaseDate, voteAverage: $voteAverage, genres: $genres)';
   }
 
   @override
@@ -276,10 +315,14 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
             other is _$MovieCardDTOImpl &&
             (identical(other.backdropPath, backdropPath) ||
                 other.backdropPath == backdropPath) &&
+            (identical(other.posterPath, posterPath) ||
+                other.posterPath == posterPath) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.originalTitle, originalTitle) ||
                 other.originalTitle == originalTitle) &&
+            (identical(other.originalLanguage, originalLanguage) ||
+                other.originalLanguage == originalLanguage) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.popularity, popularity) ||
@@ -296,9 +339,11 @@ class _$MovieCardDTOImpl extends _MovieCardDTO {
   int get hashCode => Object.hash(
       runtimeType,
       backdropPath,
+      posterPath,
       id,
       title,
       originalTitle,
+      originalLanguage,
       description,
       popularity,
       releaseDate,
@@ -323,10 +368,14 @@ abstract class _MovieCardDTO extends MovieDTO {
   factory _MovieCardDTO(
       {@JsonKey(name: 'backdrop_path', defaultValue: '')
       required final String backdropPath,
+      @JsonKey(name: 'poster_path', defaultValue: '')
+      required final String posterPath,
       @JsonKey(name: 'id', defaultValue: 0) required final int id,
       @JsonKey(name: 'title', defaultValue: '') required final String title,
       @JsonKey(name: 'original_title', defaultValue: '')
       required final String originalTitle,
+      @JsonKey(name: 'original_language', defaultValue: '')
+      required final String originalLanguage,
       @JsonKey(name: 'overview', defaultValue: '')
       required final String description,
       @JsonKey(name: 'popularity', defaultValue: 0)
@@ -346,6 +395,9 @@ abstract class _MovieCardDTO extends MovieDTO {
   @JsonKey(name: 'backdrop_path', defaultValue: '')
   String get backdropPath;
   @override
+  @JsonKey(name: 'poster_path', defaultValue: '')
+  String get posterPath;
+  @override
   @JsonKey(name: 'id', defaultValue: 0)
   int get id;
   @override
@@ -354,6 +406,9 @@ abstract class _MovieCardDTO extends MovieDTO {
   @override
   @JsonKey(name: 'original_title', defaultValue: '')
   String get originalTitle;
+  @override
+  @JsonKey(name: 'original_language', defaultValue: '')
+  String get originalLanguage;
   @override
   @JsonKey(name: 'overview', defaultValue: '')
   String get description;

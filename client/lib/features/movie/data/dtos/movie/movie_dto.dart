@@ -10,10 +10,13 @@ class MovieDTO with _$MovieDTO {
   factory MovieDTO({
     @JsonKey(name: 'backdrop_path', defaultValue: '')
     required String backdropPath,
+    @JsonKey(name: 'poster_path', defaultValue: '') required String posterPath,
     @JsonKey(name: 'id', defaultValue: 0) required int id,
     @JsonKey(name: 'title', defaultValue: '') required String title,
     @JsonKey(name: 'original_title', defaultValue: '')
     required String originalTitle,
+    @JsonKey(name: 'original_language', defaultValue: '')
+    required String originalLanguage,
     @JsonKey(name: 'overview', defaultValue: '') required String description,
     @JsonKey(name: 'popularity', defaultValue: 0) required double popularity,
     @JsonKey(name: 'release_date', defaultValue: '')

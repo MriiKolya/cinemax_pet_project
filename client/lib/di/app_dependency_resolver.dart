@@ -10,6 +10,7 @@ import 'package:client/features/movie/di/dependency_resolver.dart';
 import 'package:client/features/movie/new_movie_list/di/dependency_resolver.dart';
 import 'package:client/features/movie/popular_movie_genre/di/dependency_resolver.dart';
 import 'package:client/features/movie_trailer/di/dependency_resolver.dart';
+import 'package:client/features/search_movie/di/dependency_resolver.dart';
 
 import 'package:dio/dio.dart';
 
@@ -29,5 +30,6 @@ class AppDependencyResolver {
     MovieDetailDependencyResolver.register();
     MovieTrailerDependencyResolver.register();
     MovieRecommendationDependencyResolver.register();
+    SearchMovieDependencyResolver.register();
   }
 }

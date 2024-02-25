@@ -33,7 +33,7 @@ class SignUpFormCubit extends Cubit<SignUpFormState> {
 
   void nameChanged(String name) {
     emit(state.copyWith(
-      name: Name(name),
+      name: Input(name),
       authFailureOrSuccess: null,
     ));
   }

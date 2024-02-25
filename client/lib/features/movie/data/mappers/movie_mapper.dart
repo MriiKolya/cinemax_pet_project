@@ -6,11 +6,14 @@ extension MovieMapper on MovieDTO {
   MovieEntity toDomain() => MovieEntity(
         id: id,
         title: title,
+        originalLanguage: originalLanguage.toUpperCase(),
         originalTitle: originalTitle,
         description: description,
         popularity: popularity,
-        picture: '${MovieQuery.image}$backdropPath',
+        posterPath: '${MovieQuery.image}$posterPath',
+        backdropPath: '${MovieQuery.image}$backdropPath',
         voteAverage: voteAverage,
+        releaseDate: DateTime.tryParse(releaseDate),
         genres: genres,
       );
 }

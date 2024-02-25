@@ -2,9 +2,9 @@ import 'package:client/core/validator/value_failure/value_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-class Name extends Equatable {
-  factory Name(String name) => Name._(_validateName(name));
-  const Name._(this.value);
+class Input extends Equatable {
+  factory Input(String input) => Input._(_validateName(input));
+  const Input._(this.value);
   final Either<ValueFailure, String> value;
 
   @override

@@ -6,19 +6,23 @@ class MovieEntity extends Equatable {
   final String? originalTitle;
   final String? description;
   final double? popularity;
-  final String? picture;
+  final String? posterPath;
+  final String? backdropPath;
   final DateTime? releaseDate;
   final double? voteAverage;
   final List<int>? genres;
+  final String? originalLanguage;
 
   const MovieEntity({
     required this.id,
     required this.title,
+    this.originalLanguage,
+    this.backdropPath,
     this.genres,
     this.originalTitle,
     this.description,
     this.popularity,
-    this.picture,
+    this.posterPath,
     this.releaseDate,
     this.voteAverage,
   });
@@ -31,9 +35,11 @@ class MovieEntity extends Equatable {
       originalTitle,
       description,
       popularity,
-      picture,
+      posterPath,
+      backdropPath,
       releaseDate,
       voteAverage,
+      genres,
     ];
   }
 }

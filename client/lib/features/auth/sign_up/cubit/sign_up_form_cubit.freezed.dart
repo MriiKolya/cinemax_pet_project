@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignUpFormState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
-  Name get name => throw _privateConstructorUsedError;
+  Input get name => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
   bool get agreeTerms => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $SignUpFormStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Password password,
-      Name name,
+      Input name,
       bool isSubmitting,
       bool showErrorMessage,
       bool agreeTerms,
@@ -79,7 +79,7 @@ class _$SignUpFormStateCopyWithImpl<$Res, $Val extends SignUpFormState>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as Input,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -111,7 +111,7 @@ abstract class _$$SignUpFormStateImplCopyWith<$Res>
   $Res call(
       {EmailAddress emailAddress,
       Password password,
-      Name name,
+      Input name,
       bool isSubmitting,
       bool showErrorMessage,
       bool agreeTerms,
@@ -149,7 +149,7 @@ class __$$SignUpFormStateImplCopyWithImpl<$Res>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as Input,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -187,7 +187,7 @@ class _$SignUpFormStateImpl implements _SignUpFormState {
   @override
   final Password password;
   @override
-  final Name name;
+  final Input name;
   @override
   @JsonKey()
   final bool isSubmitting;
@@ -241,7 +241,7 @@ abstract class _SignUpFormState implements SignUpFormState {
   const factory _SignUpFormState(
           {required final EmailAddress emailAddress,
           required final Password password,
-          required final Name name,
+          required final Input name,
           final bool isSubmitting,
           final bool showErrorMessage,
           final bool agreeTerms,
@@ -253,7 +253,7 @@ abstract class _SignUpFormState implements SignUpFormState {
   @override
   Password get password;
   @override
-  Name get name;
+  Input get name;
   @override
   bool get isSubmitting;
   @override

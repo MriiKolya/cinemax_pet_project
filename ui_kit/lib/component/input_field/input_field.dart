@@ -16,10 +16,12 @@ class InputField extends StatefulWidget {
     this.onChanged,
     this.validator,
     this.autovalidateMode,
+    this.placeHolder,
   }) : super(key: key);
 
   final TextEditingController? controller;
   final String? labelText;
+  final String? placeHolder;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final VoidCallback? prefixOnTap;
@@ -55,6 +57,8 @@ class _InputFieldState extends State<InputField> {
       obscureText: isObscure,
       keyboardType: widget.keyboardType,
       decoration: InputDecoration(
+        hintText: widget.placeHolder,
+        hintStyle: style.labelStyle,
         contentPadding: style.contentPadding,
         prefixIcon: widget.prefixIcon != null
             ? Padding(

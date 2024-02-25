@@ -9,32 +9,32 @@ class NewMovieList extends StatelessWidget {
   final list = [
     PosterMovieModel(
         title: 'Test',
-        poster:
+        backdropPath:
             'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         release: '12.12.2023'),
     PosterMovieModel(
         title: 'Test',
-        poster:
+        backdropPath:
             'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         release: '12.12.2023'),
     PosterMovieModel(
         title: 'Test',
-        poster:
+        backdropPath:
             'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         release: '12.12.2023'),
     PosterMovieModel(
         title: 'Test',
-        poster:
+        backdropPath:
             'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         release: '12.12.2023'),
     PosterMovieModel(
         title: 'Test',
-        poster:
+        backdropPath:
             'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         release: '12.12.2023'),
     PosterMovieModel(
         title: 'Test',
-        poster:
+        backdropPath:
             'https://image.tmdb.org/t/p/w500//pWsD91G2R1Da3AKM3ymr3UoIfRb.jpg',
         release: '12.12.2023'),
   ];

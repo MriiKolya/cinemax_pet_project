@@ -1,17 +1,20 @@
+import 'package:client/features/search_movie/search_movie.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_kit/theme/theme_context_extension.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final style = context.textStyle;
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'SearchScreen',
-          style: style.h1,
+    return const Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              SearchMovie(),
+            ],
+          ),
         ),
       ),
     );

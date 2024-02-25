@@ -5,7 +5,7 @@ class SignUpFormState with _$SignUpFormState {
   const factory SignUpFormState({
     required EmailAddress emailAddress,
     required Password password,
-    required Name name,
+    required Input name,
     @Default(false) bool isSubmitting,
     @Default(false) bool showErrorMessage,
     @Default(true) bool agreeTerms,
@@ -15,6 +15,6 @@ class SignUpFormState with _$SignUpFormState {
   factory SignUpFormState.initial() => SignUpFormState(
         emailAddress: EmailAddress(''),
         password: Password(''),
-        name: Name(''),
+        name: Input(''),
       );
 }

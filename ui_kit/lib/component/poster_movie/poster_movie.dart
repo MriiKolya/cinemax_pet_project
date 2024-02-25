@@ -26,7 +26,7 @@ class PosterMovie extends StatelessWidget {
             borderRadius: style.borderRadius,
             image: DecorationImage(
                 fit: BoxFit.cover,
-                image: CachedNetworkImageProvider(posterMovie.poster)),
+                image: CachedNetworkImageProvider(posterMovie.backdropPath)),
           ),
           child: Padding(
             padding: style.contentPadding,
