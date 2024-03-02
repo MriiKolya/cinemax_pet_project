@@ -8,10 +8,11 @@ part 'search_movie_state.dart';
 part 'search_movie_cubit.freezed.dart';
 
 class SearchMovieCubit extends Cubit<SearchMovieState> {
-  final SearchRepository _repository;
+  final SearchRepository _searchRepository;
 
-  SearchMovieCubit({required SearchRepository repository})
-      : _repository = repository,
+  SearchMovieCubit({
+    required SearchRepository searchRepository,
+  })  : _searchRepository = searchRepository,
         super(SearchMovieState());
 
   void queryChanged(String query) {
@@ -30,7 +31,8 @@ class SearchMovieCubit extends Cubit<SearchMovieState> {
     if (state.loading != true) {
       emit(state.copyWith(loading: true));
     }
-    final movieRecommendation = await _repository.getMovie(query: state.query);
+    final movieRecommendation =
+        await _searchRepository.getMovie(query: state.query);
 
     movieRecommendation.fold(
       (failure) => emit(

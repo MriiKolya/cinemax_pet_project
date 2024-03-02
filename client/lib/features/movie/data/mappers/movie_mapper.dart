@@ -10,10 +10,10 @@ extension MovieMapper on MovieDTO {
         originalTitle: originalTitle,
         description: description,
         popularity: popularity,
-        posterPath: '${MovieQuery.image}$posterPath',
-        backdropPath: '${MovieQuery.image}$backdropPath',
+        posterPath: posterPath != '' ? '${MovieQuery.image}$posterPath' : null,
+        backdropPath:
+            backdropPath != '' ? '${MovieQuery.image}$backdropPath' : null,
         voteAverage: voteAverage,
         releaseDate: DateTime.tryParse(releaseDate),
-        genres: genres,
       );
 }

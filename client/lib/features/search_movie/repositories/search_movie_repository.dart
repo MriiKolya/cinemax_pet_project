@@ -1,5 +1,4 @@
 // ignore_for_file: inference_failure_on_function_invocation
-
 import 'package:client/core/api/api_config.dart';
 import 'package:client/core/error/failure.dart';
 import 'package:client/features/movie/data/dtos/list_movie/list_new_movie_dto.dart';
@@ -27,7 +26,6 @@ class SearchRepository implements ISearchRepository {
     required String query,
   }) async {
     try {
-      //static const baseUrlSearch = 'https://api.themoviedb.org/3/search';
       final url = '${MovieQuery.baseUrlSearch}?query=$query';
       final response =
           await _dio.get(url, queryParameters: MovieQuery.queryParametersBase);
@@ -37,6 +35,13 @@ class SearchRepository implements ISearchRepository {
         try {
           final movieRecommendationDTO = ListMovieDTO.fromJson(responseData);
           final listMovieEntity = movieRecommendationDTO.toDomain();
+          listMovieEntity.movies
+              .removeWhere((movie) => movie.posterPath == null);
+          // listMovieEntity.movies.forEach(
+          //   (element) {
+          //     element.genres = [];
+          //   },
+          // );
           return right(listMovieEntity);
         } catch (e) {
           return left(const Failure.parseError());

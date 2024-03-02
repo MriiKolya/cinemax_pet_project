@@ -22,7 +22,7 @@ class ImageNetwork extends StatelessWidget {
       imageUrl,
       fit: BoxFit.cover,
       opacity: opacity,
-      errorBuilder: (ontext, error, stackTrace) {
+      errorBuilder: (context, error, stackTrace) {
         return FadeTransition(
           opacity: fadeAnimation,
           child: ColoredBox(
@@ -30,7 +30,7 @@ class ImageNetwork extends StatelessWidget {
           ),
         );
       },
-      loadingBuilder: (ontext, child, loadingProgress) {
+      loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) {
           animationController.forward();
           return FadeTransition(

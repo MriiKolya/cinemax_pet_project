@@ -30,6 +30,10 @@ class _CinemaxAppState extends State<CinemaxApp> {
         BlocProvider<AuthBloc>(
           create: (context) => DependencyProvider.get<AuthBloc>(),
         ),
+        BlocProvider<GenreListCubit>(
+          create: (context) =>
+              DependencyProvider.get<GenreListCubit>()..loadGenreList(),
+        ),
         BlocProvider<PopularMoviesGenreCubit>(
           create: (context) =>
               DependencyProvider.get<PopularMoviesGenreCubit>()..initial(),
@@ -37,10 +41,6 @@ class _CinemaxAppState extends State<CinemaxApp> {
         BlocProvider<SearchMovieCubit>(
           create: (context) => DependencyProvider.get<SearchMovieCubit>(),
         ),
-        BlocProvider<GenreListCubit>(
-          create: (context) =>
-              DependencyProvider.get<GenreListCubit>()..loadGenreList(),
-        )
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

@@ -37,7 +37,6 @@ class MovieRecommendationRepository implements IMovieRecommendationRepository {
         try {
           final movieRecommendationDTO = ListMovieDTO.fromJson(responseData);
 
-          // // Создание объекта ListMovieEntity из списка сущностей
           final listMovieEntity = movieRecommendationDTO.toDomain();
 
           return right(listMovieEntity);

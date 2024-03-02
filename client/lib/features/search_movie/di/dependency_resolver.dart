@@ -8,7 +8,7 @@ class SearchMovieDependencyResolver {
   static void register() {
     DependencyProvider.registerFactory<SearchMovieCubit>(
       () => SearchMovieCubit(
-        repository: DependencyProvider.get<SearchRepository>(),
+        searchRepository: DependencyProvider.get<SearchRepository>(),
       ),
     );
     DependencyProvider.registerLazySingleton<SearchRepository>(

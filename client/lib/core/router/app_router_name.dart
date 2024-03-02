@@ -9,3 +9,4 @@ abstract class AppRouterName {
   static const String verificationEmailName = 'verificationEmai';
   static const String detailMovieName = 'detailMovie';
 }
+

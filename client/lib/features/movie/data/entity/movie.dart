@@ -1,3 +1,4 @@
+import 'package:client/features/genre_list/data/entity/genre_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class MovieEntity extends Equatable {
@@ -10,7 +11,7 @@ class MovieEntity extends Equatable {
   final String? backdropPath;
   final DateTime? releaseDate;
   final double? voteAverage;
-  final List<int>? genres;
+  final List<GenreEntity>? genres;
   final String? originalLanguage;
 
   const MovieEntity({
